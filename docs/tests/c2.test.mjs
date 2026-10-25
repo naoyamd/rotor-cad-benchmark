@@ -47,8 +47,9 @@ test('C2 HTML local references and required handles resolve', async () => {
   assert.match(html, /href="\.\/index\.html"/);
   assert.match(html, /href="\.\/c1\.html"/);
   assert.match(html, /id="motionMode" class="active"/);
-  assert.match(html, /id="viewport" hidden/);
-  assert.match(html, /id="xrayOption"[^>]*hidden/);
+  assert.match(html, /id="viewport" tabindex/);
+  assert.doesNotMatch(html, /id="motionViewport"/);
+  for(const id of ['collective','cyclic','phase','azimuth','motionPlay','residual'])assert.ok(ids.has(id));
   assert.match(html, /results\/C2/);
   assert.match(html, /425/);
   assert.match(html, /648/);

@@ -40,6 +40,24 @@ was revised with the `japanese-humanizer` skill to use direct descriptive labels
 
 ## Provenance and limits
 
+- C2's motion tab now uses continuous Three.js animation, not the 12 PNG
+  snapshots. `c2-kinematics.mjs` ports C2's constrained swash yaw, planar RR-S
+  and finite pitch-link solver. `c2-rig.mjs` maps all 425 neutral CAD meshes to
+  the solved frames, without rewriting source vertices. All five blades use
+  the same mast phase. The rotating hub/mast frame also carries the flange.
+- C2 supports collective 8–16°, cyclic amplitude 0–3°, arbitrary phase and
+  azimuth, and display speeds 3/12/30 rpm. Flap/lag are zero and folding is
+  shown through the original saved-state tab, not a simulated transition.
+- The two scissor RingBracket meshes retain their neutral rigid lengths.
+  Their endpoint discrepancy reaches 1.2763 mm on the documented test grid
+  (1.3 mm rounded bound for those samples). This is a display approximation,
+  not a tolerance, clearance or engineering acceptance claim. No BREP rebuild,
+  contact, elastic deformation, or structural calculation runs in the browser.
+- C2 tests compare the JS solver to original Python fixtures, verify all mesh
+  bindings, pin and link endpoints, rigid 500/350 mm rods, and the 360° wrap.
+  The historical 12 CAD-generated PNGs remain in the published evidence but
+  are not used for live animation. Original CAD/verification files are unchanged.
+
 - The benchmark section embeds the recorded C1 specification, model/effort,
   timing and token-only cost estimates from `EXECUTION_REPORT.md` and
   `metrics/C1/summary.json`. These are historical estimates dated 2026-10-25,

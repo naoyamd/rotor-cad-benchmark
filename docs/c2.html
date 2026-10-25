@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ROTOR / C2 — 継手を実形状へ更新したローターヘッド</title>
-  <meta name="description" content="C2メジャーアップデート。425形状フィーチャ・648ソリッドの実CADと、12姿勢のCAD生成モーション画像をブラウザで確認できます。">
+  <meta name="description" content="C2メジャーアップデート。425形状フィーチャの実CADをC2の機構計算で連続駆動。翼角・回転速度を操作し、4つの保存状態とも比較できます。">
   <meta name="theme-color" content="#002060">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23002060'/%3E%3Ctext x='18' y='75' font-size='66' fill='%2338BEE2'%3EC2%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="c2.css">
+  <link rel="stylesheet" href="c2.css?v=continuous-1">
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
 </head>
 <body>
@@ -40,28 +40,24 @@
   <section id="explore" class="explorer" aria-label="C2インタラクティブCAD">
     <div class="explorer-top">
       <div class="tabs" role="group" aria-label="表示モード">
-        <button id="motionMode" class="active" aria-pressed="true">01 動作を見る</button>
+        <button id="motionMode" class="active" aria-pressed="true">01 機構を動かす</button>
         <button id="cadMode" aria-pressed="false">02 CADを探索</button>
       </div>
       <div class="display-options">
-        <label id="xrayOption" class="xray-label" hidden><input id="xray" type="checkbox" checked> X-ray（透過）</label>
-        <span class="live-tag" id="modeTag">12 CAD-GENERATED FRAMES</span>
+        <label id="xrayOption" class="xray-label"><input id="xray" type="checkbox" checked> X-ray（透過）</label>
+        <span class="live-tag" id="modeTag">C2 / LIVE KINEMATICS</span>
       </div>
     </div>
     <div class="explorer-body">
       <div class="stage-wrap">
-        <div id="viewport" hidden tabindex="0" role="img" aria-label="C2実CAD。ドラッグで回転、ホイールで拡大。下の視点ボタンでも操作できます。"></div>
-        <div id="motionViewport">
-          <img id="motionImage" src="assets/c2/motion-00.png" alt="C2実CADから生成した動作フレーム 1 / 12">
-          <span class="frame-chip" id="frameChip">FRAME 01 / 12</span>
-        </div>
+        <div id="viewport" tabindex="0" role="img" aria-label="C2実CAD。ドラッグで回転、ホイールで拡大。下の視点ボタンでも操作できます。"></div>
         <div class="stage-caption">
           <span class="eyebrow" id="stageTitle">C2 / FINITE CAD MOTION</span>
-          <p id="stageDescription">12枚の実CAD生成画像を手動スクラブ・再生。連続解ではありません。</p>
+          <p id="stageDescription">C2の閉路計算に合わせて実CAD形状を連続駆動。</p>
         </div>
         <div class="stage-bottom">
-          <span id="status" role="status" aria-live="polite">CAD生成フレーム 01 / 12</span>
-          <div id="cameraButtons" class="camera-buttons" role="group" aria-label="視点" hidden>
+          <span id="status" role="status" aria-live="polite">機構モデルを読み込み中…</span>
+          <div id="cameraButtons" class="camera-buttons" role="group" aria-label="視点">
             <button data-view="head" class="active">ヘッド</button>
             <button data-view="full">全体</button>
             <button data-view="top">真上</button>
@@ -97,25 +93,18 @@
         </div>
 
         <div id="motionControls">
-          <p class="eyebrow">FINITE CAD MOTION</p>
-          <h2>12姿勢の動作ビューア</h2>
-          <p class="control-intro">各フレームは有限長閉路から実CADを再生成したPNGです。連続ソルバーや210 rpmの実時間シミュレーションではありません。</p>
-          <label for="frameRange">フレーム <output id="frameValue">01 / 12</output></label>
-          <input id="frameRange" type="range" min="0" max="11" step="1" value="0">
-          <div class="play-row">
-            <button id="motionPlay" aria-pressed="false">▶ 再生</button>
-            <button id="motionReset">先頭へ</button>
-          </div>
-          <p class="preset-label">再生速度</p>
-          <div class="presets" role="group" aria-label="再生速度">
-            <button data-motion-speed="0" class="active" aria-pressed="true">低速<small>1.5秒 / frame</small></button>
-            <button data-motion-speed="1" aria-pressed="false">中速<small>0.7秒 / frame</small></button>
-            <button data-motion-speed="2" aria-pressed="false">高速<small>0.3秒 / frame</small></button>
-          </div>
-          <div class="motion-readout">
-            <span>サンプル数</span><strong>12 frames</strong>
-            <small>実CAD生成画像 / 連続的に解かれた軌跡ではありません</small>
-          </div>
+          <p class="eyebrow">C2 / LIVE KINEMATICS</p><h2>翼角と回転の設定</h2>
+          <p class="preset-label">翼角プリセット</p><div class="presets" role="group" aria-label="翼角プリセット"><button data-pitch="0" aria-pressed="false">小<small>8° / 変動なし</small></button><button data-pitch="1" class="active" aria-pressed="true">中<small>12° / ±1.5°</small></button><button data-pitch="2" aria-pressed="false">大<small>16° / ±3°</small></button></div>
+          <label for="collective">コレクティブ <output id="collectiveValue">12.0°</output></label><input id="collective" type="range" min="8" max="16" step="0.1" value="12">
+          <label for="cyclic">サイクリック振幅 <output id="cyclicValue">1.5°</output></label><input id="cyclic" type="range" min="0" max="3" step="0.1" value="1.5">
+          <label for="phase">入力の方位 <output id="phaseValue">0°</output></label><input id="phase" type="range" min="0" max="360" step="1" value="0">
+          <label for="azimuth">ローターの方位 <output id="azimuthValue">0°</output></label><input id="azimuth" type="range" min="0" max="359.9" step="0.1" value="0">
+          <p class="preset-label">見た目の回転速度</p><div class="presets" role="group" aria-label="回転速度プリセット"><button data-speed="0" class="active" aria-pressed="true">低速<small>3 rpm</small></button><button data-speed="1" aria-pressed="false">中速<small>12 rpm</small></button><button data-speed="2" aria-pressed="false">高速<small>30 rpm</small></button></div>
+          <div class="play-row"><button id="motionPlay" aria-pressed="false">▶ 回転を開始</button><button id="motionReset">リセット</button></div>
+          <p class="fine">表示速度は設計値210 rpmより遅くしています。翼角は誇張せず、フラップ・ラグは0°固定です。</p>
+          <div class="pitch-section"><svg viewBox="0 0 220 58" role="img" aria-label="翼1のピッチ角。破線が0度。"><path d="M15 38H205" stroke="#8aa5ba" stroke-dasharray="4 4"/><g id="pitchSection"><path d="M25 38 Q45 23 195 38 Q45 47 25 38Z" fill="#38BEE2" stroke="#D7F2F9"/></g><text x="16" y="14" fill="#D7F2F9" font-size="10">翼1の断面方向（角度は実寸）</text></svg></div>
+          <div id="pitches" class="pitches" aria-label="各翼ピッチ角"></div><p class="residual">ピッチリンク閉路残差 <output id="residual">—</output> mm<br>RR-S閉路残差 <output id="scissorResidual">—</output> mm</p>
+          <p class="fine">形状は中立CADのメッシュを使用し、C2の閉路解から姿勢を更新します。ブラウザ上での干渉・強度検証ではありません。2本のリング取付ブラケットは剛体近似で、検査した格子上の端点差は最大1.3 mmです。</p>
         </div>
       </aside>
     </div>
@@ -131,7 +120,7 @@
     <div><strong>425<span>features</span></strong><p>形状フィーチャ（製造部品数ではない）</p></div>
     <div><strong>648<span>solids</span></strong><p>4状態で再読込したネイティブCAD</p></div>
     <div><strong>4<span>states</span></strong><p>中立・最大入力・駐機・折畳み</p></div>
-    <div><strong>12<span>frames</span></strong><p>実CADから生成した有限サンプル</p></div>
+    <div><strong>3<span>inputs</span></strong><p>コレクティブとサイクリック2成分</p></div>
   </section>
 
   <section class="story">
@@ -208,6 +197,6 @@
   <p>ROTOR / C2 · OPEN DESIGN BENCHMARK · 2026-10-25<br>工学候補CAD。未検証項目を含み、製作・飛行の承認ではありません。</p>
   <a href="https://github.com/naoyamd/rotor-cad-benchmark">GitHub ↗</a>
 </footer>
-<script type="module" src="c2.mjs"></script>
+<script type="module" src="c2.mjs?v=continuous-1"></script>
 </body>
 </html>
