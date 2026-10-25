@@ -2,4 +2,4 @@
 @media(max-width:900px){header{padding:22px 24px}.hero{padding:40px 24px 24px}.versions{padding:12px 24px 40px;gap:18px}.version-heading{padding:18px;gap:12px}.date{display:none}.version-body{padding:12px 18px 22px}.preview img{height:250px}.version-body>p{min-height:105px}.sub-links{flex-wrap:wrap}#comparison{padding:40px 24px}.method{padding:45px 24px;gap:30px}footer{padding:24px}}
 @media(max-width:600px){header{gap:16px;flex-wrap:wrap}.brand{font-size:23px}.brand span{font-size:9px}nav{gap:22px;font-size:11px}h1{font-size:32px;letter-spacing:-1px}.hero p{font-size:13px}.scope{font-size:12px;padding:12px 15px}.versions{grid-template-columns:1fr}.version-body>p{min-height:0}.preview img{height:260px}.version-heading h2{font-size:20px}.version-id{font-size:35px}h2{font-size:25px}.method{grid-template-columns:1fr;gap:15px}table{font-size:12px}th,td{padding:14px 13px}.intro-note{font-size:12px}footer{flex-direction:column;gap:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.preview{overflow:hidden}.preview img{transform:scale(1.4)}
+.preview{overflow:hidden}.preview img{transform:scale(1.18)}
