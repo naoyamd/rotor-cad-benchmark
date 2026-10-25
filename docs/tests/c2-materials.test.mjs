@@ -10,5 +10,8 @@ test('C2 display finishes respect BOM material before part-name hints',async()=>
   assert.equal(finish('BearingCage').metalness,0);
   assert.notEqual(finish('GuideBush100').color,finish('Mast').color);
   assert.ok(finish('Servo0Rod').roughness<finish('Servo0Body').roughness);
+  assert.notEqual(finish('StatorSocket').color,finish('Blade1Housing').color);
+  assert.notEqual(finish('Blade1FlightLockHead').color,finish('Blade1FlightLock').color);
+  assert.ok(finish('Blade1Housing').metalness<finish('Servo0Rod').metalness);
   for(const part of parts){const s=surfaceFor(part);assert.ok(Number.isInteger(s.color));assert.ok(s.metalness>=0&&s.metalness<=1&&s.roughness>=0&&s.roughness<=1);}
 });

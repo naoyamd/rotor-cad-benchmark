@@ -40,10 +40,12 @@ was revised with the `japanese-humanizer` skill to use direct descriptive labels
 
 ## Provenance and limits
 
-- C2's opaque view uses BOM-informed display finishes: silver/gray steel,
-  dark composite and elastomer, bronze bushings, with material-specific
-  metalness/roughness and neutral lighting. These are visualization choices,
-  not verified manufacturing finishes. X-ray retains its diagnostic colors.
+- C2's opaque view combines BOM materials with illustrative finishes: blue-gray
+  and olive painted structures, warm metallic fasteners, silver sliding parts,
+  dark composite/elastomer, and restrained red lock-head accents. Coatings are
+  visualization choices, not verified aircraft finishes. X-ray retains its
+  diagnostic colors. [MRO surface-treatment reference](https://www.kongsberg.com/what-we-do/defence-and-security/aviation-maintenance-repair-overhaul/helicopter-dynamic-components/)
+  documents painting and protective treatments; it does not specify C2's colors.
 
 - C2's motion tab now uses continuous Three.js animation, not the 12 PNG
   snapshots. `c2-kinematics.mjs` ports C2's constrained swash yaw, planar RR-S

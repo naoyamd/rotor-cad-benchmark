@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three.module.js';
 import {OrbitControls} from './vendor/OrbitControls.js';
 import {createRig} from './c2-rig.mjs';
-import {surfaceFor} from './c2-materials.mjs';
+import {surfaceFor} from './c2-materials.mjs?v=coatings-1';
 import {pitchPresets, speedPresets} from './presets.mjs';
 
 const $ = id => document.getElementById(id);
@@ -47,8 +47,8 @@ function applyXray(){
   ambientLight.color.setHex(xray?0xd7f2f9:0xffffff);ambientLight.groundColor.setHex(xray?0x334f7c:0x575b62);
   fillLight.color.setHex(xray?0x86c1d7:0xffffff);
   const legend=document.querySelectorAll('.explorer-foot>span');
-  const labels=xray?['操縦・スワッシュ','関節・ロック','荷重を支える骨格']:['金属：銀・グレー','ブッシュ：ブロンズ','複合材・ゴム：黒系'];
-  const swatches=xray?['#38bee2','#edc263','#b0c8df']:['#969da5','#927344','#30343a'];
+  const labels=xray?['操縦・スワッシュ','関節・ロック','荷重を支える骨格']:['塗装部：青灰・オリーブ','金具：銀・黄褐色','複合材・ゴム：黒系'];
+  const swatches=xray?['#38bee2','#edc263','#b0c8df']:['#7d8c6b','#b59b66','#30343a'];
   for(let i=0;i<3;i++){legend[i].innerHTML=`<i class="legend" style="background:${swatches[i]}"></i>${labels[i]}`;}
   for(const group of [cad,live])group?.traverse(object=>{
     if(!object.isMesh)return;
