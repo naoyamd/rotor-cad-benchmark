@@ -32,6 +32,13 @@ was revised with the `japanese-humanizer` skill to use direct descriptive labels
 
 ## Provenance and limits
 
+- The benchmark section embeds the recorded C1 specification, model/effort,
+  timing and token-only cost estimates from `EXECUTION_REPORT.md` and
+  `metrics/C1/summary.json`. These are historical estimates dated 2026-10-25,
+  not current pricing or actual billing. Website and additional drawing work
+  are outside the measured scope. A regression test checks displayed table
+  values against the source JSON and model counts against request records.
+
 - [2D reference drawing PDF](drawings/rotor_reference_drawing_A3.pdf): three
   A3 sheets projected from the actual FreeCAD assemblies (neutral assembly,
   rotor-head/root detail, and folded state). See [drawing notes](drawings/README.md)
