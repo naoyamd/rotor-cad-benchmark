@@ -1,6 +1,6 @@
 # ROTOR / C1 + C2 benchmark site
 
-GitHub Pages: https://naoyamd.github.io/rotor-cad-benchmark/
+GitHub Pages: https://rotor.nightly.dedyn.io/
 
 `index.html` is the side-by-side comparison landing. `c1.html` preserves the
 original C1 explorer; `c2.html` presents the redesigned C2. Shared root URLs

@@ -18,14 +18,15 @@ test('landing page and both design pages have working local links',async()=>{
 
 test('old C1 hash URLs redirect while the new comparison stays on the landing',async()=>{
   const script=await readFile(new URL('../landing.mjs',import.meta.url),'utf8');
+  for(const base of ['https://naoyamd.github.io/rotor-cad-benchmark/','https://rotor.nightly.dedyn.io/'])
   for(const hash of ['','#comparison','#explore','#benchmark','#evidence']){
     let redirected;
-    const location={hash,href:`https://naoyamd.github.io/rotor-cad-benchmark/${hash}`,replace:url=>{redirected=url.href;}};
+    const location={hash,href:`${base}${hash}`,replace:url=>{redirected=url.href;}};
     let onHashChange;
     vm.runInNewContext(script,{location,URL,addEventListener:(event,fn)=>{assert.equal(event,'hashchange');onHashChange=fn;}});
-    assert.equal(redirected,['#explore','#benchmark','#evidence'].includes(hash)?`https://naoyamd.github.io/rotor-cad-benchmark/c1.html${hash}`:undefined);
+    assert.equal(redirected,['#explore','#benchmark','#evidence'].includes(hash)?`${base}c1.html${hash}`:undefined);
     location.hash='#explore';
     onHashChange();
-    assert.equal(redirected,'https://naoyamd.github.io/rotor-cad-benchmark/c1.html#explore');
+    assert.equal(redirected,`${base}c1.html#explore`);
   }
 });

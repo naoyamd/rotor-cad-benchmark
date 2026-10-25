@@ -1,7 +1,7 @@
 # Rotor CAD Benchmark — 要求仕様 v0.2
 
-**[C1 / C2 比較サイト →](https://naoyamd.github.io/rotor-cad-benchmark/)**
-[C1 初回設計](https://naoyamd.github.io/rotor-cad-benchmark/c1.html) と [C2 再設計](https://naoyamd.github.io/rotor-cad-benchmark/c2.html) を比較し、それぞれの実CAD・動作表示・検証資料を確認できます。C2はC1の不足を踏まえた再設計で、独立した同条件試行ではありません。表示の区別・検証方法は [サイトのREADME](docs/README.md) を参照してください。
+**[C1 / C2 比較サイト →](https://rotor.nightly.dedyn.io/)**
+[C1 初回設計](https://rotor.nightly.dedyn.io/c1.html) と [C2 再設計](https://rotor.nightly.dedyn.io/c2.html) を比較し、それぞれの実CAD・動作表示・検証資料を確認できます。C2はC1の不足を踏まえた再設計で、独立した同条件試行ではありません。表示の区別・検証方法は [サイトのREADME](docs/README.md) を参照してください。
 
 実機の初期設計に引き継げる工学的な説明と、編集・再計算・検証できるCADアセンブリを、AIがどこまで自律的に構築できるかを評価する課題。
 
