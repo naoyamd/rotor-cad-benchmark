@@ -618,7 +618,6 @@ def find_freecadcmd(explicit: str | None) -> str:
         os.environ.get("FREECADCMD", ""),
         shutil.which("FreeCADCmd.exe") or "",
         shutil.which("freecadcmd") or "",
-        r"C:\Users\ynaoy\Documents\Codex-LocalData\INTAKECamp2026\runtime\FreeCAD_1.1.4-Windows-x86_64-py311\FreeCADCmd.exe",
     ])
     for candidate in candidates:
         if candidate and Path(candidate).exists():

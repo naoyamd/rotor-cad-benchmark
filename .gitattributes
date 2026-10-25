@@ -5,3 +5,4 @@ metrics/C1/** text eol=lf
 *.FCStd binary
 *.step binary
 *.png binary
+*.pdf binary
