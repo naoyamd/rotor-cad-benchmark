@@ -29,3 +29,13 @@ test('local HTML assets and internal anchors resolve',async()=>{
     assert.ok((await readFile(new URL(`../${path}`,import.meta.url))).length>0,path);
   }
 });
+
+test('drawing provenance matches the original FreeCAD documents',async()=>{
+  const provenance=JSON.parse(await readFile(new URL('../drawings/provenance.json',import.meta.url)));
+  for(const source of provenance.sources){
+    const cad=await readFile(new URL(`../drawings/${source.path}`,import.meta.url));
+    assert.equal(createHash('sha256').update(cad).digest('hex'),source.sha256);
+  }
+  const pdf=await readFile(new URL(`../drawings/${provenance.artifact}`,import.meta.url));
+  assert.equal(pdf.subarray(0,5).toString(),'%PDF-');
+});

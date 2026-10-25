@@ -18,7 +18,24 @@ controls offer camera presets, saved states, component isolation, and mechanism
 inputs. Rotation starts only on request; reduced-motion preferences disable
 smooth scrolling. Network/WebGL errors leave the evidence and source links usable.
 
+The initial view is the live mechanism with X-ray enabled. X-ray makes outer
+surfaces translucent and draws their edges while retaining opaque pitch links.
+The same toggle applies to the saved CAD states. Pitch presets combine collective
+and cyclic amplitude: 8/0, 12/1.5, and 16/3 degrees. They stay within the original
+solver envelope; no pitch exaggeration is applied. The small section indicator
+shows blade 1's solved angle. Sliders remain available for individual adjustments.
+
+Palette source: [training-report-blue theme tokens](https://github.com/naoyamd/codex-training-report-deck/blob/main/skills/create-training-report-deck/assets/theme-tokens.json).
+Blue `#004EA2`, navy `#002060`, cyan `#38BEE2`, and the reference neutral colors
+are used without corporate logos or proprietary footer assets. Japanese UI copy
+was revised with the `japanese-humanizer` skill to use direct descriptive labels.
+
 ## Provenance and limits
+
+- [2D reference drawing PDF](drawings/rotor_reference_drawing_A3.pdf): three
+  A3 sheets projected from the actual FreeCAD assemblies (neutral assembly,
+  rotor-head/root detail, and folded state). See [drawing notes](drawings/README.md)
+  for regeneration and dimensions. This is not a toleranced manufacturing drawing.
 
 - Exact-CAD mode shows tessellated geometry of four saved FCStd files, with 145
   functional parts per state. The airframe reference envelope is omitted.
@@ -29,7 +46,7 @@ smooth scrolling. Network/WebGL errors leave the evidence and source links usabl
   `results/C1/src/mechanism.py`. Input/output lengths remain mm in the solver.
   Its simplified display geometry is not CAD verification geometry. The blade
   envelope is untwisted; flap and lag are fixed at zero in the UI.
-- Live display speed is 3 rpm, versus the candidate design value of 210 rpm.
+- Live display speed presets are 3, 12, and 30 rpm, versus the candidate design value of 210 rpm.
   The mechanism does not compute aerodynamic response or aircraft attitude.
 - Saved states do not establish safe intermediate folding motion. Original gate
   decisions remain G0 complete; G1 provisional/not passed; G2 and G3 unmet.
