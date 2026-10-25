@@ -6,7 +6,9 @@ GitHub Pages: https://naoyamd.github.io/rotor-cad-benchmark/
 original C1 explorer; `c2.html` presents the redesigned C2. Shared root URLs
 with `#explore`, `#benchmark` or `#evidence` redirect to C1 to preserve old links.
 C2 is a redesign informed by C1, not an independent same-condition trial.
-Its time, model usage and cost have not been aggregated for this site.
+C2 reported time (1h07m03s), models and Standard token-only estimate ($24.42)
+are transcribed from the redesign chat; see `metrics/C2/README.md` for scope.
+Unlike C1, no request-level public token breakdown is included.
 
 Buildless Three.js 0.180.0 website. All runtime dependencies are vendored under
 `vendor/` with the upstream MIT license; there is no CDN, analytics, or backend.
