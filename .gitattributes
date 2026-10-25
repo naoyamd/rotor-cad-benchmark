@@ -1,0 +1,7 @@
+# Preserve the verified artifact snapshot bytes and its SHA256 manifest.
+results/C1/** -text whitespace=cr-at-eol
+results/*.zip binary
+metrics/C1/** text eol=lf
+*.FCStd binary
+*.step binary
+*.png binary

@@ -1,0 +1,147 @@
+﻿CAD_name,quantity,material,assembly,connection,evaluation
+Mast,1,"Steel, grade TBD",Hub,gearbox / hub,Capacity not verified
+MountFlange,1,"Steel, grade TBD",Hub,gearbox interface,Capacity not verified
+FixedGuide,1,"Steel, grade TBD",Fixed,airframe / sliding sphere,Capacity not verified
+SlidingSleeve,1,"Steel, grade TBD",Swashplate,FixedGuide axial slide,Capacity not verified
+SupportSphere,1,"Steel, grade TBD",Swashplate,SlidingSleeve / socket,Capacity not verified
+TiltSocket,1,"Steel, grade TBD",Swashplate,SupportSphere spherical tilt,2 mm visualization clearance; bearing fit not toleranced
+Stator,1,Al alloy TBD,Swashplate,TiltSocket / lower bearing race,Capacity not verified
+RotorRing,1,Al alloy TBD,Swashplate,upper bearing race / 5 raised ball lugs,Capacity not verified
+LowerRace,1,"Steel, grade TBD",Swashplate,Stator / bearing rollers,Capacity not verified
+UpperRace,1,"Steel, grade TBD",Swashplate,RotorRing / bearing rollers,Capacity not verified
+BearingRollingElements,1,"Steel, grade TBD",Swashplate,LowerRace / UpperRace,Concept rolling race; contact stress and rated capacity unresolved
+ServoBody0,1,"Steel, grade TBD",Fixed,airframe / piston,Capacity not verified
+ServoRod0,1,"Steel, grade TBD",Fixed,piston / Stator,650 mm rigid rod slides inside body; capacity unverified
+Servo0LowerJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+Servo0UpperJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+ServoBody1,1,"Steel, grade TBD",Fixed,airframe / piston,Capacity not verified
+ServoRod1,1,"Steel, grade TBD",Fixed,piston / Stator,650 mm rigid rod slides inside body; capacity unverified
+Servo1LowerJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+Servo1UpperJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+ServoBody2,1,"Steel, grade TBD",Fixed,airframe / piston,Capacity not verified
+ServoRod2,1,"Steel, grade TBD",Fixed,piston / Stator,650 mm rigid rod slides inside body; capacity unverified
+Servo2LowerJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+Servo2UpperJoint,1,"Steel, grade TBD",Fixed,spherical joint,Capacity not verified
+AntirotationA,1,"Steel, grade TBD",Fixed,universal end / revolute elbow,Centre-distance closure only; joint clocking not fully verified
+AntirotationB,1,"Steel, grade TBD",Fixed,universal end / revolute elbow,Centre-distance closure only; joint clocking not fully verified
+AntirotationJoint0,1,"Steel, grade TBD",Fixed,scissor pivot,Capacity not verified
+AntirotationJoint1,1,"Steel, grade TBD",Fixed,scissor pivot,Capacity not verified
+AntirotationJoint2,1,"Steel, grade TBD",Fixed,scissor pivot,Capacity not verified
+RotatingDriveA,1,"Steel, grade TBD",Hub,universal end / revolute elbow,Centre-distance closure only; joint clocking not fully verified
+RotatingDriveB,1,"Steel, grade TBD",Hub,universal end / revolute elbow,Centre-distance closure only; joint clocking not fully verified
+RotatingDriveJoint0,1,"Steel, grade TBD",Hub,scissor pivot,Capacity not verified
+RotatingDriveJoint1,1,"Steel, grade TBD",Hub,scissor pivot,Capacity not verified
+RotatingDriveJoint2,1,"Steel, grade TBD",Hub,scissor pivot,Capacity not verified
+HubRing,1,"Steel, grade TBD",Hub,Mast / five bearing housings,Capacity not verified
+HubCap,1,"Steel, grade TBD",Hub,hub retention,Capacity not verified
+Blade1HubArm,1,"Steel, grade TBD",Hub,Blade1OuterRace / HubRing,Capacity not verified
+Blade1OuterRace,1,"Steel, grade TBD",Blade1,HubArm / laminated bearing,Capacity not verified
+Blade1Elastomer,1,Elastomer TBD,Blade1,InnerRace / shims,"Undeformed layer envelope; finite stiffness assigned in basis, capacity unproven"
+Blade1Shims,1,"Steel, grade TBD",Blade1,laminated bearing,Capacity not verified
+Blade1InnerRace,1,"Steel, grade TBD",Blade1,Cuff / elastomer,Capacity not verified
+Blade1Cuff,1,"Steel, grade TBD",Blade1,InnerRace / fold clevis,Capacity not verified
+Blade1PitchHorn,1,"Steel, grade TBD",Blade1,Cuff / pitch link,Capacity not verified
+Blade1PitchLink,1,"Steel, grade TBD",Blade1,RotorRing / PitchHorn,Fixed length; finite-angle closure solved
+Blade1LowerBall,1,"Steel, grade TBD",Blade1,spherical rod end,Capacity not verified
+Blade1UpperBall,1,"Steel, grade TBD",Blade1,spherical rod end,Capacity not verified
+Blade1DamperMount,1,"Steel, grade TBD",Blade1,Hub / damper fixed ball,Capacity not verified
+Blade1DamperLug,1,"Steel, grade TBD",Blade1,Cuff / damper moving ball,Capacity not verified
+Blade1DamperBody,1,"Steel, grade TBD",Blade1,fixed bracket / piston,Capacity not verified
+Blade1DamperRod,1,"Steel, grade TBD",Blade1,piston / moving bracket,Capacity not verified
+Blade1DA,1,"Steel, grade TBD",Blade1,damper spherical end,Capacity not verified
+Blade1DB,1,"Steel, grade TBD",Blade1,damper spherical end,Capacity not verified
+Blade1FoldClevis,1,"Steel, grade TBD",Blade1,Cuff / hinge and lock,Capacity not verified
+Blade1FoldTang,1,"Steel, grade TBD",Blade1,blade root / fold hinge,Capacity not verified
+Blade1FoldHinge,1,"Steel, grade TBD",Blade1,clevis / tang,Capacity not verified
+Blade1FlightLock,1,"Steel, grade TBD",Blade1,offset lock / tethered parking position,Withdrawal precedes fold; retaining cap/interlock detail provisional
+Blade1Airfoil,1,Composite equivalent,Blade1,FoldTang / spar,Full length NACA0012 envelope; internal laminate not designed
+Blade1RootSparEnvelope,1,Composite equivalent,Blade1,FoldTang / Airfoil,Capacity not verified
+Blade2HubArm,1,"Steel, grade TBD",Hub,Blade2OuterRace / HubRing,Capacity not verified
+Blade2OuterRace,1,"Steel, grade TBD",Blade2,HubArm / laminated bearing,Capacity not verified
+Blade2Elastomer,1,Elastomer TBD,Blade2,InnerRace / shims,"Undeformed layer envelope; finite stiffness assigned in basis, capacity unproven"
+Blade2Shims,1,"Steel, grade TBD",Blade2,laminated bearing,Capacity not verified
+Blade2InnerRace,1,"Steel, grade TBD",Blade2,Cuff / elastomer,Capacity not verified
+Blade2Cuff,1,"Steel, grade TBD",Blade2,InnerRace / fold clevis,Capacity not verified
+Blade2PitchHorn,1,"Steel, grade TBD",Blade2,Cuff / pitch link,Capacity not verified
+Blade2PitchLink,1,"Steel, grade TBD",Blade2,RotorRing / PitchHorn,Fixed length; finite-angle closure solved
+Blade2LowerBall,1,"Steel, grade TBD",Blade2,spherical rod end,Capacity not verified
+Blade2UpperBall,1,"Steel, grade TBD",Blade2,spherical rod end,Capacity not verified
+Blade2DamperMount,1,"Steel, grade TBD",Blade2,Hub / damper fixed ball,Capacity not verified
+Blade2DamperLug,1,"Steel, grade TBD",Blade2,Cuff / damper moving ball,Capacity not verified
+Blade2DamperBody,1,"Steel, grade TBD",Blade2,fixed bracket / piston,Capacity not verified
+Blade2DamperRod,1,"Steel, grade TBD",Blade2,piston / moving bracket,Capacity not verified
+Blade2DA,1,"Steel, grade TBD",Blade2,damper spherical end,Capacity not verified
+Blade2DB,1,"Steel, grade TBD",Blade2,damper spherical end,Capacity not verified
+Blade2FoldClevis,1,"Steel, grade TBD",Blade2,Cuff / hinge and lock,Capacity not verified
+Blade2FoldTang,1,"Steel, grade TBD",Blade2,blade root / fold hinge,Capacity not verified
+Blade2FoldHinge,1,"Steel, grade TBD",Blade2,clevis / tang,Capacity not verified
+Blade2FlightLock,1,"Steel, grade TBD",Blade2,offset lock / tethered parking position,Withdrawal precedes fold; retaining cap/interlock detail provisional
+Blade2Airfoil,1,Composite equivalent,Blade2,FoldTang / spar,Full length NACA0012 envelope; internal laminate not designed
+Blade2RootSparEnvelope,1,Composite equivalent,Blade2,FoldTang / Airfoil,Capacity not verified
+Blade3HubArm,1,"Steel, grade TBD",Hub,Blade3OuterRace / HubRing,Capacity not verified
+Blade3OuterRace,1,"Steel, grade TBD",Blade3,HubArm / laminated bearing,Capacity not verified
+Blade3Elastomer,1,Elastomer TBD,Blade3,InnerRace / shims,"Undeformed layer envelope; finite stiffness assigned in basis, capacity unproven"
+Blade3Shims,1,"Steel, grade TBD",Blade3,laminated bearing,Capacity not verified
+Blade3InnerRace,1,"Steel, grade TBD",Blade3,Cuff / elastomer,Capacity not verified
+Blade3Cuff,1,"Steel, grade TBD",Blade3,InnerRace / fold clevis,Capacity not verified
+Blade3PitchHorn,1,"Steel, grade TBD",Blade3,Cuff / pitch link,Capacity not verified
+Blade3PitchLink,1,"Steel, grade TBD",Blade3,RotorRing / PitchHorn,Fixed length; finite-angle closure solved
+Blade3LowerBall,1,"Steel, grade TBD",Blade3,spherical rod end,Capacity not verified
+Blade3UpperBall,1,"Steel, grade TBD",Blade3,spherical rod end,Capacity not verified
+Blade3DamperMount,1,"Steel, grade TBD",Blade3,Hub / damper fixed ball,Capacity not verified
+Blade3DamperLug,1,"Steel, grade TBD",Blade3,Cuff / damper moving ball,Capacity not verified
+Blade3DamperBody,1,"Steel, grade TBD",Blade3,fixed bracket / piston,Capacity not verified
+Blade3DamperRod,1,"Steel, grade TBD",Blade3,piston / moving bracket,Capacity not verified
+Blade3DA,1,"Steel, grade TBD",Blade3,damper spherical end,Capacity not verified
+Blade3DB,1,"Steel, grade TBD",Blade3,damper spherical end,Capacity not verified
+Blade3FoldClevis,1,"Steel, grade TBD",Blade3,Cuff / hinge and lock,Capacity not verified
+Blade3FoldTang,1,"Steel, grade TBD",Blade3,blade root / fold hinge,Capacity not verified
+Blade3FoldHinge,1,"Steel, grade TBD",Blade3,clevis / tang,Capacity not verified
+Blade3FlightLock,1,"Steel, grade TBD",Blade3,offset lock / tethered parking position,Withdrawal precedes fold; retaining cap/interlock detail provisional
+Blade3Airfoil,1,Composite equivalent,Blade3,FoldTang / spar,Full length NACA0012 envelope; internal laminate not designed
+Blade3RootSparEnvelope,1,Composite equivalent,Blade3,FoldTang / Airfoil,Capacity not verified
+Blade4HubArm,1,"Steel, grade TBD",Hub,Blade4OuterRace / HubRing,Capacity not verified
+Blade4OuterRace,1,"Steel, grade TBD",Blade4,HubArm / laminated bearing,Capacity not verified
+Blade4Elastomer,1,Elastomer TBD,Blade4,InnerRace / shims,"Undeformed layer envelope; finite stiffness assigned in basis, capacity unproven"
+Blade4Shims,1,"Steel, grade TBD",Blade4,laminated bearing,Capacity not verified
+Blade4InnerRace,1,"Steel, grade TBD",Blade4,Cuff / elastomer,Capacity not verified
+Blade4Cuff,1,"Steel, grade TBD",Blade4,InnerRace / fold clevis,Capacity not verified
+Blade4PitchHorn,1,"Steel, grade TBD",Blade4,Cuff / pitch link,Capacity not verified
+Blade4PitchLink,1,"Steel, grade TBD",Blade4,RotorRing / PitchHorn,Fixed length; finite-angle closure solved
+Blade4LowerBall,1,"Steel, grade TBD",Blade4,spherical rod end,Capacity not verified
+Blade4UpperBall,1,"Steel, grade TBD",Blade4,spherical rod end,Capacity not verified
+Blade4DamperMount,1,"Steel, grade TBD",Blade4,Hub / damper fixed ball,Capacity not verified
+Blade4DamperLug,1,"Steel, grade TBD",Blade4,Cuff / damper moving ball,Capacity not verified
+Blade4DamperBody,1,"Steel, grade TBD",Blade4,fixed bracket / piston,Capacity not verified
+Blade4DamperRod,1,"Steel, grade TBD",Blade4,piston / moving bracket,Capacity not verified
+Blade4DA,1,"Steel, grade TBD",Blade4,damper spherical end,Capacity not verified
+Blade4DB,1,"Steel, grade TBD",Blade4,damper spherical end,Capacity not verified
+Blade4FoldClevis,1,"Steel, grade TBD",Blade4,Cuff / hinge and lock,Capacity not verified
+Blade4FoldTang,1,"Steel, grade TBD",Blade4,blade root / fold hinge,Capacity not verified
+Blade4FoldHinge,1,"Steel, grade TBD",Blade4,clevis / tang,Capacity not verified
+Blade4FlightLock,1,"Steel, grade TBD",Blade4,offset lock / tethered parking position,Withdrawal precedes fold; retaining cap/interlock detail provisional
+Blade4Airfoil,1,Composite equivalent,Blade4,FoldTang / spar,Full length NACA0012 envelope; internal laminate not designed
+Blade4RootSparEnvelope,1,Composite equivalent,Blade4,FoldTang / Airfoil,Capacity not verified
+Blade5HubArm,1,"Steel, grade TBD",Hub,Blade5OuterRace / HubRing,Capacity not verified
+Blade5OuterRace,1,"Steel, grade TBD",Blade5,HubArm / laminated bearing,Capacity not verified
+Blade5Elastomer,1,Elastomer TBD,Blade5,InnerRace / shims,"Undeformed layer envelope; finite stiffness assigned in basis, capacity unproven"
+Blade5Shims,1,"Steel, grade TBD",Blade5,laminated bearing,Capacity not verified
+Blade5InnerRace,1,"Steel, grade TBD",Blade5,Cuff / elastomer,Capacity not verified
+Blade5Cuff,1,"Steel, grade TBD",Blade5,InnerRace / fold clevis,Capacity not verified
+Blade5PitchHorn,1,"Steel, grade TBD",Blade5,Cuff / pitch link,Capacity not verified
+Blade5PitchLink,1,"Steel, grade TBD",Blade5,RotorRing / PitchHorn,Fixed length; finite-angle closure solved
+Blade5LowerBall,1,"Steel, grade TBD",Blade5,spherical rod end,Capacity not verified
+Blade5UpperBall,1,"Steel, grade TBD",Blade5,spherical rod end,Capacity not verified
+Blade5DamperMount,1,"Steel, grade TBD",Blade5,Hub / damper fixed ball,Capacity not verified
+Blade5DamperLug,1,"Steel, grade TBD",Blade5,Cuff / damper moving ball,Capacity not verified
+Blade5DamperBody,1,"Steel, grade TBD",Blade5,fixed bracket / piston,Capacity not verified
+Blade5DamperRod,1,"Steel, grade TBD",Blade5,piston / moving bracket,Capacity not verified
+Blade5DA,1,"Steel, grade TBD",Blade5,damper spherical end,Capacity not verified
+Blade5DB,1,"Steel, grade TBD",Blade5,damper spherical end,Capacity not verified
+Blade5FoldClevis,1,"Steel, grade TBD",Blade5,Cuff / hinge and lock,Capacity not verified
+Blade5FoldTang,1,"Steel, grade TBD",Blade5,blade root / fold hinge,Capacity not verified
+Blade5FoldHinge,1,"Steel, grade TBD",Blade5,clevis / tang,Capacity not verified
+Blade5FlightLock,1,"Steel, grade TBD",Blade5,offset lock / tethered parking position,Withdrawal precedes fold; retaining cap/interlock detail provisional
+Blade5Airfoil,1,Composite equivalent,Blade5,FoldTang / spar,Full length NACA0012 envelope; internal laminate not designed
+Blade5RootSparEnvelope,1,Composite equivalent,Blade5,FoldTang / Airfoil,Capacity not verified
+AirframeEnvelope,1,Boundary only,Reference,fixed airframe,Not an actual fuselage design

@@ -1,0 +1,22 @@
+"""Edit Parameters, then execute. Creates a new document, preserving the original."""
+from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent/'src'))
+import FreeCAD as App
+import FreeCADGui as Gui
+import importlib
+import mechanism,build
+importlib.reload(mechanism)
+importlib.reload(build)
+from mechanism import P
+from build import build
+from render import style
+old=App.ActiveDocument
+if old is None or not hasattr(old,'Parameters'):raise ValueError('Open a rotor model first')
+par=old.Parameters
+values={key:float(getattr(par,key)) for key in P}
+doc,bom=build('Rotor_Rebuilt',par.Collective,par.CyclicCos,par.CyclicSin,par.Azimuth,par.FoldFraction,p=values,parked=par.Parked,flap=par.FlapAngles,lag=par.LagAngles)
+style(doc)
+doc.recompute()
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()

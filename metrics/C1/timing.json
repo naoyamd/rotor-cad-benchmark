@@ -1,0 +1,296 @@
+{
+  "turns": [
+    {
+      "turn": "specification_main_turn1",
+      "phase": "specification",
+      "agent": "specification_main",
+      "primary": true,
+      "start_utc": "2026-10-25T06:08:12.134Z",
+      "end_utc": "2026-10-25T06:24:59.106Z",
+      "duration_ms": 1006983,
+      "model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 1892693,
+        "cached_input_tokens": 1822208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 22411,
+        "reasoning_output_tokens": 1122,
+        "total_tokens": 1915104
+      }
+    },
+    {
+      "turn": "specification_main_turn2",
+      "phase": "requirements_review",
+      "agent": "specification_main",
+      "primary": true,
+      "start_utc": "2026-10-25T06:26:57.112Z",
+      "end_utc": "2026-10-25T06:33:33.388Z",
+      "duration_ms": 396278,
+      "model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 1596385,
+        "cached_input_tokens": 1564800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10268,
+        "reasoning_output_tokens": 1377,
+        "total_tokens": 1606653
+      }
+    },
+    {
+      "turn": "cad_main_turn1",
+      "phase": "cad_design",
+      "agent": "cad_main",
+      "primary": true,
+      "start_utc": "2026-10-25T06:34:52.963Z",
+      "end_utc": "2026-10-25T07:34:12.329Z",
+      "duration_ms": 3559378,
+      "model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "usage": {
+        "input_tokens": 10126396,
+        "cached_input_tokens": 9979648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 52532,
+        "reasoning_output_tokens": 12858,
+        "total_tokens": 10178928
+      }
+    },
+    {
+      "turn": "specification_review_agent_turn1",
+      "phase": "specification",
+      "agent": "specification_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:08:31.419Z",
+      "end_utc": "2026-10-25T06:10:18.948Z",
+      "duration_ms": 107530,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 1651183,
+        "cached_input_tokens": 1526144,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 6968,
+        "reasoning_output_tokens": 3506,
+        "total_tokens": 1658151
+      }
+    },
+    {
+      "turn": "specification_review_agent_turn2",
+      "phase": "specification",
+      "agent": "specification_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:14:15.914Z",
+      "end_utc": "2026-10-25T06:14:47.769Z",
+      "duration_ms": 31855,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 146688,
+        "cached_input_tokens": 143616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4423,
+        "reasoning_output_tokens": 3108,
+        "total_tokens": 151111
+      }
+    },
+    {
+      "turn": "specification_review_agent_turn3",
+      "phase": "specification",
+      "agent": "specification_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:18:30.752Z",
+      "end_utc": "2026-10-25T06:19:29.539Z",
+      "duration_ms": 58788,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 474456,
+        "cached_input_tokens": 455296,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7633,
+        "reasoning_output_tokens": 5655,
+        "total_tokens": 482089
+      }
+    },
+    {
+      "turn": "specification_review_agent_turn4",
+      "phase": "specification",
+      "agent": "specification_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:21:40.452Z",
+      "end_utc": "2026-10-25T06:22:21.678Z",
+      "duration_ms": 41227,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 350389,
+        "cached_input_tokens": 337408,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5725,
+        "reasoning_output_tokens": 4234,
+        "total_tokens": 356114
+      }
+    },
+    {
+      "turn": "requirements_review_agent_turn1",
+      "phase": "requirements_review",
+      "agent": "requirements_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:27:32.684Z",
+      "end_utc": "2026-10-25T06:29:31.216Z",
+      "duration_ms": 118534,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 785415,
+        "cached_input_tokens": 724864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12371,
+        "reasoning_output_tokens": 10170,
+        "total_tokens": 797786
+      }
+    },
+    {
+      "turn": "requirements_review_agent_turn2",
+      "phase": "requirements_review",
+      "agent": "requirements_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:31:18.955Z",
+      "end_utc": "2026-10-25T06:32:26.757Z",
+      "duration_ms": 67802,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 424223,
+        "cached_input_tokens": 393472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8950,
+        "reasoning_output_tokens": 8075,
+        "total_tokens": 433173
+      }
+    },
+    {
+      "turn": "engineering_review_agent_turn1",
+      "phase": "cad_design",
+      "agent": "engineering_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T06:36:04.812Z",
+      "end_utc": "2026-10-25T06:39:03.885Z",
+      "duration_ms": 179076,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 734204,
+        "cached_input_tokens": 650624,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20718,
+        "reasoning_output_tokens": 15783,
+        "total_tokens": 754922
+      }
+    },
+    {
+      "turn": "engineering_review_agent_turn2",
+      "phase": "cad_design",
+      "agent": "engineering_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T07:14:09.902Z",
+      "end_utc": "2026-10-25T07:17:26.532Z",
+      "duration_ms": 196736,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 2750240,
+        "cached_input_tokens": 2674304,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 20420,
+        "reasoning_output_tokens": 6883,
+        "total_tokens": 2770660
+      }
+    },
+    {
+      "turn": "engineering_review_agent_turn3",
+      "phase": "cad_design",
+      "agent": "engineering_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T07:20:45.413Z",
+      "end_utc": "2026-10-25T07:23:08.937Z",
+      "duration_ms": 143524,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 3026393,
+        "cached_input_tokens": 2984960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 15099,
+        "reasoning_output_tokens": 4580,
+        "total_tokens": 3041492
+      }
+    },
+    {
+      "turn": "engineering_review_agent_turn4",
+      "phase": "cad_design",
+      "agent": "engineering_review_agent",
+      "primary": false,
+      "start_utc": "2026-10-25T07:24:43.793Z",
+      "end_utc": "2026-10-25T07:26:50.315Z",
+      "duration_ms": 126522,
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "max",
+      "usage": {
+        "input_tokens": 3556116,
+        "cached_input_tokens": 3530112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10957,
+        "reasoning_output_tokens": 2565,
+        "total_tokens": 3567073
+      }
+    }
+  ],
+  "excluded_waits": [
+    {
+      "phase": "cad_design",
+      "kind": "freecad_modal_queue_timeout",
+      "start_ms": 1792910561092,
+      "end_ms": 1792910654723,
+      "excluded_ms": 93631,
+      "evidence": "completed MCP item timestamps and explicit timeout result; full blocked call interval"
+    },
+    {
+      "phase": "cad_design",
+      "kind": "computer_use_approval_timeout",
+      "start_ms": 1792910683959,
+      "end_ms": 1792910984051,
+      "excluded_ms": 300092,
+      "evidence": "completed MCP item timestamps and explicit timeout result; full blocked call interval"
+    }
+  ],
+  "sources": [
+    {
+      "agent": "specification_main",
+      "usage_records": 46,
+      "selected_usage_lines_sha256": "cb3f0773f171dfa9c5a42cf1a1fb873a14cd14588315891da9c1f0cb3ba0114d"
+    },
+    {
+      "agent": "cad_main",
+      "usage_records": 93,
+      "selected_usage_lines_sha256": "4ffb1745646d344fe69e9f9b78be0a5a2c628048b25ccf682f19ba2bc321a74d"
+    },
+    {
+      "agent": "specification_review_agent",
+      "usage_records": 26,
+      "selected_usage_lines_sha256": "e2d75423d180788908e5011b303029e5548a3ebf5a1581488258d1e61db985b9"
+    },
+    {
+      "agent": "requirements_review_agent",
+      "usage_records": 17,
+      "selected_usage_lines_sha256": "3b54959055d0e15786eba230244dbfad0063b7575f05221d169ac9fbbf84055e"
+    },
+    {
+      "agent": "engineering_review_agent",
+      "usage_records": 67,
+      "selected_usage_lines_sha256": "eb8f85ac54df5810457d1f54951f77b8a6cb35e7b43295ac8426150fb5d442fb"
+    }
+  ]
+}

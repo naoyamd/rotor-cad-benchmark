@@ -1,0 +1,28 @@
+{
+  "checked_local_date": "2026-10-25",
+  "currency": "USD",
+  "basis": "API Standard / short context; observed cache hits retained",
+  "source": "https://developers.openai.com/api/docs/pricing",
+  "short_context_max_input_tokens": 272000,
+  "per_million_tokens": {
+    "gpt-6-astra": {
+      "uncached_input": 10,
+      "cached_input": 1,
+      "output": 50
+    },
+    "gpt-5.6-luna": {
+      "uncached_input": 0.2,
+      "cached_input": 0.02,
+      "output": 1.2
+    }
+  },
+  "fast_multiplier": 2,
+  "assumed_cache_write_charge": 0,
+  "excluded_costs": [
+    "separate tool fees",
+    "tax",
+    "local compute",
+    "subscription fees"
+  ],
+  "caveat": "Counterfactual token-only API estimate, not actual Codex subscription billing. Cache writes are zero in the observed usage records."
+}

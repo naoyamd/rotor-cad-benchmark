@@ -1,0 +1,150 @@
+{
+  "rotor-neutral": {
+    "parts": 145,
+    "solids": 235,
+    "volume_mm3": 2135867909.6299634,
+    "bounds_mm": [
+      -7806.403575802115,
+      9300.000000000002,
+      -8993.368576265171,
+      8894.339926451677,
+      -90.0,
+      2440.0
+    ],
+    "step_solids": 235,
+    "step_relative_volume_error": 1.0312069351594208e-09,
+    "step_max_bound_error_mm": 3.219611244276166e-10,
+    "measured_ball_closure_mm": 2.2737367544323206e-13,
+    "measured_pitch_error_deg": 5.1514348342607263e-14
+  },
+  "negative_collision": {
+    "pair": [
+      "Mast",
+      "FixedGuide"
+    ],
+    "translation_mm": [
+      100,
+      0,
+      0
+    ],
+    "overlap_mm3": 3653743.6780744493,
+    "detected": true
+  },
+  "rotor-max-input": {
+    "parts": 145,
+    "solids": 235,
+    "volume_mm3": 2135867909.5866783,
+    "bounds_mm": [
+      -9299.999999999998,
+      7799.237270368485,
+      -8893.824564140405,
+      8991.826250853772,
+      -90.0,
+      2440.0
+    ],
+    "step_solids": 235,
+    "step_relative_volume_error": 1.0376265514976895e-09,
+    "step_max_bound_error_mm": 4.847606760449708e-10,
+    "measured_ball_closure_mm": 2.2737367544323206e-13,
+    "measured_pitch_error_deg": 5.3290705182007514e-14
+  },
+  "rotor-folded": {
+    "parts": 145,
+    "solids": 235,
+    "volume_mm3": 2135867909.7788167,
+    "bounds_mm": [
+      -9013.525491562421,
+      9300.0,
+      -1914.6084407644537,
+      1589.2593298833044,
+      -90.0,
+      2675.0
+    ],
+    "step_solids": 235,
+    "step_relative_volume_error": 1.0208876613889631e-09,
+    "step_max_bound_error_mm": 4.5361048250924796e-10,
+    "measured_ball_closure_mm": 0.0,
+    "measured_pitch_error_deg": null
+  },
+  "rotor-parked": {
+    "parts": 145,
+    "solids": 235,
+    "volume_mm3": 2135867909.631163,
+    "bounds_mm": [
+      -7810.148734873015,
+      9300.0,
+      -8995.33752290858,
+      8894.99624199948,
+      -90.0,
+      2675.0
+    ],
+    "step_solids": 235,
+    "step_relative_volume_error": 9.977753683261658e-10,
+    "step_max_bound_error_mm": 4.802132025361061e-10,
+    "measured_ball_closure_mm": 0.0,
+    "measured_pitch_error_deg": null
+  },
+  "fold_airfoil_path": {
+    "samples": 436,
+    "minimum_projected_envelope_gap_mm": 698.5847744427303,
+    "worst": [
+      2,
+      1,
+      1.0
+    ],
+    "between_samples_motion_bound_mm": 68.22273164784855,
+    "continuous_lower_bound_mm": 630.3620427948817,
+    "limitation": "Full airfoil conservative XY envelopes only. Root lock/tang sweep not certified."
+  },
+  "folded_width_mm": 3503.8677706477583,
+  "parameter_regeneration": {
+    "link_plus_2": {
+      "measured_upper_ball_mm": [
+        600.0,
+        235.60207867714027,
+        2283.6161498934903
+      ],
+      "shape_valid": true,
+      "parts": 145
+    },
+    "mount_plus_5": {
+      "measured_upper_ball_mm": [
+        605.0,
+        236.29931861062948,
+        2281.624947314851
+      ],
+      "shape_valid": true,
+      "parts": 145
+    }
+  },
+  "articulated_CAD_check": {
+    "flap_deg": [
+      6,
+      0,
+      -3,
+      0,
+      0
+    ],
+    "lag_deg": [
+      -3,
+      0,
+      3,
+      0,
+      0
+    ],
+    "max_closure_mm": 0.0,
+    "shape_snapshot": {
+      "parts": 145,
+      "solids": 235,
+      "volume_mm3": 2135867909.5890212,
+      "bounds_mm": [
+        -7860.061402146128,
+        9245.936031032461,
+        -8990.659985635886,
+        8893.438968637915,
+        -90.0,
+        3168.4227308844756
+      ]
+    }
+  }
+}
