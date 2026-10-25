@@ -1,12 +1,13 @@
 import * as THREE from './vendor/three.module.js';
 import {OrbitControls} from './vendor/OrbitControls.js';
 import {createRig} from './c2-rig.mjs';
+import {surfaceFor} from './c2-materials.mjs';
 import {pitchPresets, speedPresets} from './presets.mjs';
 
 const $ = id => document.getElementById(id);
 const colors = {blue:0x38bee2,gold:0xedc263,silver:0xb0c8df,blade:0x578bc2,rubber:0x253c60};
 const stateNames = {neutral:'中立','max-input':'最大入力',parked:'駐機',folded:'折畳み'};
-let renderer,scene,camera,orbit,cad,live,rig,selected;
+let renderer,scene,camera,orbit,cad,live,rig,selected,ambientLight,fillLight;
 let mode='motion',currentState='neutral',view='head',requestId=0;
 let playing=false,azimuth=0,displayRpm=speedPresets[0],lastTime=0,lastReadout=0,liveLoading=false;
 const cache=new Map();
@@ -42,8 +43,17 @@ function selectPart(object){
   $('partDetail').textContent=[object.userData.group,object.userData.connection,object.userData.material,object.userData.note].filter(Boolean).join(' / ');
 }
 function applyXray(){
+  const xray=$('xray').checked;
+  ambientLight.color.setHex(xray?0xd7f2f9:0xffffff);ambientLight.groundColor.setHex(xray?0x334f7c:0x575b62);
+  fillLight.color.setHex(xray?0x86c1d7:0xffffff);
+  const legend=document.querySelectorAll('.explorer-foot>span');
+  const labels=xray?['操縦・スワッシュ','関節・ロック','荷重を支える骨格']:['金属：銀・グレー','ブッシュ：ブロンズ','複合材・ゴム：黒系'];
+  const swatches=xray?['#38bee2','#edc263','#b0c8df']:['#969da5','#927344','#30343a'];
+  for(let i=0;i<3;i++){legend[i].innerHTML=`<i class="legend" style="background:${swatches[i]}"></i>${labels[i]}`;}
   for(const group of [cad,live])group?.traverse(object=>{
     if(!object.isMesh)return;
+    const finish=xray?{color:meshColor(object.name),metalness:.45,roughness:.48}:surfaceFor(object.userData);
+    object.material.color.setHex(finish.color);object.material.metalness=finish.metalness;object.material.roughness=finish.roughness;
     const solid=/Pin|PitchLink|Rod|FlightLock|FoldHinge|BearingBalls|Piston/.test(object.name);
     object.material.transparent=$('xray').checked&&!solid;
     object.material.opacity=object.material.transparent ? 0.24 : 1;
@@ -118,7 +128,7 @@ function setCamera(which){
 try{
   renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x002060,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.5;$('viewport').appendChild(renderer.domElement);
   scene=new THREE.Scene();camera=new THREE.PerspectiveCamera(38,1,.02,150);camera.up.set(0,0,1);orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;orbit.minDistance=.35;orbit.maxDistance=65;orbit.maxPolarAngle=Math.PI*.94;
-  scene.add(new THREE.HemisphereLight(0xd7f2f9,0x334f7c,2.1));const key=new THREE.DirectionalLight(0xffffff,3);key.position.set(4,-5,9);scene.add(key);const fill=new THREE.DirectionalLight(0x86c1d7,2);fill.position.set(-5,1,4);scene.add(fill);
+  ambientLight=new THREE.HemisphereLight(0xd7f2f9,0x334f7c,2.1);scene.add(ambientLight);const key=new THREE.DirectionalLight(0xffffff,3);key.position.set(4,-5,9);scene.add(key);fillLight=new THREE.DirectionalLight(0x86c1d7,2);fillLight.position.set(-5,1,4);scene.add(fillLight);
   const grid=new THREE.GridHelper(24,48,0x385c8c,0x1a3d70);grid.rotation.x=Math.PI/2;grid.position.z=-.12;grid.material.transparent=true;grid.material.opacity=.26;scene.add(grid);
   new ResizeObserver(()=>{const w=$('viewport').clientWidth,h=$('viewport').clientHeight;if(!w||!h)return;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();setCamera(view);}).observe($('viewport'));
   const ray=new THREE.Raycaster();let down;

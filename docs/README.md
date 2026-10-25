@@ -40,6 +40,11 @@ was revised with the `japanese-humanizer` skill to use direct descriptive labels
 
 ## Provenance and limits
 
+- C2's opaque view uses BOM-informed display finishes: silver/gray steel,
+  dark composite and elastomer, bronze bushings, with material-specific
+  metalness/roughness and neutral lighting. These are visualization choices,
+  not verified manufacturing finishes. X-ray retains its diagnostic colors.
+
 - C2's motion tab now uses continuous Three.js animation, not the 12 PNG
   snapshots. `c2-kinematics.mjs` ports C2's constrained swash yaw, planar RR-S
   and finite pitch-link solver. `c2-rig.mjs` maps all 425 neutral CAD meshes to
