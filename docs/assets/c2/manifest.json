@@ -1,0 +1,22 @@
+{
+  "neutral": {
+    "parts": 425,
+    "bytes": 7730326,
+    "sha256": "f6327208b4776ca5444e591bfd723d98010239fa2969a679606519c95a7ef899"
+  },
+  "max-input": {
+    "parts": 425,
+    "bytes": 7829839,
+    "sha256": "c6e53e0b2561ea1311d28e5341aec4d8dc683f61b9261e37d36e33e6c4cf240c"
+  },
+  "parked": {
+    "parts": 425,
+    "bytes": 7711418,
+    "sha256": "2e52daff3dc338eb454bc127714ab32ccf99182ce92e4665f84ebdecc4cb41ce"
+  },
+  "folded": {
+    "parts": 425,
+    "bytes": 7711265,
+    "sha256": "39b1fcb623103603027a257a047203bc774bd267beb7e9b82bedbe5fe39ef7cb"
+  }
+}

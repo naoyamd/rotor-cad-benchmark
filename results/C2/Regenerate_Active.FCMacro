@@ -1,0 +1,20 @@
+"""Re-solve the current Parameters and create a new document without replacing it."""
+import FreeCAD as App
+import FreeCADGui as Gui
+import sys,json
+from pathlib import Path
+
+doc=App.ActiveDocument
+if doc is None or doc.getObject('Parameters') is None:
+    raise RuntimeError('Open a C2 model first')
+root=Path(doc.FileName).parent
+if not (root/'src/build.py').is_file():raise RuntimeError('Keep src next to the FCStd files')
+sys.path.insert(0,str(root/'src'))
+import importlib,mechanism,geometry,build,render
+for module in [mechanism,geometry,build,render]:importlib.reload(module)
+o=doc.Parameters
+new,bom=build.build('C2_Edited',o.Collective,o.CyclicCos,o.CyclicSin,o.Azimuth,o.FoldFraction,p=json.loads(o.DesignJSON),parked=o.Parked,flap=o.FlapAngles,lag=o.LagAngles)
+render.style(new,True)
+Gui.activeDocument().activeView().viewAxonometric()
+Gui.activeDocument().activeView().fitAll()
+print('Regenerated',len(build.components(new)),'solid features from edited parameters; save under a new filename.')

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 
 test('displayed benchmark costs, tokens and times match the published source',async()=>{
-  const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
+  const html=await readFile(new URL('../c1.html',import.meta.url),'utf8');
   const summary=JSON.parse(await readFile(new URL('../../metrics/C1/summary.json',import.meta.url)));
   const rows=[...html.matchAll(/<tr data-benchmark="([^"]+)">([\s\S]*?)<\/tr>/g)];
   assert.equal(rows.length,3);

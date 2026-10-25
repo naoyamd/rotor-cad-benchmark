@@ -1,0 +1,5019 @@
+{
+  "method": "fresh native FCStd reopen and independent STEP import; exact OCC BREP checks where available",
+  "tolerances": {
+    "common_volume_mm3": 1e-06,
+    "distance_mm": 1e-06
+  },
+  "limitations": [
+    "STEP comparison is aggregate volume/bounds, not a semantic part-name comparison.",
+    "Fold sweep rigidly rotates parked FoldTang/RootSpar/Airfoil; it does not model flex, tolerance stack-up, or a rebuilt shape at every angle.",
+    "A zero BREP gap can mean tangent contact; supplier fits, bolt preload, bearing load rating, and material strength remain outside this script.",
+    "All positive native bounding-box candidates are reported; only exact named pairs are classified intentional."
+  ],
+  "states": {
+    "rotor-neutral": {
+      "available": true,
+      "native_path": "rotor-neutral.FCStd",
+      "step_path": "rotor-neutral.step",
+      "native": {
+        "parts": 425,
+        "solids": 648,
+        "volume_mm3": 2858741267.595444,
+        "bounds_mm": [
+          -7806.403575802115,
+          9300.000000000002,
+          -8993.36857626517,
+          8894.339926451676,
+          -120.0,
+          2709.864969448679
+        ],
+        "all_parts_valid": true,
+        "invalid_parts": []
+      },
+      "step": {
+        "read": true,
+        "valid": true,
+        "shape_valid": true,
+        "all_solids_valid": true,
+        "valid_solids": 648,
+        "solids": 648,
+        "invalid_solid_details": [],
+        "volume_mm3": 2858741693.3593736,
+        "bounds_mm": [
+          -7806.403575802,
+          9300.0,
+          -8993.368576265,
+          8894.339926452,
+          -120.0,
+          2709.8649694488026
+        ]
+      },
+      "native_step_compare": {
+        "volume_relative_error": 1.489340550658457e-07,
+        "max_bound_error_mm": 3.2378011383116245e-10,
+        "comparable": true
+      },
+      "pitch": {
+        "parameters": {
+          "collective": 12.0,
+          "cc": 0.0,
+          "cs": 0.0,
+          "psi": 0.0,
+          "fold": 0.0,
+          "parked": false,
+          "flap": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lag": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              600.0,
+              250.00000000000003,
+              1200.0
+            ],
+            "upper_ball_com_mm": [
+              600.0,
+              244.53690018345137,
+              2251.97792270444
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              600.0,
+              250.0,
+              1200.0
+            ],
+            "geometry_top_centre_mm": [
+              600.0,
+              244.5369001834514,
+              2251.97792270444
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 2.842170943040401e-14,
+            "geometry_vs_upper_ball_com_mm": 2.842170943040401e-14,
+            "solved_pitch_deg": 12.000000000000004,
+            "expected_pitch_deg": 12.000000000000004,
+            "pitch_error_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1200.0
+            ],
+            "upper_ball_com_mm": [
+              -47.158215769120496,
+              646.1999676855487,
+              2251.97792270444
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1200.0
+            ],
+            "geometry_top_centre_mm": [
+              -47.15821576912049,
+              646.1999676855487,
+              2251.97792270444
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 7.105427357601002e-15,
+            "solved_pitch_deg": 12.000000000000004,
+            "expected_pitch_deg": 12.000000000000004,
+            "pitch_error_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1200.0
+            ],
+            "upper_ball_com_mm": [
+              -629.1453801941177,
+              154.83664337530158,
+              2251.97792270444
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1200.0
+            ],
+            "geometry_top_centre_mm": [
+              -629.1453801941177,
+              154.83664337530158,
+              2251.97792270444
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 12.000000000000004,
+            "expected_pitch_deg": 12.000000000000004,
+            "pitch_error_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1200.0
+            ],
+            "upper_ball_com_mm": [
+              -341.6750130558192,
+              -550.5056593756663,
+              2251.97792270444
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1200.0
+            ],
+            "geometry_top_centre_mm": [
+              -341.6750130558192,
+              -550.5056593756663,
+              2251.97792270444
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 12.000000000000004,
+            "expected_pitch_deg": 12.000000000000004,
+            "pitch_error_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              423.17432569875683,
+              -493.37966118335544,
+              1200.0
+            ],
+            "upper_ball_com_mm": [
+              417.9786090190574,
+              -495.06785186863556,
+              2251.97792270444
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              1200.0
+            ],
+            "geometry_top_centre_mm": [
+              417.97860901905733,
+              -495.06785186863556,
+              2251.97792270444
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 8.038873388460929e-14,
+            "geometry_vs_upper_ball_com_mm": 5.684341886080802e-14,
+            "solved_pitch_deg": 12.000000000000004,
+            "expected_pitch_deg": 12.000000000000004,
+            "pitch_error_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 2.2737367544323206e-13,
+        "max_geometry_closure_mm": 2.2737367544323206e-13,
+        "max_sphere_com_error_mm": 8.038873388460929e-14,
+        "max_pitch_error_deg": 0.0
+      },
+      "key_gaps": [
+        {
+          "part_a": "Blade1PitchLowerBall",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999999394,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerPin",
+          "part_b": "Blade1PitchLowerBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperBall",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999982122,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperPin",
+          "part_b": "Blade1PitchUpperBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            44.631664508009294,
+            0.20772398480721677
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            44.631664508009294,
+            0.2077239848076715
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1OuterRace",
+          "part_b": "Blade1DamperBody",
+          "bbox_intersection_mm": [
+            272.39724120894084,
+            -130.51240392109514,
+            126.2247077598131
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 130.51240392109514,
+          "distance_mm": 144.72791713222145,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerFork",
+          "part_b": "Blade1PitchLowerPin",
+          "bbox_intersection_mm": [
+            116.00000000000159,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998103,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperFork",
+          "part_b": "Blade1PitchUpperPin",
+          "bbox_intersection_mm": [
+            116.00000000004843,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999997189,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerBall",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875957,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999993757,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerPin",
+          "part_b": "Blade2PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000002511,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperBall",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999998264,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperPin",
+          "part_b": "Blade2PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003187,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            44.40499981852224,
+            41.431378214629376,
+            0.20772398480721677
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 7.105427357601002e-15,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            44.40499981852224,
+            41.431378214629376,
+            0.2077239848076715
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 7.105427357601002e-15,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2OuterRace",
+          "part_b": "Blade2DamperBody",
+          "bbox_intersection_mm": [
+            -105.54091507714264,
+            242.0389694787467,
+            126.2247077598131
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 105.54091507714264,
+          "distance_mm": 144.72791713222136,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerFork",
+          "part_b": "Blade2PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            131.3357115077356,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999986764,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperFork",
+          "part_b": "Blade2PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            133.35095603993193,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999994253034,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerBall",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999998923,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerPin",
+          "part_b": "Blade3PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999991765,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperBall",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999985275,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperPin",
+          "part_b": "Blade3PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999981657,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            42.722554778009,
+            43.74717863718661,
+            0.20772398480721677
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            42.722554778009,
+            43.74717863718661,
+            0.2077239848076715
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.842170943040401e-14,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3OuterRace",
+          "part_b": "Blade3DamperBody",
+          "bbox_intersection_mm": [
+            133.0232144066739,
+            -27.129238957064217,
+            126.2247077598131
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 27.129238957064217,
+          "distance_mm": 144.72791713222134,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerFork",
+          "part_b": "Blade3PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999998565706,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperFork",
+          "part_b": "Blade3PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999970505,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerBall",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999999155,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerPin",
+          "part_b": "Blade4PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990508,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperBall",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999983382,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperPin",
+          "part_b": "Blade4PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999985995,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            42.722554778009055,
+            43.74717863718661,
+            0.20772398480721677
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            42.722554778009055,
+            43.74717863718661,
+            0.2077239848076715
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4OuterRace",
+          "part_b": "Blade4DamperBody",
+          "bbox_intersection_mm": [
+            72.6387071443661,
+            26.03306082832509,
+            126.2247077598131
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 144.72791713222145,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerFork",
+          "part_b": "Blade4PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998015,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperFork",
+          "part_b": "Blade4PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999994254677,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerBall",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.0591459387594,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999998634,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerPin",
+          "part_b": "Blade5PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.73202667030756,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999995349,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperBall",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999998264,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperPin",
+          "part_b": "Blade5PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999978648,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            44.40499981852224,
+            41.43137821462915,
+            0.20772398480721677
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            44.40499981852224,
+            41.43137821462915,
+            0.2077239848076715
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5OuterRace",
+          "part_b": "Blade5DamperBody",
+          "bbox_intersection_mm": [
+            -64.74914063431586,
+            179.98827660433756,
+            126.2247077598131
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 64.74914063431586,
+          "distance_mm": 144.7279171322214,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerFork",
+          "part_b": "Blade5PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            131.3357115077356,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998328,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperFork",
+          "part_b": "Blade5PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            133.35095603990914,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999997189,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Servo0Rod",
+          "part_b": "Servo0UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo1Rod",
+          "part_b": "Servo1UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo2Rod",
+          "part_b": "Servo2UpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "AntirotationArmA",
+          "part_b": "AntirotationArmB",
+          "bbox_intersection_mm": [
+            437.4312653232445,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "RotatingDriveArmA",
+          "part_b": "RotatingDriveArmB",
+          "bbox_intersection_mm": [
+            87.27587545263475,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "LowerRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999978053,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_lower_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "UpperRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0999999999998116,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_upper_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "BearingCage",
+          "bbox_intersection_mm": [
+            1311.929018654712,
+            1311.9290186547119,
+            8.084385487859436
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.5999999841435604,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_cage",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Mast",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            320.0,
+            320.0,
+            1280.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 10.0,
+          "common_volume_mm3": 0.0,
+          "check": "mast_fixed_guide",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "SliderSphere",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            560.0,
+            560.0,
+            373.89687980986184
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 11.99999999999999,
+          "common_volume_mm3": 0.0,
+          "check": "slider_to_fixed_guide",
+          "pass_nonintersection": true
+        }
+      ],
+      "servo_endpoints": [
+        {
+          "index": 0,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 760.0,
+          "expected_stroke_mm": 760.0,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            910.0
+          ]
+        },
+        {
+          "index": 1,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 1.1368683772161603e-13,
+          "measured_stroke_mm": 759.9999999999999,
+          "expected_stroke_mm": 760.0,
+          "stroke_error_mm": 1.1368683772161603e-13,
+          "tangent_axis": [
+            -0.49999999999999994,
+            -0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            909.9999999999999
+          ]
+        },
+        {
+          "index": 2,
+          "lower_endpoint_error_mm": 1.38871184079791e-16,
+          "upper_endpoint_error_mm": 1.1493190088081082e-15,
+          "measured_stroke_mm": 760.0,
+          "expected_stroke_mm": 760.0,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            1.0,
+            -1.8369701987210297e-16,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -1.3028601292511332e-13,
+            -710.0,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -1.29275565100385e-13,
+            -710.0,
+            910.0
+          ]
+        }
+      ],
+      "negative_collision": {
+        "available": true,
+        "normal_pair": [
+          "Mast",
+          "FixedGuide"
+        ],
+        "translation_mm": [
+          50.0,
+          0.0,
+          0.0
+        ],
+        "overlap_mm3": 9616090.309388403,
+        "detected": true
+      }
+    },
+    "rotor-max-input": {
+      "available": true,
+      "native_path": "rotor-max-input.FCStd",
+      "step_path": "rotor-max-input.step",
+      "native": {
+        "parts": 425,
+        "solids": 648,
+        "volume_mm3": 2858743047.2346725,
+        "bounds_mm": [
+          -9296.128172065031,
+          8008.462554607619,
+          -8894.138831391843,
+          8990.371823968291,
+          -120.0,
+          3168.337788951292
+        ],
+        "all_parts_valid": true,
+        "invalid_parts": []
+      },
+      "step": {
+        "read": true,
+        "valid": true,
+        "shape_valid": true,
+        "all_solids_valid": true,
+        "valid_solids": 648,
+        "solids": 648,
+        "invalid_solid_details": [],
+        "volume_mm3": 2858743467.2902455,
+        "bounds_mm": [
+          -9296.128172065,
+          8008.462554608,
+          -8894.138831392,
+          8990.371823968,
+          -120.0,
+          3168.337788951
+        ]
+      },
+      "native_step_compare": {
+        "volume_relative_error": 1.4693715596192955e-07,
+        "max_bound_error_mm": 3.8107828004285693e-10,
+        "comparable": true
+      },
+      "pitch": {
+        "parameters": {
+          "collective": 16.0,
+          "cc": 2.12132034356,
+          "cs": 2.12132034356,
+          "psi": 36.0,
+          "fold": 0.0,
+          "parked": false,
+          "flap": [
+            6.0,
+            0.0,
+            -3.0,
+            0.0,
+            3.0
+          ],
+          "lag": [
+            -3.0,
+            0.0,
+            3.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              337.129223422005,
+              553.3165348416209,
+              1229.5577852125766
+            ],
+            "upper_ball_com_mm": [
+              349.5844596256618,
+              546.1059759881418,
+              2281.4514444050283
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              337.129223422005,
+              553.3165348416209,
+              1229.5577852125766
+            ],
+            "geometry_top_centre_mm": [
+              349.5844596256618,
+              546.1059759881418,
+              2281.4514444050283
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 19.123194510905886,
+            "expected_pitch_deg": 19.123194510905886,
+            "pitch_error_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -424.4233803739605,
+              491.0958283674241,
+              1222.7127073747238
+            ],
+            "upper_ball_com_mm": [
+              -412.3362512296527,
+              496.9011650476063,
+              2274.619354702438
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -424.4233803739606,
+              491.09582836742413,
+              1222.7127073747238
+            ],
+            "geometry_top_centre_mm": [
+              -412.3362512296527,
+              496.90116504760624,
+              2274.619354702438
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 8.038873388460929e-14,
+            "geometry_vs_upper_ball_com_mm": 5.684341886080802e-14,
+            "solved_pitch_deg": 17.36617630155127,
+            "expected_pitch_deg": 17.36617630155127,
+            "pitch_error_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -600.4735909066346,
+              -252.3193322469462,
+              1207.851277656142
+            ],
+            "upper_ball_com_mm": [
+              -590.4233314325879,
+              -242.5658794043572,
+              2259.7501595641443
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -600.4735909066346,
+              -252.31933224694623,
+              1207.851277656142
+            ],
+            "geometry_top_centre_mm": [
+              -590.4233314325879,
+              -242.56587940435722,
+              2259.7501595641443
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 2.842170943040401e-14,
+            "geometry_vs_upper_ball_com_mm": 2.842170943040401e-14,
+            "solved_pitch_deg": 13.84691895055092,
+            "expected_pitch_deg": 13.84691895055092,
+            "pitch_error_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              52.27399905356356,
+              -649.5544627843927,
+              1205.5114868064932
+            ],
+            "upper_ball_com_mm": [
+              45.984533638403015,
+              -645.8186152441621,
+              2257.478159940724
+            ],
+            "measured_ball_distance_mm": 1051.9921080108697,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              52.27399905356356,
+              -649.5544627843927,
+              1205.5114868064932
+            ],
+            "geometry_top_centre_mm": [
+              45.984533638403036,
+              -645.8186152441621,
+              2257.478159940724
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 2.1316282072803006e-14,
+            "solved_pitch_deg": 13.291928541296288,
+            "expected_pitch_deg": 13.291928541296288,
+            "pitch_error_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              631.7444062562199,
+              -151.64411436766548,
+              1218.9268462534262
+            ],
+            "upper_ball_com_mm": [
+              623.3059960591903,
+              -156.55466958354972,
+              2270.873648614635
+            ],
+            "measured_ball_distance_mm": 1051.9921080108697,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              631.7444062562199,
+              -151.64411436766548,
+              1218.9268462534262
+            ],
+            "geometry_top_centre_mm": [
+              623.3059960591903,
+              -156.55466958354972,
+              2270.873648614635
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 16.49213036468495,
+            "expected_pitch_deg": 16.49213036468495,
+            "pitch_error_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 2.2737367544323206e-13,
+        "max_geometry_closure_mm": 2.2737367544323206e-13,
+        "max_sphere_com_error_mm": 8.038873388460929e-14,
+        "max_pitch_error_deg": 0.0
+      },
+      "key_gaps": [
+        {
+          "part_a": "Blade1PitchLowerBall",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.721402615124816,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999999354,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerPin",
+          "part_b": "Blade1PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.721402615124816,
+            64.0,
+            34.01058309314976
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0999999999999649,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperBall",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.38808444428912,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999985153,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperPin",
+          "part_b": "Blade1PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.38808444428912,
+            64.0,
+            45.42355342404153
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003179,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            50.55808583748683,
+            46.112948072109134,
+            0.5472223684157598
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            50.55808583748683,
+            46.112948072109134,
+            0.5472223684155324
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1OuterRace",
+          "part_b": "Blade1DamperBody",
+          "bbox_intersection_mm": [
+            70.9940232867998,
+            22.04662511386232,
+            124.30612197479968
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 148.36424255001958,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerFork",
+          "part_b": "Blade1PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.42599202877125,
+            103.38299813137428,
+            34.01058309314976
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999998551184,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperFork",
+          "part_b": "Blade1PitchUpperPin",
+          "bbox_intersection_mm": [
+            127.64050807355602,
+            98.2296180565952,
+            45.42355342404153
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999994248043,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerBall",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.15993273083285,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994681,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerPin",
+          "part_b": "Blade2PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.76777576654467,
+            33.775133097744856
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000000639,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperBall",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.06118662530224,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999996694,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperPin",
+          "part_b": "Blade2PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0999999999998144,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            50.24612833973259,
+            44.92178005212958,
+            0.5098508033952385
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 5.684341886080802e-14,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            50.24612833973259,
+            44.92178005212958,
+            0.5098508033952385
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2OuterRace",
+          "part_b": "Blade2DamperBody",
+          "bbox_intersection_mm": [
+            -61.741830311112125,
+            182.07861326215766,
+            138.65531252384153
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 61.741830311112125,
+          "distance_mm": 142.78109991630052,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerFork",
+          "part_b": "Blade2PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.15266379096704,
+            131.37617451834427,
+            33.775133097744856
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999999108,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperFork",
+          "part_b": "Blade2PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            133.35095603990936,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999997544,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerBall",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.38031656218402,
+            64.00000000000003,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999988928,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerPin",
+          "part_b": "Blade3PitchLowerBall",
+          "bbox_intersection_mm": [
+            48.31907636407027,
+            31.91873941726402,
+            32.79125483241614
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0999999999999544,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperBall",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.38031656218402,
+            64.00000000000003,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999998256,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperPin",
+          "part_b": "Blade3PitchUpperBall",
+          "bbox_intersection_mm": [
+            50.99955074993977,
+            38.655417232621346,
+            38.66476542926375
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999963152,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            39.99817455189657,
+            48.26830761432362,
+            0.5325101514347352
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            39.99817455189657,
+            48.26830761432362,
+            0.5325101514345079
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3OuterRace",
+          "part_b": "Blade3DamperBody",
+          "bbox_intersection_mm": [
+            276.23942851823506,
+            -117.64653204524276,
+            138.80366045816072
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 117.64653204524276,
+          "distance_mm": 137.19105443913412,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerFork",
+          "part_b": "Blade3PitchLowerPin",
+          "bbox_intersection_mm": [
+            116.84020194373579,
+            31.91873941726402,
+            32.79125483241614
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999998560444,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperFork",
+          "part_b": "Blade3PitchUpperPin",
+          "bbox_intersection_mm": [
+            123.4774144318202,
+            38.655417232621346,
+            38.66476542926375
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999994564,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerBall",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            54.99322904924884,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999995497,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerPin",
+          "part_b": "Blade4PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.72215046456154,
+            34.38575956865316
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999997596,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperBall",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.06024814452644,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999992433,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperPin",
+          "part_b": "Blade4PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000000349,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            45.33217066696529,
+            43.16740131474057,
+            0.2781512019703314
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 1.4210854715202004e-14,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            45.33217066696529,
+            43.16740131474057,
+            0.278151201970104
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 1.4210854715202004e-14,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4OuterRace",
+          "part_b": "Blade4DamperBody",
+          "bbox_intersection_mm": [
+            -105.27333147767524,
+            241.9066075812542,
+            129.29352382418347
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 105.27333147767524,
+          "distance_mm": 144.32438580837683,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerFork",
+          "part_b": "Blade4PitchLowerPin",
+          "bbox_intersection_mm": [
+            70.91282672693465,
+            131.32451039688772,
+            34.38575956865316
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999998568115,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperFork",
+          "part_b": "Blade4PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            133.3509560399317,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999981096,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerBall",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.708902550646144,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999993827,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerPin",
+          "part_b": "Blade5PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.708902550646144,
+            64.0,
+            32.409384043866794
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999995746,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperBall",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.726206707877736,
+            63.999999999999986,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999981833,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperPin",
+          "part_b": "Blade5PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.726206707877736,
+            63.999999999999986,
+            38.66476542926375
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999989466,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            47.15370530810867,
+            44.163261327414034,
+            0.37122759647240855
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            47.15370530810867,
+            44.163261327414034,
+            0.3712275964726359
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5OuterRace",
+          "part_b": "Blade5DamperBody",
+          "bbox_intersection_mm": [
+            134.27465197760944,
+            -26.192739540094976,
+            127.14045495454138
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 26.192739540094976,
+          "distance_mm": 142.66151394361358,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerFork",
+          "part_b": "Blade5PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.53348788888229,
+            103.22447569124891,
+            32.409384043866794
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999978043,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperFork",
+          "part_b": "Blade5PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.38389389248414,
+            103.22665429187467,
+            38.66476542926375
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999994244113,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Servo0Rod",
+          "part_b": "Servo0UpperEye",
+          "bbox_intersection_mm": [
+            51.61049070505919,
+            50.857088709260836,
+            0.1642159216175969
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo1Rod",
+          "part_b": "Servo1UpperEye",
+          "bbox_intersection_mm": [
+            51.65558255181679,
+            53.49580522552856,
+            0.34823217361167735
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo2Rod",
+          "part_b": "Servo2UpperEye",
+          "bbox_intersection_mm": [
+            40.04415314684275,
+            52.34346285580443,
+            0.21673636587468081
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 1.1368683772161603e-13,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "AntirotationArmA",
+          "part_b": "AntirotationArmB",
+          "bbox_intersection_mm": [
+            431.65854358333956,
+            48.000000000000014,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "RotatingDriveArmA",
+          "part_b": "RotatingDriveArmB",
+          "bbox_intersection_mm": [
+            95.98332171552681,
+            83.95149194082427,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 1.9999999999999112,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "LowerRace",
+          "bbox_intersection_mm": [
+            1333.9566807773308,
+            1333.7765134378112,
+            55.66284380465845
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999971565,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_lower_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "UpperRace",
+          "bbox_intersection_mm": [
+            1333.9566807773308,
+            1333.7765134378112,
+            55.66284380465845
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999971566,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_upper_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "BearingCage",
+          "bbox_intersection_mm": [
+            1311.9821018385232,
+            1311.804957186037,
+            33.843467300553584
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.5999999841436059,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_cage",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Mast",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            320.0,
+            320.0,
+            1280.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 10.0,
+          "common_volume_mm3": 0.0,
+          "check": "mast_fixed_guide",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "SliderSphere",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            560.0,
+            560.0,
+            356.96546356005194
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 11.999999999999991,
+          "common_volume_mm3": 0.0,
+          "check": "slider_to_fixed_guide",
+          "pass_nonintersection": true
+        }
+      ],
+      "servo_endpoints": [
+        {
+          "index": 0,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 788.0213142237961,
+          "expected_stroke_mm": 788.0213142237961,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            617.4166475986968,
+            356.35092413834934,
+            938.0160671773197
+          ]
+        },
+        {
+          "index": 1,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 778.8909726732614,
+          "expected_stroke_mm": 778.8909726732614,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            -0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -612.2985729552894,
+            360.44760733169903,
+            928.867650665449
+          ]
+        },
+        {
+          "index": 2,
+          "lower_endpoint_error_mm": 1.38871184079791e-16,
+          "upper_endpoint_error_mm": 1.7763568394002505e-15,
+          "measured_stroke_mm": 764.0299475546879,
+          "expected_stroke_mm": 764.0299475546879,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            1.0,
+            -1.8369701987210297e-16,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -1.3028601292511332e-13,
+            -710.0,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -0.8438241377677829,
+            -706.4182088134947,
+            914.0210857647451
+          ]
+        }
+      ]
+    },
+    "rotor-folded": {
+      "available": true,
+      "native_path": "rotor-folded.FCStd",
+      "step_path": "rotor-folded.step",
+      "native": {
+        "parts": 425,
+        "solids": 648,
+        "volume_mm3": 2858741361.0160155,
+        "bounds_mm": [
+          -9013.525491562421,
+          9300.0,
+          -1914.6084407644537,
+          1589.2593298833044,
+          -125.0,
+          2700.0
+        ],
+        "all_parts_valid": true,
+        "invalid_parts": []
+      },
+      "step": {
+        "read": true,
+        "valid": true,
+        "shape_valid": true,
+        "all_solids_valid": true,
+        "valid_solids": 648,
+        "solids": 648,
+        "invalid_solid_details": [],
+        "volume_mm3": 2858741783.5310287,
+        "bounds_mm": [
+          -9013.525491562,
+          9300.0,
+          -1914.608440764,
+          1589.259329883,
+          -125.0,
+          2700.0
+        ]
+      },
+      "native_step_compare": {
+        "volume_relative_error": 1.4779756538302626e-07,
+        "max_bound_error_mm": 4.5361048250924796e-10,
+        "comparable": true
+      },
+      "pitch": {
+        "parameters": {
+          "collective": -0.0032510327599297,
+          "cc": 0.0,
+          "cs": 0.0,
+          "psi": 0.0,
+          "fold": 1.0,
+          "parked": true,
+          "flap": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lag": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              600.0,
+              250.00000000000003,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              600.0,
+              250.0,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              600.0,
+              250.0,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              600.0,
+              250.0,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 2.842170943040401e-14,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -52.35393244881992,
+              647.8881583708289,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 1.4210854715202004e-14,
+            "solved_pitch_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              423.1743256987567,
+              -493.37966118335544,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 8.038873388460929e-14,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 0.0,
+        "max_geometry_closure_mm": 0.0,
+        "max_sphere_com_error_mm": 8.038873388460929e-14,
+        "max_pitch_error_deg": null
+      },
+      "key_gaps": [
+        {
+          "part_a": "Blade1PitchLowerBall",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994276,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerPin",
+          "part_b": "Blade1PitchLowerBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperBall",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999999394,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperPin",
+          "part_b": "Blade1PitchUpperBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1OuterRace",
+          "part_b": "Blade1DamperBody",
+          "bbox_intersection_mm": [
+            268.5931777608506,
+            -134.45975580699314,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 134.45975580699314,
+          "distance_mm": 146.5052228508729,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerFork",
+          "part_b": "Blade1PitchLowerPin",
+          "bbox_intersection_mm": [
+            116.00000000000159,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998103,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperFork",
+          "part_b": "Blade1PitchUpperPin",
+          "bbox_intersection_mm": [
+            116.00000000000023,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999977305,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerBall",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999992739,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerPin",
+          "part_b": "Blade2PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003187,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperBall",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999972174,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperPin",
+          "part_b": "Blade2PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003187,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2OuterRace",
+          "part_b": "Blade2DamperBody",
+          "bbox_intersection_mm": [
+            -106.74275620171454,
+            242.60894175553858,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 106.74275620171454,
+          "distance_mm": 146.50522285087283,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerFork",
+          "part_b": "Blade2PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            131.3357115077357,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999983383,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperFork",
+          "part_b": "Blade2PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            133.35095603990885,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999996877,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerBall",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999999687,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerPin",
+          "part_b": "Blade3PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999991765,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperBall",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.149999999999764,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperPin",
+          "part_b": "Blade3PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999981657,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3OuterRace",
+          "part_b": "Blade3DamperBody",
+          "bbox_intersection_mm": [
+            132.8603381433212,
+            -28.61710682156331,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 28.61710682156331,
+          "distance_mm": 146.50522285087285,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerFork",
+          "part_b": "Blade3PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999990883,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperFork",
+          "part_b": "Blade3PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999426109,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerBall",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994137,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerPin",
+          "part_b": "Blade4PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990508,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperBall",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999973668,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperPin",
+          "part_b": "Blade4PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999974865,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4OuterRace",
+          "part_b": "Blade4DamperBody",
+          "bbox_intersection_mm": [
+            70.90830816923153,
+            24.55300688849681,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 146.5052228508728,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerFork",
+          "part_b": "Blade4PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999997925,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperFork",
+          "part_b": "Blade4PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999426109,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerBall",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.0591459387594,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994423,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerPin",
+          "part_b": "Blade5PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.73202667030756,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999995349,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperBall",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.0591459387594,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999974722,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperPin",
+          "part_b": "Blade5PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.73202667030756,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999977809,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.00000000000006,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.00000000000006,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5OuterRace",
+          "part_b": "Blade5DamperBody",
+          "bbox_intersection_mm": [
+            -67.55921994359025,
+            177.9392918564572,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 67.55921994359025,
+          "distance_mm": 146.50522285087285,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerFork",
+          "part_b": "Blade5PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            131.3357115077356,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998328,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperFork",
+          "part_b": "Blade5PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            133.35095603990897,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999980624,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Servo0Rod",
+          "part_b": "Servo0UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo1Rod",
+          "part_b": "Servo1UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo2Rod",
+          "part_b": "Servo2UpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "AntirotationArmA",
+          "part_b": "AntirotationArmB",
+          "bbox_intersection_mm": [
+            448.1516068818912,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "RotatingDriveArmA",
+          "part_b": "RotatingDriveArmB",
+          "bbox_intersection_mm": [
+            70.0,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "LowerRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999986628,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_lower_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "UpperRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999987719,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_upper_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "BearingCage",
+          "bbox_intersection_mm": [
+            1311.929018654712,
+            1311.9290186547119,
+            8.084385487859436
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.5999999841435707,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_cage",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Mast",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            320.0,
+            320.0,
+            1280.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 10.0,
+          "common_volume_mm3": 0.0,
+          "check": "mast_fixed_guide",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "SliderSphere",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            560.0,
+            560.0,
+            387.7937596197238
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 11.999999999999977,
+          "common_volume_mm3": 0.0,
+          "check": "slider_to_fixed_guide",
+          "pass_nonintersection": true
+        }
+      ],
+      "servo_endpoints": [
+        {
+          "index": 0,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            858.00789198913
+          ]
+        },
+        {
+          "index": 1,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            -0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            858.00789198913
+          ]
+        },
+        {
+          "index": 2,
+          "lower_endpoint_error_mm": 1.38871184079791e-16,
+          "upper_endpoint_error_mm": 1.1964383374223982e-15,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            1.0,
+            -1.8369701987210297e-16,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -1.3028601292511332e-13,
+            -710.0,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -1.292284457717707e-13,
+            -710.0,
+            858.00789198913
+          ]
+        }
+      ]
+    },
+    "rotor-parked": {
+      "available": true,
+      "native_path": "rotor-parked.FCStd",
+      "step_path": "rotor-parked.step",
+      "native": {
+        "parts": 425,
+        "solids": 648,
+        "volume_mm3": 2858741367.724823,
+        "bounds_mm": [
+          -7810.148734873015,
+          9300.0,
+          -8995.33752290858,
+          8894.99624199948,
+          -125.0,
+          2700.0
+        ],
+        "all_parts_valid": true,
+        "invalid_parts": []
+      },
+      "step": {
+        "read": true,
+        "valid": true,
+        "shape_valid": true,
+        "all_solids_valid": true,
+        "valid_solids": 648,
+        "solids": 648,
+        "invalid_solid_details": [],
+        "volume_mm3": 2858741788.660452,
+        "bounds_mm": [
+          -7810.148734873,
+          9300.0,
+          -8995.337522909,
+          8894.996241999,
+          -125.0,
+          2700.0
+        ]
+      },
+      "native_step_compare": {
+        "volume_relative_error": 1.472450896199819e-07,
+        "max_bound_error_mm": 4.802132025361061e-10,
+        "comparable": true
+      },
+      "pitch": {
+        "parameters": {
+          "collective": -0.0032510327599297,
+          "cc": 0.0,
+          "cs": 0.0,
+          "psi": 0.0,
+          "fold": 0.0,
+          "parked": true,
+          "flap": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lag": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              600.0,
+              250.00000000000003,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              600.0,
+              250.0,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              600.0,
+              250.0,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              600.0,
+              250.0,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 2.842170943040401e-14,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -52.35393244881992,
+              647.8881583708289,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -52.353932448819904,
+              647.8881583708289,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 1.4210854715202004e-14,
+            "solved_pitch_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -632.3565096980867,
+              150.4169027817471,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              -338.46388355185024,
+              -554.9253999692207,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              423.1743256987567,
+              -493.37966118335544,
+              1148.00789198913
+            ],
+            "upper_ball_com_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              2200.0
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              1148.00789198913
+            ],
+            "geometry_top_centre_mm": [
+              423.1743256987568,
+              -493.3796611833554,
+              2200.0
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 8.038873388460929e-14,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 0.0,
+        "max_geometry_closure_mm": 0.0,
+        "max_sphere_com_error_mm": 8.038873388460929e-14,
+        "max_pitch_error_deg": null
+      },
+      "key_gaps": [
+        {
+          "part_a": "Blade1PitchLowerBall",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994276,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerPin",
+          "part_b": "Blade1PitchLowerBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperBall",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999999394,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperPin",
+          "part_b": "Blade1PitchUpperBall",
+          "bbox_intersection_mm": [
+            48.0,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990905,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1PitchLink",
+          "part_b": "Blade1PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade1OuterRace",
+          "part_b": "Blade1DamperBody",
+          "bbox_intersection_mm": [
+            268.5931777608506,
+            -134.45975580699314,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 134.45975580699314,
+          "distance_mm": 146.5052228508729,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchLowerFork",
+          "part_b": "Blade1PitchLowerPin",
+          "bbox_intersection_mm": [
+            116.00000000000159,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998103,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade1PitchUpperFork",
+          "part_b": "Blade1PitchUpperPin",
+          "bbox_intersection_mm": [
+            116.00000000000023,
+            31.799999999999983,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999977305,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerBall",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999992739,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerPin",
+          "part_b": "Blade2PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003187,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperBall",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            55.05914593875946,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999972174,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperPin",
+          "part_b": "Blade2PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.00000000000003,
+            58.732026670307505,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.10000000000003187,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2PitchLink",
+          "part_b": "Blade2PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade2OuterRace",
+          "part_b": "Blade2DamperBody",
+          "bbox_intersection_mm": [
+            -106.74275620171454,
+            242.60894175553858,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 106.74275620171454,
+          "distance_mm": 146.50522285087283,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchLowerFork",
+          "part_b": "Blade2PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            131.3357115077357,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999983383,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade2PitchUpperFork",
+          "part_b": "Blade2PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567897,
+            133.35095603990885,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999996877,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerBall",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.1499999999999687,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerPin",
+          "part_b": "Blade3PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999991765,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperBall",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.149999999999764,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperPin",
+          "part_b": "Blade3PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999981657,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3PitchLink",
+          "part_b": "Blade3PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade3OuterRace",
+          "part_b": "Blade3DamperBody",
+          "bbox_intersection_mm": [
+            132.8603381433212,
+            -28.61710682156331,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 28.61710682156331,
+          "distance_mm": 146.50522285087285,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchLowerFork",
+          "part_b": "Blade3PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999990883,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade3PitchUpperFork",
+          "part_b": "Blade3PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372982,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999426109,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerBall",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994137,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerPin",
+          "part_b": "Blade4PitchLowerBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999990508,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperBall",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999973668,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperPin",
+          "part_b": "Blade4PitchUpperBall",
+          "bbox_intersection_mm": [
+            63.714953360033405,
+            64.0,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999974865,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4PitchLink",
+          "part_b": "Blade4PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade4OuterRace",
+          "part_b": "Blade4DamperBody",
+          "bbox_intersection_mm": [
+            70.90830816923153,
+            24.55300688849681,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 146.5052228508728,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchLowerFork",
+          "part_b": "Blade4PitchLowerPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999997925,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade4PitchUpperFork",
+          "part_b": "Blade4PitchUpperPin",
+          "bbox_intersection_mm": [
+            125.48181428039379,
+            103.31439372372978,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999426109,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerBall",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.0591459387594,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999994423,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerPin",
+          "part_b": "Blade5PitchLowerBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.73202667030756,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999995349,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperBall",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            64.0,
+            55.0591459387594,
+            64.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.14999999999974722,
+          "common_volume_mm3": 0.0,
+          "check": "spherical_inner_ball_eye",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperPin",
+          "part_b": "Blade5PitchUpperBall",
+          "bbox_intersection_mm": [
+            64.0,
+            58.73202667030756,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999977809,
+          "common_volume_mm3": 0.0,
+          "check": "pin_inner_ball",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchLowerEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.00000000000006,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5PitchLink",
+          "part_b": "Blade5PitchUpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            40.00000000000006,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Blade5OuterRace",
+          "part_b": "Blade5DamperBody",
+          "bbox_intersection_mm": [
+            -67.55921994359025,
+            177.9392918564572,
+            96.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 67.55921994359025,
+          "distance_mm": 146.50522285087285,
+          "common_volume_mm3": 0.0,
+          "check": "damper_to_outer_race_clearance",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchLowerFork",
+          "part_b": "Blade5PitchLowerPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            131.3357115077356,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.3499999999998328,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_lower_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Blade5PitchUpperFork",
+          "part_b": "Blade5PitchUpperPin",
+          "bbox_intersection_mm": [
+            71.03384047567886,
+            133.35095603990897,
+            31.800000000000182
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.34999999999980624,
+          "common_volume_mm3": 0.0,
+          "check": "pitch_upper_fork_pin",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Servo0Rod",
+          "part_b": "Servo0UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo1Rod",
+          "part_b": "Servo1UpperEye",
+          "bbox_intersection_mm": [
+            50.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "Servo2Rod",
+          "part_b": "Servo2UpperEye",
+          "bbox_intersection_mm": [
+            40.0,
+            50.0,
+            0.0
+          ],
+          "bbox_positive_volume_candidate": false,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.0,
+          "common_volume_mm3": 0.0,
+          "check": "joined_servo_rod_eye",
+          "pass_nonintersection": true,
+          "intentional_join": true,
+          "joined_contact": true
+        },
+        {
+          "part_a": "AntirotationArmA",
+          "part_b": "AntirotationArmB",
+          "bbox_intersection_mm": [
+            448.1516068818912,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "RotatingDriveArmA",
+          "part_b": "RotatingDriveArmB",
+          "bbox_intersection_mm": [
+            70.0,
+            48.0,
+            70.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 2.0,
+          "common_volume_mm3": 0.0,
+          "check": "scissor_armA_armB_nonoverlap",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "LowerRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999986628,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_lower_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "UpperRace",
+          "bbox_intersection_mm": [
+            1334.0,
+            1334.0,
+            30.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.09999999999987719,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_upper_race",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "BearingBalls",
+          "part_b": "BearingCage",
+          "bbox_intersection_mm": [
+            1311.929018654712,
+            1311.9290186547119,
+            8.084385487859436
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 0.5999999841435707,
+          "common_volume_mm3": 0.0,
+          "check": "bearing_ball_cage",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "Mast",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            320.0,
+            320.0,
+            1280.0
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 10.0,
+          "common_volume_mm3": 0.0,
+          "check": "mast_fixed_guide",
+          "pass_nonintersection": true
+        },
+        {
+          "part_a": "SliderSphere",
+          "part_b": "FixedGuide",
+          "bbox_intersection_mm": [
+            560.0,
+            560.0,
+            387.7937596197238
+          ],
+          "bbox_positive_volume_candidate": true,
+          "bbox_gap_mm": 0.0,
+          "distance_mm": 11.999999999999977,
+          "common_volume_mm3": 0.0,
+          "check": "slider_to_fixed_guide",
+          "pass_nonintersection": true
+        }
+      ],
+      "servo_endpoints": [
+        {
+          "index": 0,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            614.8780366869515,
+            354.99999999999994,
+            858.00789198913
+          ]
+        },
+        {
+          "index": 1,
+          "lower_endpoint_error_mm": 0.0,
+          "upper_endpoint_error_mm": 0.0,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            -0.49999999999999994,
+            -0.8660254037844387,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -614.8780366869515,
+            354.99999999999994,
+            858.00789198913
+          ]
+        },
+        {
+          "index": 2,
+          "lower_endpoint_error_mm": 1.38871184079791e-16,
+          "upper_endpoint_error_mm": 1.1964383374223982e-15,
+          "measured_stroke_mm": 708.00789198913,
+          "expected_stroke_mm": 708.00789198913,
+          "stroke_error_mm": 0.0,
+          "tangent_axis": [
+            1.0,
+            -1.8369701987210297e-16,
+            0.0
+          ],
+          "lower_ball_com_mm": [
+            -1.3028601292511332e-13,
+            -710.0,
+            150.0
+          ],
+          "upper_ball_com_mm": [
+            -1.292284457717707e-13,
+            -710.0,
+            858.00789198913
+          ]
+        }
+      ]
+    }
+  },
+  "folding_clearance": {
+    "1.0": {
+      "step_deg": 1.0,
+      "samples": 221,
+      "minimum_gap_mm": 0.0,
+      "worst_gap": [
+        1,
+        "tang",
+        "clevis",
+        0.0
+      ],
+      "maximum_overlap_mm3": 0.0,
+      "worst_overlap": null,
+      "sequence": [
+        2,
+        5,
+        3,
+        4
+      ],
+      "method": "parked FoldTang/RootSpar/Airfoil BREPs rotated about solved hinge axis; FoldClevis/withdrawn FlightLock/LockGuide held at parked positions"
+    },
+    "0.5": {
+      "step_deg": 0.5,
+      "samples": 437,
+      "minimum_gap_mm": 0.0,
+      "worst_gap": [
+        1,
+        "tang",
+        "clevis",
+        0.0
+      ],
+      "maximum_overlap_mm3": 0.0,
+      "worst_overlap": null,
+      "sequence": [
+        2,
+        5,
+        3,
+        4
+      ],
+      "method": "parked FoldTang/RootSpar/Airfoil BREPs rotated about solved hinge axis; FoldClevis/withdrawn FlightLock/LockGuide held at parked positions"
+    }
+  },
+  "parameter_variants": {
+    "link_plus_2mm": {
+      "parts": 425,
+      "all_parts_valid": true,
+      "measured_link_length_mm": 1053.99210801087,
+      "target_link_length_mm": 1053.99210801087,
+      "link_length_error_mm": 0.0,
+      "bottom_vs_solver_mm": 0.0,
+      "top_vs_solver_mm": 0.0,
+      "pitch": {
+        "parameters": {
+          "collective": 16.0,
+          "cc": 3.0,
+          "cs": 0.0,
+          "psi": 0.0,
+          "fold": 0.0,
+          "parked": false,
+          "flap": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lag": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              597.88663930554,
+              249.6232721885298,
+              1229.713456140115
+            ],
+            "upper_ball_com_mm": [
+              600.0,
+              235.60418753998994,
+              2283.6102075922627
+            ],
+            "measured_ball_distance_mm": 1053.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              597.88663930554,
+              249.6232721885298,
+              1229.713456140115
+            ],
+            "geometry_top_centre_mm": [
+              600.0,
+              235.60418753998997,
+              2283.6102075922627
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 2.842170943040401e-14,
+            "solved_pitch_deg": 19.538538723335154,
+            "expected_pitch_deg": 19.538538723335154,
+            "pitch_error_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -54.671328287529064,
+              647.0781002002908,
+              1220.8591705046742
+            ],
+            "upper_ball_com_mm": [
+              -41.472460593819946,
+              644.3525538411354,
+              2274.7651079762522
+            ],
+            "measured_ball_distance_mm": 1053.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              -54.67132828752906,
+              647.0781002002908,
+              1220.8591705046742
+            ],
+            "geometry_top_centre_mm": [
+              -41.47246059381993,
+              644.3525538411354,
+              2274.7651079762522
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 7.105427357601002e-15,
+            "geometry_vs_upper_ball_com_mm": 1.4210854715202004e-14,
+            "solved_pitch_deg": 17.40117923398302,
+            "expected_pitch_deg": 17.40117923398302,
+            "pitch_error_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -634.1877315224986,
+              149.24617330880935,
+              1206.5500579435118
+            ],
+            "upper_ball_com_mm": [
+              -627.9887927136981,
+              156.42854947279446,
+              2260.4994639300994
+            ],
+            "measured_ball_distance_mm": 1053.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -634.1877315224986,
+              149.24617330880935,
+              1206.5500579435118
+            ],
+            "geometry_top_centre_mm": [
+              -627.9887927136981,
+              156.42854947279446,
+              2260.4994639300994
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 14.0044854745737,
+            "expected_pitch_deg": 14.0044854745737,
+            "pitch_error_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              -339.7905981667303,
+              -555.8857062067403,
+              1206.5608256673058
+            ],
+            "upper_ball_com_mm": [
+              -342.83540973438755,
+              -548.90851036671,
+              2260.5254415866093
+            ],
+            "measured_ball_distance_mm": 1053.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -339.7905981667303,
+              -555.8857062067403,
+              1206.5608256673058
+            ],
+            "geometry_top_centre_mm": [
+              -342.83540973438755,
+              -548.90851036671,
+              2260.5254415866093
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 14.010621579179599,
+            "expected_pitch_deg": 14.010621579179599,
+            "pitch_error_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              421.67323967263934,
+              -493.84924740696414,
+              1220.8765930477548
+            ],
+            "upper_ball_com_mm": [
+              412.27579071040833,
+              -496.92080986115326,
+              2274.822330363623
+            ],
+            "measured_ball_distance_mm": 1053.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              421.6732396726393,
+              -493.84924740696414,
+              1220.8765930477548
+            ],
+            "geometry_top_centre_mm": [
+              412.2757907104083,
+              -496.92080986115326,
+              2274.822330363623
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 5.684341886080802e-14,
+            "geometry_vs_upper_ball_com_mm": 5.684341886080802e-14,
+            "solved_pitch_deg": 17.414923133148704,
+            "expected_pitch_deg": 17.414923133148704,
+            "pitch_error_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 2.2737367544323206e-13,
+        "max_geometry_closure_mm": 2.2737367544323206e-13,
+        "max_sphere_com_error_mm": 5.684341886080802e-14,
+        "max_pitch_error_deg": 0.0
+      }
+    },
+    "horn_x_plus_5mm": {
+      "parts": 425,
+      "all_parts_valid": true,
+      "measured_link_length_mm": 1051.9921080108702,
+      "target_link_length_mm": 1051.99210801087,
+      "link_length_error_mm": 2.2737367544323206e-13,
+      "bottom_vs_solver_mm": 0.0,
+      "top_vs_solver_mm": 0.0,
+      "pitch": {
+        "parameters": {
+          "collective": 16.0,
+          "cc": 3.0,
+          "cs": 0.0,
+          "psi": 0.0,
+          "fold": 0.0,
+          "parked": false,
+          "flap": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "lag": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "blades": {
+          "1": {
+            "lower_ball_com_mm": [
+              602.9005545557624,
+              249.6318557514616,
+              1229.7137637623334
+            ],
+            "upper_ball_com_mm": [
+              605.0,
+              236.30126504805312,
+              2281.619312277731
+            ],
+            "measured_ball_distance_mm": 1051.9921080108702,
+            "measured_ball_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_bottom_centre_mm": [
+              602.9005545557624,
+              249.63185575146156,
+              1229.7137637623334
+            ],
+            "geometry_top_centre_mm": [
+              605.0,
+              236.30126504805315,
+              2281.619312277731
+            ],
+            "geometry_closure_error_mm": 2.2737367544323206e-13,
+            "geometry_vs_lower_ball_com_mm": 2.842170943040401e-14,
+            "geometry_vs_upper_ball_com_mm": 2.842170943040401e-14,
+            "solved_pitch_deg": 19.055097722204074,
+            "expected_pitch_deg": 19.055097722204074,
+            "pitch_error_deg": 0.0
+          },
+          "2": {
+            "lower_ball_com_mm": [
+              -53.11199594586094,
+              651.8458808756977,
+              1220.8595812101926
+            ],
+            "upper_ball_com_mm": [
+              -40.512444154739065,
+              649.297936712562,
+              2272.7731492338958
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -53.11199594586094,
+              651.8458808756977,
+              1220.8595812101926
+            ],
+            "geometry_top_centre_mm": [
+              -40.51244415473906,
+              649.297936712562,
+              2272.7731492338958
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 7.105427357601002e-15,
+            "solved_pitch_deg": 16.923379528866914,
+            "expected_pitch_deg": 16.923379528866914,
+            "pitch_error_deg": 0.0
+          },
+          "3": {
+            "lower_ball_com_mm": [
+              -638.2232517869398,
+              152.1989554917527,
+              1206.5503809041948
+            ],
+            "upper_ball_com_mm": [
+              -632.3212806929615,
+              158.97189943099804,
+              2258.5041295475253
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -638.2232517869398,
+              152.1989554917527,
+              1206.5503809041948
+            ],
+            "geometry_top_centre_mm": [
+              -632.3212806929615,
+              158.97189943099804,
+              2258.5041295475253
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 13.533656987650103,
+            "expected_pitch_deg": 13.533656987650103,
+            "pitch_error_deg": 0.0
+          },
+          "4": {
+            "lower_ball_com_mm": [
+              -343.82934459523864,
+              -558.8138518941442,
+              1206.5609913153985
+            ],
+            "upper_ball_com_mm": [
+              -346.59279502072434,
+              -552.243421273872,
+              2258.528950951225
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              -343.82934459523864,
+              -558.8138518941442,
+              1206.5609913153985
+            ],
+            "geometry_top_centre_mm": [
+              -346.59279502072434,
+              -552.243421273872,
+              2258.528950951225
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 0.0,
+            "geometry_vs_upper_ball_com_mm": 0.0,
+            "solved_pitch_deg": 13.539508176448546,
+            "expected_pitch_deg": 13.539508176448546,
+            "pitch_error_deg": 0.0
+          },
+          "5": {
+            "lower_ball_com_mm": [
+              423.22735197119346,
+              -498.59700791116586,
+              1220.8767492161548
+            ],
+            "upper_ball_com_mm": [
+              414.40715284432474,
+              -501.4855994452301,
+              2272.827915118577
+            ],
+            "measured_ball_distance_mm": 1051.99210801087,
+            "measured_ball_closure_error_mm": 0.0,
+            "geometry_bottom_centre_mm": [
+              423.2273519711935,
+              -498.5970079111658,
+              1220.8767492161548
+            ],
+            "geometry_top_centre_mm": [
+              414.40715284432474,
+              -501.48559944523015,
+              2272.827915118577
+            ],
+            "geometry_closure_error_mm": 0.0,
+            "geometry_vs_lower_ball_com_mm": 8.038873388460929e-14,
+            "geometry_vs_upper_ball_com_mm": 5.684341886080802e-14,
+            "solved_pitch_deg": 16.93649954634449,
+            "expected_pitch_deg": 16.93649954634449,
+            "pitch_error_deg": 0.0
+          }
+        },
+        "max_ball_closure_mm": 2.2737367544323206e-13,
+        "max_geometry_closure_mm": 2.2737367544323206e-13,
+        "max_sphere_com_error_mm": 8.038873388460929e-14,
+        "max_pitch_error_deg": 0.0
+      }
+    }
+  }
+}

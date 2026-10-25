@@ -1,0 +1,29 @@
+﻿requirement_id,status,evidence,method,limitations
+R-01,合格,design-basis.md,参照方式と独自寸法を区別,実機の複製ではない
+R-02,合格,design-basis.md; design-structure.md,事実・仮定・導出・未解決を単位付きで区分,材料400 MPaは独自スクリーニング値
+R-03,未検証,design-review.md,自由度・荷重経路・閾値を整合,主保持・軸受容量・境界荷重が未確定
+R-04,合格,design-basis.md; verification/manifest.sha256,C1との差分と再検証対象を記録,変更後は再実行する
+R-05,未検証,src/build.py; verification/numerical.json,5翼・72度・個別flap/lag/pitchを構築,弾性支持の物理容量と結合を確定していない
+R-06,未検証,src/mechanism.py; src/build.py; images/swash-section.png,RR-Sピン軸から固定/回転リング時計角を解く,実支持・軸受容量と全域干渉は未閉鎖
+R-07,合格,verification/numerical.json; verification/cad-checks.json,3入力rank3と実CAD球中心の有限長閉路,油圧源・空力操縦負荷は別途
+R-08,合格,design-basis.md; src/test_mechanism.py,座標、符号、位相反転の負の試験,空力応答位相を確定した意味ではない
+R-09,未検証,verification/numerical.json; verification/control-checks.json,全周・複合入力の数値格子と4状態CAD照合,連続域と全自由度組合せの完全検証ではない
+R-10,未検証,verification/control-checks.json; verification/critical-cad-checks.json,首振り・レバー・一定長ロッド・室内ピストン位置,20度限界は形状上の設定、製品定格と全支持端の確認は残る
+R-11,未検証,verification/control-checks.json; verification/structure.json,ダンパー実ストローク、作用線、正常/劣化の縮約感度,温度/速度特性・製品性能未確定
+R-12,未検証,operating-state.md; src/build.py,翼根ストップ・パーク支持・マスト固定を追加,衝撃/風/全低回転条件の保持容量未確定
+R-13,未検証,design-review.md; verification/control-checks.json,弾性操縦反力の符号付き釣合いと主要経路,全空力・過渡・境界の6成分荷重は未閉鎖
+R-14,未検証,verification/structure-load-cases.csv,停止、始動、ホバー、端入力、不確かさ、地上風を整理,複合ケース・過渡荷重包絡が未確定
+R-15,不合格,verification/structure.json; design-structure.md,φ109.8ピン、リンク、カフ等の初期金属評価,軸受・エラストマー・桁接合・固定接合の容量が未完了
+R-16,未検証,verification/structure.json; src/build.py,積層外形、剛性仮定、圧縮/せん断需要を分離,材料許容、接着、変形、温度、遠心保持を未検証
+R-17,合格,design-review.md,疲労、共振、空力弾性、摩耗等のリスクと次工程を特定,解析・試験自体の完了ではない
+R-18,未検証,operating-state.md; src/mechanism.py,段階順序と機械保持前提、負の状態試験,タイダウンとトラップドキー実機構未完了
+R-19,合格,verification/cad-checks.json,固定Y投影の全長5翼・全ヘッドの包絡測定,甲板・格納庫は独自境界であり実機寸法でない
+R-20,未検証,verification/folding-clearance.csv,ピン引抜き後の翼根/桁/全長翼と自翼金具を1度/0.5度で掃引,全翼相互・全ヘッド・機体・公差を閉じた証明ではない
+R-21,未検証,operating-state.md; verification/structure.json,飛行ピン、引抜きガイド、マスト位置決めを構築,収納保持・誤操作/故障時の物理インターロック未完了
+R-22,未検証,bom.csv; images/; verification/neutral-overlaps.csv,名前・材質区分・接続先、正規モデルと断面を分離,固定接合の重なりが残り製法/締結を確定していない
+R-23,合格,Regenerate_Active.FCMacro; verification/cad-checks.json,リンク+2 mmと取付+5 mmの実CAD再生成,通常の再計算のみでは再生成しない。主要寸法全ての頑健性保証ではない
+R-24,未検証,operating-state.md; images/joint-detail.png,分割ソケット/外輪、ピン・ガイド・組立手順,全接合の抜け止め、工具アクセス、支持ハウジング組立が未閉鎖
+R-25,未検証,verification/neutral-overlaps.csv; verification/critical-cad-checks.json,中立全対診断と4状態の重要な非接触対を確認,全作動域・公差・変形、固定接合の製法別処理が残る
+R-26,合格,verification/cad-checks.json; verification/critical-cad-checks.json,4状態の新規プロセス読込、形状・STEP照合,STEPは形状であり機構履歴を保持しない
+R-27,合格,images/review.md; images/,全景・断面・最大入力・収納・関節詳細を目視確認,画像は構造容量の証明ではない
+R-28,合格,requirements.csv; final-report.md,28要求を一対一で追跡し未達を明記,追跡表の存在と設計完了は別

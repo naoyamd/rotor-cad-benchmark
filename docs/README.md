@@ -1,6 +1,12 @@
-# ROTOR / C1 public explorer
+# ROTOR / C1 + C2 benchmark site
 
 GitHub Pages: https://naoyamd.github.io/rotor-cad-benchmark/
+
+`index.html` is the side-by-side comparison landing. `c1.html` preserves the
+original C1 explorer; `c2.html` presents the redesigned C2. Shared root URLs
+with `#explore`, `#benchmark` or `#evidence` redirect to C1 to preserve old links.
+C2 is a redesign informed by C1, not an independent same-condition trial.
+Its time, model usage and cost have not been aggregated for this site.
 
 Buildless Three.js 0.180.0 website. All runtime dependencies are vendored under
 `vendor/` with the upstream MIT license; there is no CDN, analytics, or backend.
@@ -18,7 +24,7 @@ controls offer camera presets, saved states, component isolation, and mechanism
 inputs. Rotation starts only on request; reduced-motion preferences disable
 smooth scrolling. Network/WebGL errors leave the evidence and source links usable.
 
-The initial view is the live mechanism with X-ray enabled. X-ray makes outer
+The C1 initial view is the live mechanism with X-ray enabled. X-ray makes outer
 surfaces translucent and draws their edges while retaining opaque pitch links.
 The same toggle applies to the saved CAD states. Pitch presets combine collective
 and cyclic amplitude: 8/0, 12/1.5, and 16/3 degrees. They stay within the original

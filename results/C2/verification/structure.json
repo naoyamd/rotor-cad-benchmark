@@ -1,0 +1,881 @@
+{
+  "assessment": "initial structural sizing screen; not a strength or certification approval",
+  "units": {
+    "geometry": "mm",
+    "loads": "N",
+    "stress": "MPa",
+    "stiffness": "N m/rad"
+  },
+  "inputs": {
+    "radius_m": 9.3,
+    "root_m": 1.6,
+    "flap_hinge_m": 0.6,
+    "blade_mass_kg": 180.0,
+    "rpm": 210.0,
+    "aircraft_mass_kg": 15600.0,
+    "blade_cg_m": 5.45,
+    "blade_inertia_kgm2": 5123.400000000001,
+    "omega_rad_s": 21.991148575128552,
+    "thrust_N": 160632.927,
+    "torque_Nm": 152089.28810031086,
+    "blade_count": 5.0,
+    "load_factor": 1.5,
+    "cuff_radius_mm": 65.0,
+    "cuff_stop_collar_radius_mm": 85.0,
+    "fold_pin_d_mm": 109.8,
+    "fold_pin_radius_mm": 54.9,
+    "fold_pin_bore_mm": 111.0,
+    "recommended_fold_pin_d_mm": 110.0,
+    "recommended_fold_pin_bore_mm": 111.0,
+    "fold_clevis_thickness_mm": 40.0,
+    "fold_clevis_width_mm": 300.0,
+    "fold_tang_width_mm": 220.0,
+    "fold_tang_length_mm": 460.0,
+    "fold_tang_load_span_mm": 160.0,
+    "fold_hinge_x_mm": 0.0,
+    "fold_lock_x_mm": -200.0,
+    "stop_collar_x_span_mm": [
+      335.0,
+      365.0
+    ],
+    "stop_faces_z_mm": [
+      -115.0,
+      146.0
+    ],
+    "park_shoe_width_mm": 30.0,
+    "park_shoe_holds_zero": true,
+    "stop_nominal_drop_deg": -5.0,
+    "stop_load_arm_mm": 350.0,
+    "pitch_link_d_mm": 40.0,
+    "pitch_link_center_length_mm": 1051.99210801087,
+    "pitch_pin_d_mm": 31.8,
+    "pitch_clevis_ear_thickness_mm": 20.0,
+    "pitch_pin_ear_center_span_mm": 48.0,
+    "pitch_pin_ball_load_width_mm": 48.0,
+    "pitch_horn_arm_mm": 250.0,
+    "pitch_horn_cross_radius_mm": 40.0,
+    "mast_outer_diameter_mm": 320.0,
+    "mast_inner_diameter_mm": 230.0,
+    "swash_fixed_inner_outer_radius_mm": 651.9,
+    "swash_rotating_outer_inner_radius_mm": 652.1,
+    "swash_groove_minor_radius_mm": 15.1,
+    "swash_axial_z_span_mm": [
+      -80.0,
+      -10.0
+    ],
+    "swash_ball_z_mm": -50.0
+  },
+  "material": {
+    "candidate": "17-4 PH / Custom 630 H1150",
+    "source": "https://www.carpentertechnology.com/hubfs/7407324/Material%20Saftey%20Data%20Sheets/Custom%20630%20(17-4%20PH).pdf",
+    "typical_yield_reference_MPa": 869.0,
+    "typical_not_minimum": true,
+    "screen_allowable_MPa": 400.0,
+    "screen_shear_allowable_MPa": 230.94010767585033,
+    "limitation": "No product-form, orientation, temperature, process, notch, fatigue, or certification allowable is established."
+  },
+  "load_cases": [
+    {
+      "name": "stopped_parked",
+      "rpm": 0.0,
+      "blade_mass_kg": 180.0,
+      "rpm_factor": 0.0,
+      "mass_factor": 1.0,
+      "absolute_pitch_deg": 0.0,
+      "relative_pitch_deg": -12.0,
+      "flap_deg": 0.0,
+      "lag_deg": 0.0,
+      "ground_gust_m_s": null,
+      "thrust_N": 0.0,
+      "torque_Nm": null,
+      "note": "Gravity/park support; absolute pitch zero, spring deflection -12 deg. Wind/brake/stop transient remain open.",
+      "centrifugal_N": 0.0,
+      "gravity_N": 1765.197,
+      "design_retention_N": 2647.7954999999997,
+      "flap_stop_moment_Nm": 8561.205450000001,
+      "design_flap_stop_moment_Nm": 12841.808175,
+      "stop_cradle_load_per_blade_N": 24460.587000000007,
+      "design_stop_cradle_load_per_blade_N": 36690.8805,
+      "stop_collar_radius_mm": 85.0,
+      "stop_collar_x_span_mm": [
+        335.0,
+        365.0
+      ],
+      "stop_faces_z_mm": [
+        -115.0,
+        146.0
+      ],
+      "park_shoe_width_mm": 30.0,
+      "park_shoe_holds_zero": true,
+      "stop_nominal_drop_deg": -5.0,
+      "startup_angular_accel_rad_s2": null,
+      "startup_inertial_torque_per_blade_Nm": null,
+      "startup_inertial_torque_rotor_Nm": null,
+      "ground_gust_dynamic_pressure_Pa": null,
+      "fold_pin_double_shear_MPa": 0.13981696879621386,
+      "fold_clevis_bearing_MPa": 0.3014339139344262,
+      "fold_pin_combined_vm_MPa": 0.7530913402637609,
+      "pitch_design_moment_Nm": 3769.9111843077517,
+      "pitch_combined_support_moment_Nm": 3769.9111843077517,
+      "pitch_link_force_N": 15079.644737231007,
+      "pitch_link_force_pitch_only_N": 15079.644737231007,
+      "pitch_link_axial_stress_MPa": 12.0,
+      "pitch_link_euler_pinned_N": 224137.5608794319,
+      "pitch_pin_double_shear_MPa": 9.493295360151892,
+      "pitch_pin_bearing_MPa": 11.855066617319974,
+      "pitch_pin_combined_vm_MPa": 87.53522152200215,
+      "pitch_horn_combined_vm_MPa": 99.21567416492215
+    },
+    {
+      "name": "startup_ramp_30s",
+      "rpm": 210.0,
+      "blade_mass_kg": 216.0,
+      "rpm_factor": 1.0,
+      "mass_factor": 1.2,
+      "absolute_pitch_deg": 12.0,
+      "relative_pitch_deg": 0.0,
+      "flap_deg": 0.0,
+      "lag_deg": 0.0,
+      "ground_gust_m_s": null,
+      "thrust_N": null,
+      "torque_Nm": null,
+      "startup_ramp_time_s": 30.0,
+      "note": "Linear 0-to-210 rpm/30 s inertial torque screen with +20% blade mass; acceleration profile and drivetrain torque are not measured.",
+      "centrifugal_N": 569306.4167471572,
+      "gravity_N": 2118.2364,
+      "design_retention_N": 853959.6251207358,
+      "flap_stop_moment_Nm": 10273.44654,
+      "design_flap_stop_moment_Nm": 15410.16981,
+      "stop_cradle_load_per_blade_N": 29352.704400000006,
+      "design_stop_cradle_load_per_blade_N": 44029.0566,
+      "stop_collar_radius_mm": 85.0,
+      "stop_collar_x_span_mm": [
+        335.0,
+        365.0
+      ],
+      "stop_faces_z_mm": [
+        -115.0,
+        146.0
+      ],
+      "park_shoe_width_mm": 30.0,
+      "park_shoe_holds_zero": true,
+      "stop_nominal_drop_deg": -5.0,
+      "startup_angular_accel_rad_s2": 0.7330382858376184,
+      "startup_inertial_torque_per_blade_Nm": 4506.778024392545,
+      "startup_inertial_torque_rotor_Nm": 22533.890121962726,
+      "ground_gust_dynamic_pressure_Pa": null,
+      "fold_pin_double_shear_MPa": 45.09337909922893,
+      "fold_clevis_bearing_MPa": 97.21762581064843,
+      "fold_pin_combined_vm_MPa": 242.88492015841624,
+      "pitch_design_moment_Nm": 0.0,
+      "pitch_combined_support_moment_Nm": 0.0,
+      "pitch_link_force_N": 0.0,
+      "pitch_link_force_pitch_only_N": 0.0,
+      "pitch_link_axial_stress_MPa": 0.0,
+      "pitch_link_euler_pinned_N": 224137.5608794319,
+      "pitch_pin_double_shear_MPa": 0.0,
+      "pitch_pin_bearing_MPa": 0.0,
+      "pitch_pin_combined_vm_MPa": 0.0,
+      "pitch_horn_combined_vm_MPa": 0.0
+    },
+    {
+      "name": "hover_nominal",
+      "rpm": 210.0,
+      "blade_mass_kg": 180.0,
+      "rpm_factor": 1.0,
+      "mass_factor": 1.0,
+      "absolute_pitch_deg": 15.0,
+      "relative_pitch_deg": 3.0,
+      "flap_deg": 0.0,
+      "lag_deg": 0.0,
+      "ground_gust_m_s": null,
+      "thrust_N": 160632.927,
+      "torque_Nm": 152089.28810031086,
+      "note": "Sea-level hover reference; 12 deg stress-free pitch plus 3 deg cyclic. No forward-flight model.",
+      "centrifugal_N": 474422.01395596436,
+      "gravity_N": 1765.197,
+      "design_retention_N": 711633.0209339466,
+      "flap_stop_moment_Nm": 8561.205450000001,
+      "design_flap_stop_moment_Nm": 12841.808175,
+      "stop_cradle_load_per_blade_N": 24460.587000000007,
+      "design_stop_cradle_load_per_blade_N": 36690.8805,
+      "stop_collar_radius_mm": 85.0,
+      "stop_collar_x_span_mm": [
+        335.0,
+        365.0
+      ],
+      "stop_faces_z_mm": [
+        -115.0,
+        146.0
+      ],
+      "park_shoe_width_mm": 30.0,
+      "park_shoe_holds_zero": true,
+      "stop_nominal_drop_deg": -5.0,
+      "startup_angular_accel_rad_s2": null,
+      "startup_inertial_torque_per_blade_Nm": null,
+      "startup_inertial_torque_rotor_Nm": null,
+      "ground_gust_dynamic_pressure_Pa": null,
+      "fold_pin_double_shear_MPa": 37.577815916024115,
+      "fold_clevis_bearing_MPa": 81.01468817554037,
+      "fold_pin_combined_vm_MPa": 202.40410013201353,
+      "pitch_design_moment_Nm": 942.4777960769379,
+      "pitch_combined_support_moment_Nm": 942.4777960769379,
+      "pitch_link_force_N": 3769.9111843077517,
+      "pitch_link_force_pitch_only_N": 3769.9111843077517,
+      "pitch_link_axial_stress_MPa": 3.0,
+      "pitch_link_euler_pinned_N": 224137.5608794319,
+      "pitch_pin_double_shear_MPa": 2.373323840037973,
+      "pitch_pin_bearing_MPa": 2.9637666543299934,
+      "pitch_pin_combined_vm_MPa": 21.883805380500537,
+      "pitch_horn_combined_vm_MPa": 24.803918541230537
+    },
+    {
+      "name": "extreme_controls_overspeed",
+      "rpm": 231.00000000000003,
+      "blade_mass_kg": 216.0,
+      "rpm_factor": 1.1,
+      "mass_factor": 1.2,
+      "absolute_pitch_deg": 19.0,
+      "relative_pitch_deg": 7.0,
+      "flap_deg": 6.0,
+      "lag_deg": 3.0,
+      "ground_gust_m_s": null,
+      "thrust_N": null,
+      "torque_Nm": null,
+      "note": "231 rpm/+20% mass and 16 deg collective +3 deg cyclic; 6 deg flap/3 deg lag are conservative support inputs. Aero control loads remain unresolved.",
+      "centrifugal_N": 688860.7642640603,
+      "gravity_N": 2118.2364,
+      "design_retention_N": 1033291.1463960905,
+      "flap_stop_moment_Nm": 10273.44654,
+      "design_flap_stop_moment_Nm": 15410.16981,
+      "stop_cradle_load_per_blade_N": 29352.704400000006,
+      "design_stop_cradle_load_per_blade_N": 44029.0566,
+      "stop_collar_radius_mm": 85.0,
+      "stop_collar_x_span_mm": [
+        335.0,
+        365.0
+      ],
+      "stop_faces_z_mm": [
+        -115.0,
+        146.0
+      ],
+      "park_shoe_width_mm": 30.0,
+      "park_shoe_holds_zero": true,
+      "stop_nominal_drop_deg": -5.0,
+      "startup_angular_accel_rad_s2": null,
+      "startup_inertial_torque_per_blade_Nm": null,
+      "startup_inertial_torque_rotor_Nm": null,
+      "ground_gust_dynamic_pressure_Pa": null,
+      "fold_pin_double_shear_MPa": 54.56298871006702,
+      "fold_clevis_bearing_MPa": 117.63332723088462,
+      "fold_pin_combined_vm_MPa": 293.8907533916837,
+      "pitch_design_moment_Nm": 2199.1148575128555,
+      "pitch_combined_support_moment_Nm": 7728.8925880486495,
+      "pitch_link_force_N": 30915.570352194598,
+      "pitch_link_force_pitch_only_N": 8796.459430051422,
+      "pitch_link_axial_stress_MPa": 24.60182920028509,
+      "pitch_link_euler_pinned_N": 224137.5608794319,
+      "pitch_pin_double_shear_MPa": 19.462702583192982,
+      "pitch_pin_bearing_MPa": 24.30469367310896,
+      "pitch_pin_combined_vm_MPa": 179.46054740778465,
+      "pitch_horn_combined_vm_MPa": 203.4072558163794
+    },
+    {
+      "name": "ground_gust_10m_s",
+      "rpm": 0.0,
+      "blade_mass_kg": 180.0,
+      "rpm_factor": 0.0,
+      "mass_factor": 1.0,
+      "absolute_pitch_deg": 0.0,
+      "relative_pitch_deg": -12.0,
+      "flap_deg": 0.0,
+      "lag_deg": 0.0,
+      "ground_gust_m_s": 10.0,
+      "thrust_N": null,
+      "torque_Nm": null,
+      "note": "10 m/s ground-gust scenario; dynamic pressure is reported, projected area/drag and parked restraint are unresolved.",
+      "centrifugal_N": 0.0,
+      "gravity_N": 1765.197,
+      "design_retention_N": 2647.7954999999997,
+      "flap_stop_moment_Nm": 8561.205450000001,
+      "design_flap_stop_moment_Nm": 12841.808175,
+      "stop_cradle_load_per_blade_N": 24460.587000000007,
+      "design_stop_cradle_load_per_blade_N": 36690.8805,
+      "stop_collar_radius_mm": 85.0,
+      "stop_collar_x_span_mm": [
+        335.0,
+        365.0
+      ],
+      "stop_faces_z_mm": [
+        -115.0,
+        146.0
+      ],
+      "park_shoe_width_mm": 30.0,
+      "park_shoe_holds_zero": true,
+      "stop_nominal_drop_deg": -5.0,
+      "startup_angular_accel_rad_s2": null,
+      "startup_inertial_torque_per_blade_Nm": null,
+      "startup_inertial_torque_rotor_Nm": null,
+      "ground_gust_dynamic_pressure_Pa": 61.25000000000001,
+      "fold_pin_double_shear_MPa": 0.13981696879621386,
+      "fold_clevis_bearing_MPa": 0.3014339139344262,
+      "fold_pin_combined_vm_MPa": 0.7530913402637609,
+      "pitch_design_moment_Nm": 3769.9111843077517,
+      "pitch_combined_support_moment_Nm": 3769.9111843077517,
+      "pitch_link_force_N": 15079.644737231007,
+      "pitch_link_force_pitch_only_N": 15079.644737231007,
+      "pitch_link_axial_stress_MPa": 12.0,
+      "pitch_link_euler_pinned_N": 224137.5608794319,
+      "pitch_pin_double_shear_MPa": 9.493295360151892,
+      "pitch_pin_bearing_MPa": 11.855066617319974,
+      "pitch_pin_combined_vm_MPa": 87.53522152200215,
+      "pitch_horn_combined_vm_MPa": 99.21567416492215
+    }
+  ],
+  "fold_pin_and_cuff": {
+    "pin_diameter_mm": 109.8,
+    "retention_force_N": 1033291.1463960905,
+    "pin_double_shear_area_mm2": 18937.583347692344,
+    "pin_double_shear_MPa": 54.56298871006702,
+    "clevis_bearing_area_mm2": 8784.0,
+    "clevis_bearing_MPa": 117.63332723088462,
+    "effective_bending_eccentricity_mm": 35.0,
+    "pin_bending_MPa": 278.28118103495024,
+    "pin_combined_vm_MPa": 293.8907533916837,
+    "screen_allowable_MPa": 400.0,
+    "screen_status": "PASS_SCREEN_ONLY",
+    "clevis_thickness_mm": 40.0,
+    "clevis_width_mm": 300.0,
+    "tang_width_mm": 220.0,
+    "tang_length_mm": 460.0,
+    "tang_load_span_mm": 160.0,
+    "capacity_status": "UNRESOLVED",
+    "basis": "Conservative full centrifugal force on one pin; symmetric hinge/lock sharing is not credited. Bending arm is 35F from the frozen clevis/tang distribution screen.",
+    "maximum_case": "extreme_controls_overspeed",
+    "recommended_revision": {
+      "pin_diameter_mm": 110.0,
+      "retention_force_N": 1033291.1463960905,
+      "pin_double_shear_area_mm2": 19006.63555421825,
+      "pin_double_shear_MPa": 54.3647582155468,
+      "clevis_bearing_area_mm2": 8800.0,
+      "clevis_bearing_MPa": 117.4194484541012,
+      "effective_bending_eccentricity_mm": 35.0,
+      "pin_bending_MPa": 276.7660418246019,
+      "pin_combined_vm_MPa": 292.3457246391024,
+      "screen_allowable_MPa": 400.0,
+      "screen_status": "PASS_SCREEN_ONLY",
+      "clevis_thickness_mm": 40.0,
+      "clevis_width_mm": 300.0,
+      "tang_width_mm": 220.0,
+      "tang_length_mm": 460.0,
+      "tang_load_span_mm": 160.0,
+      "capacity_status": "UNRESOLVED",
+      "basis": "Conservative full centrifugal force on one pin; symmetric hinge/lock sharing is not credited. Bending arm is 35F from the frozen clevis/tang distribution screen."
+    },
+    "recommended_pin_bore_mm": 111.0,
+    "recommended_clevis_width_mm": 300.0,
+    "recommended_tang_width_mm": 220.0,
+    "hinge_x_mm": 0.0,
+    "lock_x_mm": -200.0,
+    "cuff": {
+      "solid_diameter_mm": 130.0,
+      "radius_mm": 65.0,
+      "net_area_mm2": 13273.228961416875,
+      "section_modulus_mm3": 215689.97062302424,
+      "retention_moment_Nm": 67163.92451574588,
+      "axial_stress_MPa": 77.84776028498419,
+      "bending_stress_MPa": 311.3910411399367,
+      "extreme_fiber_stress_MPa": 389.2388014249209,
+      "screen_allowable_MPa": 400.0,
+      "screen_status": "PASS_SCREEN_ONLY",
+      "capacity_status": "UNRESOLVED_LOCAL_STRESS_AND_FATIGUE",
+      "basis": "Solid 130 mm cuff section from the v2 CAD; local fillets, holes, horn junction, stress concentration, and fatigue are not included."
+    },
+    "radius70_sensitivity": {
+      "solid_diameter_mm": 140.0,
+      "radius_mm": 70.0,
+      "net_area_mm2": 15393.804002589986,
+      "section_modulus_mm3": 269391.57004532474,
+      "retention_moment_Nm": 72330.38024772634,
+      "axial_stress_MPa": 67.12383412327718,
+      "bending_stress_MPa": 268.4953364931087,
+      "extreme_fiber_stress_MPa": 335.6191706163859,
+      "screen_allowable_MPa": 400.0,
+      "screen_status": "PASS_SCREEN_ONLY",
+      "capacity_status": "UNRESOLVED_LOCAL_STRESS_AND_FATIGUE",
+      "basis": "Solid 130 mm cuff section from the v2 CAD; local fillets, holes, horn junction, stress concentration, and fatigue are not included."
+    }
+  },
+  "pitch_link_and_horn": {
+    "rod_d_mm": 40.0,
+    "rod_center_length_mm": 1051.99210801087,
+    "pin_d_mm": 31.8,
+    "clevis_ear_thickness_mm": 20.0,
+    "pin_screen_eccentricity_mm": 18.0,
+    "horn_arm_mm": 250.0,
+    "horn_cross_section_radius_mm": 40.0,
+    "extreme_control_screen": {
+      "relative_pitch_deg": 7.0,
+      "flap_deg": 6.0,
+      "lag_deg": 3.0,
+      "support_stiffness_pitch_Nm_rad": 12000.0,
+      "support_stiffness_flap_Nm_rad": 25000.0,
+      "support_stiffness_lag_Nm_rad": 80000.0,
+      "pitch_support_moment_Nm": 1466.076571675237,
+      "flap_support_moment_Nm": 2617.9938779914946,
+      "lag_support_moment_Nm": 4188.790204786391,
+      "combined_support_moment_Nm": 5152.595058699099,
+      "design_pitch_moment_Nm": 2199.1148575128555,
+      "design_combined_moment_Nm": 7728.8925880486495,
+      "pitch_horn_arm_mm": 250.0,
+      "horn_cross_section_radius_mm": 40.0,
+      "pitch_link_force_pitch_only_N": 8796.459430051422,
+      "pitch_link_force_combined_upper_N": 30915.570352194598,
+      "design_link_force_N": 30915.570352194598,
+      "link_area_mm2": 1256.6370614359173,
+      "link_axial_stress_MPa": 24.60182920028509,
+      "link_euler_pinned_N": 224137.5608794319,
+      "link_euler_margin_ratio": 7.249989514216454,
+      "pitch_pin_double_shear_MPa": 19.462702583192982,
+      "pitch_pin_ear_bearing_MPa": 24.30469367310896,
+      "pitch_pin_screen_eccentricity_mm": 18.0,
+      "pitch_pin_bending_MPa": 176.26598565910624,
+      "pitch_pin_combined_vm_MPa": 179.46054740778465,
+      "pitch_pin_diameter_for_bending_screen_mm": 24.19895586606999,
+      "pitch_horn_section_modulus_mm3": 50265.48245743669,
+      "pitch_horn_bending_MPa": 153.76143250178183,
+      "pitch_horn_torsion_MPa": 76.88071625089091,
+      "pitch_horn_combined_vm_MPa": 203.4072558163794,
+      "pitch_horn_screen_status": "PASS_SCREEN_ONLY",
+      "capacity_status": "UNRESOLVED",
+      "basis": "Pitch force uses the 250 mm design horn arm. Flap/lag moments form a conservative upper-bound shared-support reaction; aerodynamic hinge moment and load sharing remain unresolved."
+    },
+    "actual_horn_section_status": "PASS_SCREEN_ONLY",
+    "aerodynamic_hinge_moment_status": "UNRESOLVED"
+  },
+  "elastomer_support": {
+    "inner_radius_mm": 145.0,
+    "outer_radius_mm": 174.0,
+    "radial_window_mm": 29.0,
+    "rubber_layers": 5.0,
+    "rubber_layer_thickness_mm": 4.5,
+    "steel_layer_thickness_mm": 1.3,
+    "rubber_total_thickness_mm": 22.5,
+    "steel_total_thickness_mm": 6.5,
+    "radial_stack_mm": 29.0,
+    "radial_reserve_mm": 0.0,
+    "projected_annulus_area_mm2": 40605.08504764808,
+    "screen_compression_stress_MPa": 25.44733363280914,
+    "compression_strain_sensitivity": [
+      {
+        "assumed_layer_deflection_mm": 0.5,
+        "geometric_compression_strain": 0.022222222222222223
+      },
+      {
+        "assumed_layer_deflection_mm": 1.0,
+        "geometric_compression_strain": 0.044444444444444446
+      },
+      {
+        "assumed_layer_deflection_mm": 2.0,
+        "geometric_compression_strain": 0.08888888888888889
+      },
+      {
+        "assumed_layer_deflection_mm": 5.0,
+        "geometric_compression_strain": 0.2222222222222222
+      }
+    ],
+    "shear_strain_sensitivity": [
+      {
+        "angle_deg": 1.0,
+        "tangential_displacement_mm": 2.7838001569309556,
+        "stack_shear_strain": 0.12372445141915359,
+        "stack_shear_percent": 12.372445141915358,
+        "rubber_thickness_for_50pct_strain_mm": 5.567600313861911,
+        "full_stack_radial_width_if_50pct_mm": 12.067600313861911
+      },
+      {
+        "angle_deg": 3.0,
+        "tangential_displacement_mm": 8.351400470792868,
+        "stack_shear_strain": 0.3711733542574608,
+        "stack_shear_percent": 37.11733542574608,
+        "rubber_thickness_for_50pct_strain_mm": 16.702800941585735,
+        "full_stack_radial_width_if_50pct_mm": 23.202800941585735
+      },
+      {
+        "angle_deg": 6.0,
+        "tangential_displacement_mm": 16.702800941585735,
+        "stack_shear_strain": 0.7423467085149216,
+        "stack_shear_percent": 74.23467085149215,
+        "rubber_thickness_for_50pct_strain_mm": 33.40560188317147,
+        "full_stack_radial_width_if_50pct_mm": 39.90560188317147
+      },
+      {
+        "angle_deg": 10.0,
+        "tangential_displacement_mm": 27.838001569309554,
+        "stack_shear_strain": 1.2372445141915358,
+        "stack_shear_percent": 123.72445141915358,
+        "rubber_thickness_for_50pct_strain_mm": 55.67600313861911,
+        "full_stack_radial_width_if_50pct_mm": 62.17600313861911
+      },
+      {
+        "angle_deg": 19.0,
+        "tangential_displacement_mm": 52.89220298168816,
+        "stack_shear_strain": 2.3507645769639183,
+        "stack_shear_percent": 235.07645769639183,
+        "rubber_thickness_for_50pct_strain_mm": 105.78440596337632,
+        "full_stack_radial_width_if_50pct_mm": 112.28440596337632
+      }
+    ],
+    "six_degree_shear_strain": 0.7423467085149216,
+    "six_degree_screen": "RED_FLAG",
+    "compression_capacity_status": "UNRESOLVED_NO_ELASTOMER_RATING",
+    "recommendation": "Reduce angular travel or enlarge the rubber layer/window; verify bonded shape factor, modulus, temperature, fatigue, and edge strain before release."
+  },
+  "swash_bearing": {
+    "ball_radius_mm": 15.0,
+    "ball_diameter_mm": 30.0,
+    "pitch_radius_mm": 652.0,
+    "ball_count": 72.0,
+    "fixed_inner_race_outer_radius_mm": 651.9,
+    "rotating_outer_race_inner_radius_mm": 652.1,
+    "race_radial_split_mm": 0.20000000000004547,
+    "groove_minor_radius_mm": 15.1,
+    "race_axial_z_span_mm": [
+      -80.0,
+      -10.0
+    ],
+    "ball_z_mm": -50.0,
+    "pitch_circumference_mm": 4096.63682028109,
+    "ball_center_spacing_mm": 56.89773361501514,
+    "center_spacing_minus_ball_diameter_mm": 26.89773361501514,
+    "control_link_equal_share_radial_N": 1047.1975511965977,
+    "control_link_sum_abs_N": 75398.22368615503,
+    "torsional_torque_z_Nm": null,
+    "torsional_torque_z_status": "NOT_INFERRED_FROM_AXIAL_LINK_FORCES",
+    "actual_five_point_overturn_Nm": 3.0505379675102492e-12,
+    "conservative_overturn_upper_Nm": 49585.43988308847,
+    "capacity_status": "UNRESOLVED",
+    "basis": "Five-point axial pitch-link reactions; sum(abs(F))*radius is an overturning upper bound, not a torsional torque-Z calculation.",
+    "limitation": "This custom bearing carries pitch-link control reactions in this screen, not rotor thrust. No race groove contact, preload, internal clearance, load distribution, speed rating, or L10 evidence exists; equal share is arithmetic only. Torsional torque about Z is not inferred from axial force."
+  },
+  "swash_link_reactions": {
+    "pitch_arm_mm": 250.0,
+    "blade_count": 5.0,
+    "pitch_radius_mm": 652.0,
+    "cases": [
+      {
+        "name": "parked_pitch0",
+        "azimuth_deg": [
+          0.0,
+          72.0,
+          144.0,
+          216.0,
+          288.0
+        ],
+        "absolute_pitch_deg": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "relative_pitch_deg": [
+          -12.0,
+          -12.0,
+          -12.0,
+          -12.0,
+          -12.0
+        ],
+        "link_force_N": [
+          -15079.644737231007,
+          -15079.644737231007,
+          -15079.644737231007,
+          -15079.644737231007,
+          -15079.644737231007
+        ],
+        "sum_abs_link_force_N": 75398.22368615503,
+        "actual_five_point_overturn_Nm": 3.0505379675102492e-12,
+        "conservative_overturn_upper_Nm": 49585.43988308847,
+        "torsional_torque_z_Nm": null
+      },
+      {
+        "name": "hover_collective12_cyclic3",
+        "azimuth_deg": [
+          0.0,
+          72.0,
+          144.0,
+          216.0,
+          288.0
+        ],
+        "absolute_pitch_deg": [
+          15.008466536431168,
+          12.917327677957534,
+          9.577650206033073,
+          9.581936210844018,
+          12.92679836694139
+        ],
+        "relative_pitch_deg": [
+          3.0084665364311682,
+          0.9173276779575339,
+          -2.4223497939669265,
+          -2.4180637891559815,
+          0.9267983669413908
+        ],
+        "link_force_N": [
+          3906.0794616514368,
+          1180.583771160624,
+          -3084.3629040794503,
+          -3079.9198710468827,
+          1193.704477677733
+        ],
+        "sum_abs_link_force_N": 12444.650485616126,
+        "actual_five_point_overturn_Nm": 6257.609154928221,
+        "conservative_overturn_upper_Nm": 8184.191063825765,
+        "torsional_torque_z_Nm": null
+      },
+      {
+        "name": "extreme_collective16_cyclic3",
+        "azimuth_deg": [
+          0.0,
+          72.0,
+          144.0,
+          216.0,
+          288.0
+        ],
+        "absolute_pitch_deg": [
+          19.055042983168455,
+          16.923247958251107,
+          13.533547370366144,
+          13.539457243232729,
+          16.93648523707802
+        ],
+        "relative_pitch_deg": [
+          7.055042983168455,
+          4.923247958251107,
+          1.5335473703661435,
+          1.5394572432327287,
+          4.936485237078021
+        ],
+        "link_force_N": [
+          9339.495680449225,
+          6443.441175250707,
+          1978.1653579564677,
+          1986.7261515455582,
+          6467.515392440999
+        ],
+        "sum_abs_link_force_N": 26215.343757642957,
+        "actual_five_point_overturn_Nm": 6526.458040426085,
+        "conservative_overturn_upper_Nm": 17240.45061485708,
+        "torsional_torque_z_Nm": null
+      }
+    ],
+    "worst_case": "parked_pitch0",
+    "worst_sum_abs_link_force_N": 75398.22368615503,
+    "basis": "Five equally spaced pitch-link reactions; axial link forces create horizontal overturning moment. Sum(abs(F))*pitch radius is an overturning upper bound, not torsional torque about Z. Rotor thrust is not applied to this control bearing."
+  },
+  "mast_screen": {
+    "outer_diameter_mm": 320.0,
+    "inner_diameter_mm": 230.0,
+    "area_mm2": 38877.209088173695,
+    "polar_moment_mm4": 754703821.4241718,
+    "nominal_thrust_axial_stress_MPa": 6.1977028740289875,
+    "nominal_torque_shear_MPa": 48.36523694181673,
+    "nominal_combined_vm_MPa": 83.99999972755339,
+    "capacity_status": "UNRESOLVED_BOUNDARY_AND_FATIGUE",
+    "basis": "Same nominal thrust/torque screen as mechanism.loads(), with the v2 OD/ID; mast boundary moments and fatigue are not supplied."
+  },
+  "support_sensitivity": {
+    "stiffness": {
+      "pitch_Nm_rad": 12000.0,
+      "flap_Nm_rad": 25000.0,
+      "lag_Nm_rad": 80000.0
+    },
+    "blade_inertia_kgm2": 5123.400000000001,
+    "damper_arm_m": 0.37943149894404365,
+    "damper_linear_Ns_m": 32000.0,
+    "damper_equivalent_Nms_rad": 4606.9843965095615,
+    "modal_screen": {
+      "pitch_Nm_rad": {
+        "K_Nm_rad": 12000.0,
+        "frequency_Hz": 0.24357438949845345
+      },
+      "flap_Nm_rad": {
+        "K_Nm_rad": 25000.0,
+        "frequency_Hz": 0.35156934836157716
+      },
+      "lag_Nm_rad": {
+        "K_Nm_rad": 80000.0,
+        "frequency_Hz": 0.6289063693934326
+      }
+    },
+    "lag_sensitivity": [
+      {
+        "Klag_factor": 0.5,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.44470395852950795,
+        "zeta": 0.16090799303893932
+      },
+      {
+        "Klag_factor": 0.5,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.44470395852950795,
+        "zeta": 0.08045399651946966
+      },
+      {
+        "Klag_factor": 0.5,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.4059573158307557,
+        "zeta": 0.14688822911718552
+      },
+      {
+        "Klag_factor": 0.5,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.4059573158307557,
+        "zeta": 0.07344411455859276
+      },
+      {
+        "Klag_factor": 1.0,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.6289063693934326,
+        "zeta": 0.1137791330249518
+      },
+      {
+        "Klag_factor": 1.0,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.6289063693934326,
+        "zeta": 0.0568895665124759
+      },
+      {
+        "Klag_factor": 1.0,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.5741103417924327,
+        "zeta": 0.10386566288524515
+      },
+      {
+        "Klag_factor": 1.0,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.5741103417924327,
+        "zeta": 0.051932831442622576
+      },
+      {
+        "Klag_factor": 1.5,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.7702498505001109,
+        "zeta": 0.09290027309579404
+      },
+      {
+        "Klag_factor": 1.5,
+        "blade_mass_factor": 1.0,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.7702498505001109,
+        "zeta": 0.04645013654789702
+      },
+      {
+        "Klag_factor": 1.5,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 1.0,
+        "frequency_Hz": 0.7031386967231543,
+        "zeta": 0.08480595862159448
+      },
+      {
+        "Klag_factor": 1.5,
+        "blade_mass_factor": 1.2,
+        "damping_factor": 0.5,
+        "frequency_Hz": 0.7031386967231543,
+        "zeta": 0.04240297931079724
+      }
+    ],
+    "basis": "Diagonal equivalent support stiffness and a velocity-proportional damper; no cross-coupling or full rotor-body stability model."
+  },
+  "operating_envelope": {
+    "flight_mode": "sea-level hover/low-speed initial design only; no forward-flight loads",
+    "temperature_C": [
+      0.0,
+      40.0
+    ],
+    "air_density_kg_m3": 1.225,
+    "temperature_density_variation_status": "NOT_MODELED",
+    "ground_gust_m_s": 10.0,
+    "ground_gust_status": "dynamic pressure only; drag area and restraint response unresolved"
+  },
+  "status": {
+    "passes": [
+      "Frozen dimensions and mm-to-m boundary assertions",
+      "Finite positive ball spacing arithmetic",
+      "Rod Euler and solid 130 mm cuff arithmetic screens are computable",
+      "Actual 109.8 mm fold-pin geometry is below the 400 MPa arithmetic screen under the stated 35F bending arm"
+    ],
+    "screening_only": [
+      "17-4 H1150 400 MPa value is an explicit non-certification screen",
+      "Current 109.8 mm fold-pin and 32 mm pitch-pin shear/bearing/bending calculations",
+      "Solid 80 mm pitch horn section screen using the 250 mm design arm",
+      "Support stiffness/modal and reduced-damping sensitivity"
+    ],
+    "red_flags": [
+      "Elastomer six-degree shear geometry remains beyond the transparent 50% stack-strain screen"
+    ],
+    "unresolved": [
+      "Cuff local concentration, horn junction, fillets, holes, fatigue, and lock load path",
+      "Measured aerodynamic hinge moment and exact pitch/flap/lag load sharing",
+      "Swash race/ball contact capacity, preload, life, and combined reaction distribution",
+      "Elastomer compression/shear allowable, modulus, temperature, fatigue, and bonded shape factor",
+      "Startup drivetrain torque, wind/park restraint, fatigue, modal coupling, and full rotor-body stability"
+    ],
+    "capacity_status": {
+      "fold_pin": "PASS_SCREEN_ONLY",
+      "recommended_fold_pin_screen": "PASS_SCREEN_ONLY",
+      "pitch_link_and_pin": "PASS_SCREEN_ONLY",
+      "cuff": "PASS_SCREEN_ONLY",
+      "elastomer": "UNRESOLVED_NO_ELASTOMER_RATING",
+      "swash_bearing": "UNRESOLVED"
+    },
+    "qualification_status": {
+      "fold_pin": "UNRESOLVED",
+      "pitch_link_and_pin": "UNRESOLVED",
+      "cuff": "UNRESOLVED_LOCAL_STRESS_AND_FATIGUE",
+      "swash_bearing": "UNRESOLVED"
+    }
+  },
+  "requirements_R13_R17": {
+    "R13": {
+      "status": "SCREENED_NOT_VERIFIED",
+      "evidence": "Load path, retained centrifugal demand, thrust/torque reference, pin/cuff/horn demands in this JSON.",
+      "gap": "Six-component reactions, mast boundary moments, and joint load transfer are not balanced."
+    },
+    "R14": {
+      "status": "SCREENED_NOT_VERIFIED",
+      "evidence": "Stopped, 30 s startup ramp, hover, extreme-control/overspeed, and 10 m/s ground-gust cases with mass +20% and rpm +10% envelope.",
+      "gap": "Acceleration profile, drag area, stop transient, simultaneous control/aero loads, and operating envelope remain assumptions."
+    },
+    "R15": {
+      "status": "NOT_PASS",
+      "evidence": "Candidate material and explicit 400 MPa arithmetic screen only.",
+      "gap": "No product-form allowables, bearing rating, elastomer rating, pin bending, fatigue, or lock capacity."
+    },
+    "R16": {
+      "status": "RED_FLAG_AND_UNRESOLVED",
+      "evidence": "5 x (4.5 mm rubber + 1.3 mm steel) geometry and shear/compression strain sensitivities.",
+      "gap": "Six-degree shear geometry is incompatible with the transparent 50% screen; modulus, shape factor, temperature, and life are missing."
+    },
+    "R17": {
+      "status": "PASS_RISK_PLAN_ONLY",
+      "evidence": "Risk/next-analysis plan and support stiffness, mass, and 50% lag-damping sensitivity rows.",
+      "gap": "Full aircraft dynamics are intentionally deferred; fatigue, aeroelasticity, mode coupling, and test evidence are future work."
+    }
+  },
+  "verification_limits": [
+    "No strength item is promoted to PASS from a screening allowable.",
+    "Pin bending uses explicit eccentricity sensitivity because the load line is not frozen.",
+    "Swash ball loads are derived from five pitch-link reactions, not rotor thrust, and remain arithmetic only.",
+    "Compression and stack shear strain are reported against geometry; force-to-strain needs elastomer material data."
+  ]
+}

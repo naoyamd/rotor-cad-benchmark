@@ -21,7 +21,7 @@ for (const state of ['neutral','max-input','parked','folded']) {
 }
 
 test('local HTML assets and internal anchors resolve',async()=>{
-  const html=await readFile(new URL('../index.html',import.meta.url),'utf8');
+  const html=await readFile(new URL('../c1.html',import.meta.url),'utf8');
   const ids=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
   for(const [,path] of html.matchAll(/(?:src|href)="([^" ]+)"/g)){
     if(path.startsWith('#')){assert.ok(path==='#'||ids.has(path.slice(1)),path);continue;}

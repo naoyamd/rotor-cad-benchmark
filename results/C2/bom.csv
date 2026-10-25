@@ -1,0 +1,427 @@
+﻿CAD_name,assembly,material,connection,note,solids
+Mast,Hub,17-4 PH H1150 / screening basis,GearboxBoundary / Hub,,1
+MastFlange,Hub,17-4 PH H1150 / screening basis,GearboxBoundary / Mast,,1
+MastIndexBracket,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / MastIndexPin,,1
+MastIndexPin,Fixed,17-4 PH H1150 / screening basis,MastFlange / MastIndexBracket,Engaged only after zero-speed and azimuth index; trapped key releases fold-pin handles,1
+MastIndexGuide,Fixed,17-4 PH H1150 / screening basis,MastIndexBracket / MastIndexPin,,1
+AirframeCarrier,Fixed,17-4 PH H1150 / screening basis,AirframeBoundary,Rigid interface; six-component reaction specification in design-structure.md,1
+FixedGuide,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / sliding bushes,,1
+GuideBridge,Fixed,17-4 PH H1150 / screening basis,FixedGuide / AirframeCarrier,,1
+CarrierSpoke0,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / FixedGuide,,1
+CarrierSpoke1,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / FixedGuide,,1
+CarrierSpoke2,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / FixedGuide,,1
+GuideBushM145,Swashplate,Bronze/PTFE liner; qualification required,FixedGuide / SlidingSleeve,,1
+GuideBush100,Swashplate,Bronze/PTFE liner; qualification required,FixedGuide / SlidingSleeve,,1
+SliderSphere,Swashplate,17-4 PH H1150 / screening basis,GuideBushes / StatorSocket,One-piece bored spherical slider eliminates unsupported sphere-to-sleeve seam,1
+StatorSocket,Swashplate,17-4 PH H1150 / screening basis,SliderSphere / LowerRace / servo forks,Split spherical socket belt captures slider at both apertures; machining split and flange bolts required,2
+SocketSplitBolts,Swashplate,17-4 PH H1150 / screening basis,StatorSocket two halves,Four M12 through bolts; end/thread envelopes simplified,4
+LowerRace,Swashplate,17-4 PH H1150 / screening basis,StatorSocket / rolling elements,Fixed INNER grooved race; custom bearing supplier load-rating gate,1
+UpperRace,Swashplate,17-4 PH H1150 / screening basis,RotorRing / rolling elements,Rotating OUTER race; radial split captures balls axially in both directions,2
+BearingBalls,Swashplate,17-4 PH H1150 / screening basis,LowerRace / UpperRace,,72
+BearingCage,Swashplate,Polymer separator pieces,BearingBalls,Individual separators within race groove; not a rigid rotating cage,72
+RotorRing,Swashplate,17-4 PH H1150 / screening basis,UpperRace / five pitch forks,,1
+LowerRaceBolts,Swashplate,17-4 PH H1150 / screening basis,LowerRace / ring,M12 thread envelopes with 13 mm bores; preload specified by bearing supplier,18
+UpperRaceBolts,Swashplate,17-4 PH H1150 / screening basis,UpperRace / ring,M12 thread envelopes with 13 mm bores; preload specified by bearing supplier,18
+Servo0LowerBall,Fixed,17-4 PH H1150 / screening basis,Servo0LowerPin / Servo0LowerEye,,1
+Servo0LowerEye,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo0LowerSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo0LowerBall / fork,,1
+Servo0LowerSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo0LowerBall / fork,,1
+Servo0LowerFork,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / Servo0LowerPin,,1
+Servo0LowerPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo0LowerPinHead,Fixed,17-4 PH H1150 / screening basis,Servo0LowerPin,Integral headed pin,1
+Servo0LowerPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo0LowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo0UpperBall,Fixed,17-4 PH H1150 / screening basis,Servo0UpperPin / Servo0UpperEye,,1
+Servo0UpperEye,Fixed,17-4 PH H1150 / screening basis,StatorSocket,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo0UpperSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo0UpperBall / fork,,1
+Servo0UpperSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo0UpperBall / fork,,1
+Servo0UpperFork,Fixed,17-4 PH H1150 / screening basis,StatorSocket / Servo0UpperPin,,1
+Servo0UpperPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo0UpperPinHead,Fixed,17-4 PH H1150 / screening basis,Servo0UpperPin,Integral headed pin,1
+Servo0UpperPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo0UpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo0Body,Fixed,17-4 PH H1150 / screening basis,LowerEye / piston,,1
+Servo0Rod,Fixed,17-4 PH H1150 / screening basis,piston / UpperEye,500 mm rigid piston rod; translates without resizing,1
+Servo0Piston,Fixed,17-4 PH H1150 / screening basis,ServoRod / hydraulic pressure,Seal grooves and ports are interface detail,1
+Servo1LowerBall,Fixed,17-4 PH H1150 / screening basis,Servo1LowerPin / Servo1LowerEye,,1
+Servo1LowerEye,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo1LowerSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo1LowerBall / fork,,1
+Servo1LowerSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo1LowerBall / fork,,1
+Servo1LowerFork,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / Servo1LowerPin,,1
+Servo1LowerPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo1LowerPinHead,Fixed,17-4 PH H1150 / screening basis,Servo1LowerPin,Integral headed pin,1
+Servo1LowerPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo1LowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo1UpperBall,Fixed,17-4 PH H1150 / screening basis,Servo1UpperPin / Servo1UpperEye,,1
+Servo1UpperEye,Fixed,17-4 PH H1150 / screening basis,StatorSocket,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo1UpperSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo1UpperBall / fork,,1
+Servo1UpperSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo1UpperBall / fork,,1
+Servo1UpperFork,Fixed,17-4 PH H1150 / screening basis,StatorSocket / Servo1UpperPin,,1
+Servo1UpperPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo1UpperPinHead,Fixed,17-4 PH H1150 / screening basis,Servo1UpperPin,Integral headed pin,1
+Servo1UpperPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo1UpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo1Body,Fixed,17-4 PH H1150 / screening basis,LowerEye / piston,,1
+Servo1Rod,Fixed,17-4 PH H1150 / screening basis,piston / UpperEye,500 mm rigid piston rod; translates without resizing,1
+Servo1Piston,Fixed,17-4 PH H1150 / screening basis,ServoRod / hydraulic pressure,Seal grooves and ports are interface detail,1
+Servo2LowerBall,Fixed,17-4 PH H1150 / screening basis,Servo2LowerPin / Servo2LowerEye,,1
+Servo2LowerEye,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo2LowerSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo2LowerBall / fork,,1
+Servo2LowerSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo2LowerBall / fork,,1
+Servo2LowerFork,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier / Servo2LowerPin,,1
+Servo2LowerPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo2LowerPinHead,Fixed,17-4 PH H1150 / screening basis,Servo2LowerPin,Integral headed pin,1
+Servo2LowerPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo2LowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo2UpperBall,Fixed,17-4 PH H1150 / screening basis,Servo2UpperPin / Servo2UpperEye,,1
+Servo2UpperEye,Fixed,17-4 PH H1150 / screening basis,StatorSocket,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Servo2UpperSpacerL,Fixed,17-4 PH H1150 / screening basis,Servo2UpperBall / fork,,1
+Servo2UpperSpacerR,Fixed,17-4 PH H1150 / screening basis,Servo2UpperBall / fork,,1
+Servo2UpperFork,Fixed,17-4 PH H1150 / screening basis,StatorSocket / Servo2UpperPin,,1
+Servo2UpperPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+Servo2UpperPinHead,Fixed,17-4 PH H1150 / screening basis,Servo2UpperPin,Integral headed pin,1
+Servo2UpperPinRetainer,Fixed,17-4 PH H1150 / screening basis,Servo2UpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Servo2Body,Fixed,17-4 PH H1150 / screening basis,LowerEye / piston,,1
+Servo2Rod,Fixed,17-4 PH H1150 / screening basis,piston / UpperEye,500 mm rigid piston rod; translates without resizing,1
+Servo2Piston,Fixed,17-4 PH H1150 / screening basis,ServoRod / hydraulic pressure,Seal grooves and ports are interface detail,1
+AntirotationArmA,Fixed,17-4 PH H1150 / screening basis,AntirotationBasePin / AntirotationElbowPin,,2
+AntirotationArmB,Fixed,17-4 PH H1150 / screening basis,AntirotationElbowPin / AntirotationEndEye,,1
+AntirotationBasePin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+AntirotationBasePinHead,Fixed,17-4 PH H1150 / screening basis,AntirotationBasePin,Integral headed pin,1
+AntirotationBasePinRetainer,Fixed,17-4 PH H1150 / screening basis,AntirotationBasePin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+AntirotationElbowPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+AntirotationElbowPinHead,Fixed,17-4 PH H1150 / screening basis,AntirotationElbowPin,Integral headed pin,1
+AntirotationElbowPinRetainer,Fixed,17-4 PH H1150 / screening basis,AntirotationElbowPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+AntirotationBaseBearing,Fixed,17-4 PH H1150 / screening basis,AntirotationSupport,,1
+AntirotationEndBall,Fixed,17-4 PH H1150 / screening basis,AntirotationEndPin / AntirotationEndEye,,1
+AntirotationEndEye,Fixed,17-4 PH H1150 / screening basis,AntirotationArmB,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+AntirotationEndSpacerL,Fixed,17-4 PH H1150 / screening basis,AntirotationEndBall / fork,,1
+AntirotationEndSpacerR,Fixed,17-4 PH H1150 / screening basis,AntirotationEndBall / fork,,1
+AntirotationEndFork,Fixed,17-4 PH H1150 / screening basis,AntirotationArmB / AntirotationEndPin,,1
+AntirotationEndPin,Fixed,17-4 PH H1150 / screening basis,double shear journal,,1
+AntirotationEndPinHead,Fixed,17-4 PH H1150 / screening basis,AntirotationEndPin,Integral headed pin,1
+AntirotationEndPinRetainer,Fixed,17-4 PH H1150 / screening basis,AntirotationEndPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+AntirotationSupport,Fixed,17-4 PH H1150 / screening basis,AirframeCarrier,,1
+AntirotationRingBracket,Fixed,17-4 PH H1150 / screening basis,AntirotationEndFork / swash ring,,1
+RotatingDriveArmA,Hub,17-4 PH H1150 / screening basis,RotatingDriveBasePin / RotatingDriveElbowPin,,2
+RotatingDriveArmB,Hub,17-4 PH H1150 / screening basis,RotatingDriveElbowPin / RotatingDriveEndEye,,1
+RotatingDriveBasePin,Hub,17-4 PH H1150 / screening basis,double shear journal,,1
+RotatingDriveBasePinHead,Hub,17-4 PH H1150 / screening basis,RotatingDriveBasePin,Integral headed pin,1
+RotatingDriveBasePinRetainer,Hub,17-4 PH H1150 / screening basis,RotatingDriveBasePin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+RotatingDriveElbowPin,Hub,17-4 PH H1150 / screening basis,double shear journal,,1
+RotatingDriveElbowPinHead,Hub,17-4 PH H1150 / screening basis,RotatingDriveElbowPin,Integral headed pin,1
+RotatingDriveElbowPinRetainer,Hub,17-4 PH H1150 / screening basis,RotatingDriveElbowPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+RotatingDriveBaseBearing,Hub,17-4 PH H1150 / screening basis,RotatingDriveSupport,,1
+RotatingDriveEndBall,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndPin / RotatingDriveEndEye,,1
+RotatingDriveEndEye,Hub,17-4 PH H1150 / screening basis,RotatingDriveArmB,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+RotatingDriveEndSpacerL,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndBall / fork,,1
+RotatingDriveEndSpacerR,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndBall / fork,,1
+RotatingDriveEndFork,Hub,17-4 PH H1150 / screening basis,RotatingDriveArmB / RotatingDriveEndPin,,1
+RotatingDriveEndPin,Hub,17-4 PH H1150 / screening basis,double shear journal,,1
+RotatingDriveEndPinHead,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndPin,Integral headed pin,1
+RotatingDriveEndPinRetainer,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+RotatingDriveSupport,Hub,17-4 PH H1150 / screening basis,Mast,,1
+RotatingDriveRingBracket,Hub,17-4 PH H1150 / screening basis,RotatingDriveEndFork / swash ring,,1
+HubRing,Hub,17-4 PH H1150 / screening basis,Mast / blade housings,,1
+HubCap,Hub,17-4 PH H1150 / screening basis,HubRing axial retention,,1
+Blade1Housing,Blade1,17-4 PH H1150 / screening basis,HubRing / OuterRace,Bolted split housing; opening cap retained radially,1
+Blade1OuterRace,Blade1,17-4 PH H1150 / screening basis,Housing / elastomer,,1
+Blade1Elastomer,Blade1,Bonded elastomer; supplier compound required,InnerRace / Shims / OuterRace,Undeformed material envelope; stiffness/strain assessment separate,5
+Blade1Shims,Blade1,17-4 PH H1150 / screening basis,Elastomer,,5
+Blade1InnerRace,Blade1,17-4 PH H1150 / screening basis,Elastomer / Cuff,,1
+Blade1CuffHorn,Blade1,17-4 PH H1150 / screening basis,InnerRace / PitchUpperFork / FoldClevis,,1
+Blade1StopCradle,Blade1,17-4 PH H1150 / screening basis,Blade1Housing / CuffHorn,"Lower face -115 mm, upper +146 mm; circular collar provides flap stops while retaining pitch motion",1
+Blade1LagStopM1,Blade1,17-4 PH H1150 / screening basis,Blade1StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade1LagStop1,Blade1,17-4 PH H1150 / screening basis,Blade1StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade1ParkShoe,Blade1,17-4 PH H1150 / screening basis,Blade1StopCradle,"Captive manual support wedge: fitted after jacking level for folding, stowed during flight",1
+Blade1PitchLowerBall,Blade1,17-4 PH H1150 / screening basis,Blade1PitchLowerPin / Blade1PitchLowerEye,,1
+Blade1PitchLowerEye,Blade1,17-4 PH H1150 / screening basis,RotorRing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade1PitchLowerSpacerL,Blade1,17-4 PH H1150 / screening basis,Blade1PitchLowerBall / fork,,1
+Blade1PitchLowerSpacerR,Blade1,17-4 PH H1150 / screening basis,Blade1PitchLowerBall / fork,,1
+Blade1PitchLowerFork,Blade1,17-4 PH H1150 / screening basis,RotorRing / Blade1PitchLowerPin,,1
+Blade1PitchLowerPin,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1PitchLowerPinHead,Blade1,17-4 PH H1150 / screening basis,Blade1PitchLowerPin,Integral headed pin,1
+Blade1PitchLowerPinRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1PitchLowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1PitchUpperBall,Blade1,17-4 PH H1150 / screening basis,Blade1PitchUpperPin / Blade1PitchUpperEye,,1
+Blade1PitchUpperEye,Blade1,17-4 PH H1150 / screening basis,Blade1CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade1PitchUpperSpacerL,Blade1,17-4 PH H1150 / screening basis,Blade1PitchUpperBall / fork,,1
+Blade1PitchUpperSpacerR,Blade1,17-4 PH H1150 / screening basis,Blade1PitchUpperBall / fork,,1
+Blade1PitchUpperFork,Blade1,17-4 PH H1150 / screening basis,Blade1CuffHorn / Blade1PitchUpperPin,,1
+Blade1PitchUpperPin,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1PitchUpperPinHead,Blade1,17-4 PH H1150 / screening basis,Blade1PitchUpperPin,Integral headed pin,1
+Blade1PitchUpperPinRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1PitchUpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1PitchLink,Blade1,17-4 PH H1150 / screening basis,PitchLowerEye / PitchUpperEye,Fixed centre distance; threaded adjustment envelope,1
+Blade1DamperABall,Blade1,17-4 PH H1150 / screening basis,Blade1DamperAPin / Blade1DamperAEye,,1
+Blade1DamperAEye,Blade1,17-4 PH H1150 / screening basis,Blade1Housing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade1DamperASpacerL,Blade1,17-4 PH H1150 / screening basis,Blade1DamperABall / fork,,1
+Blade1DamperASpacerR,Blade1,17-4 PH H1150 / screening basis,Blade1DamperABall / fork,,1
+Blade1DamperAFork,Blade1,17-4 PH H1150 / screening basis,Blade1Housing / Blade1DamperAPin,,1
+Blade1DamperAPin,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1DamperAPinHead,Blade1,17-4 PH H1150 / screening basis,Blade1DamperAPin,Integral headed pin,1
+Blade1DamperAPinRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1DamperAPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1DamperBBall,Blade1,17-4 PH H1150 / screening basis,Blade1DamperBPin / Blade1DamperBEye,,1
+Blade1DamperBEye,Blade1,17-4 PH H1150 / screening basis,Blade1CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade1DamperBSpacerL,Blade1,17-4 PH H1150 / screening basis,Blade1DamperBBall / fork,,1
+Blade1DamperBSpacerR,Blade1,17-4 PH H1150 / screening basis,Blade1DamperBBall / fork,,1
+Blade1DamperBFork,Blade1,17-4 PH H1150 / screening basis,Blade1CuffHorn / Blade1DamperBPin,,1
+Blade1DamperBPin,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1DamperBPinHead,Blade1,17-4 PH H1150 / screening basis,Blade1DamperBPin,Integral headed pin,1
+Blade1DamperBPinRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1DamperBPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1DamperMount,Blade1,17-4 PH H1150 / screening basis,Housing / DamperAFork,,1
+Blade1DamperLug,Blade1,17-4 PH H1150 / screening basis,CuffHorn / DamperBFork,,1
+Blade1DamperBody,Blade1,17-4 PH H1150 / screening basis,DamperAEye / piston,,1
+Blade1DamperRod,Blade1,17-4 PH H1150 / screening basis,piston / DamperBEye,350 mm constant rod length,1
+Blade1DamperPiston,Blade1,17-4 PH H1150 / screening basis,DamperRod / oil chamber,,1
+Blade1FoldClevis,Blade1,17-4 PH H1150 / screening basis,CuffHorn / hinge and flight lock,,1
+Blade1FoldTang,Blade1,17-4 PH H1150 / screening basis,RootSpar / hinge and lock,,1
+Blade1FoldHinge,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1FoldHingeHead,Blade1,17-4 PH H1150 / screening basis,Blade1FoldHinge,Integral headed pin,1
+Blade1FoldHingeRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1FoldHinge,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1FlightLock,Blade1,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade1FlightLockHead,Blade1,17-4 PH H1150 / screening basis,Blade1FlightLock,Integral headed pin,1
+Blade1FlightLockRetainer,Blade1,17-4 PH H1150 / screening basis,Blade1FlightLock,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade1LockGuide,Blade1,17-4 PH H1150 / screening basis,FoldClevis / captive flight pin,Manual screw withdrawal with trapped-key collar; see operating-state.md,1
+Blade1LockWebM1,Blade1,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade1LockWeb1,Blade1,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade1Airfoil,Blade1,Equivalent composite airfoil envelope,RootSpar,Full span; mass model does not use solid density,1
+Blade1RootSpar,Blade1,Equivalent composite insert,FoldTang / Airfoil,Insert-to-laminate qualification unresolved,1
+Blade2Housing,Blade2,17-4 PH H1150 / screening basis,HubRing / OuterRace,Bolted split housing; opening cap retained radially,1
+Blade2OuterRace,Blade2,17-4 PH H1150 / screening basis,Housing / elastomer,,1
+Blade2Elastomer,Blade2,Bonded elastomer; supplier compound required,InnerRace / Shims / OuterRace,Undeformed material envelope; stiffness/strain assessment separate,5
+Blade2Shims,Blade2,17-4 PH H1150 / screening basis,Elastomer,,5
+Blade2InnerRace,Blade2,17-4 PH H1150 / screening basis,Elastomer / Cuff,,1
+Blade2CuffHorn,Blade2,17-4 PH H1150 / screening basis,InnerRace / PitchUpperFork / FoldClevis,,1
+Blade2StopCradle,Blade2,17-4 PH H1150 / screening basis,Blade2Housing / CuffHorn,"Lower face -115 mm, upper +146 mm; circular collar provides flap stops while retaining pitch motion",1
+Blade2LagStopM1,Blade2,17-4 PH H1150 / screening basis,Blade2StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade2LagStop1,Blade2,17-4 PH H1150 / screening basis,Blade2StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade2ParkShoe,Blade2,17-4 PH H1150 / screening basis,Blade2StopCradle,"Captive manual support wedge: fitted after jacking level for folding, stowed during flight",1
+Blade2PitchLowerBall,Blade2,17-4 PH H1150 / screening basis,Blade2PitchLowerPin / Blade2PitchLowerEye,,1
+Blade2PitchLowerEye,Blade2,17-4 PH H1150 / screening basis,RotorRing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade2PitchLowerSpacerL,Blade2,17-4 PH H1150 / screening basis,Blade2PitchLowerBall / fork,,1
+Blade2PitchLowerSpacerR,Blade2,17-4 PH H1150 / screening basis,Blade2PitchLowerBall / fork,,1
+Blade2PitchLowerFork,Blade2,17-4 PH H1150 / screening basis,RotorRing / Blade2PitchLowerPin,,1
+Blade2PitchLowerPin,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2PitchLowerPinHead,Blade2,17-4 PH H1150 / screening basis,Blade2PitchLowerPin,Integral headed pin,1
+Blade2PitchLowerPinRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2PitchLowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2PitchUpperBall,Blade2,17-4 PH H1150 / screening basis,Blade2PitchUpperPin / Blade2PitchUpperEye,,1
+Blade2PitchUpperEye,Blade2,17-4 PH H1150 / screening basis,Blade2CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade2PitchUpperSpacerL,Blade2,17-4 PH H1150 / screening basis,Blade2PitchUpperBall / fork,,1
+Blade2PitchUpperSpacerR,Blade2,17-4 PH H1150 / screening basis,Blade2PitchUpperBall / fork,,1
+Blade2PitchUpperFork,Blade2,17-4 PH H1150 / screening basis,Blade2CuffHorn / Blade2PitchUpperPin,,1
+Blade2PitchUpperPin,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2PitchUpperPinHead,Blade2,17-4 PH H1150 / screening basis,Blade2PitchUpperPin,Integral headed pin,1
+Blade2PitchUpperPinRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2PitchUpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2PitchLink,Blade2,17-4 PH H1150 / screening basis,PitchLowerEye / PitchUpperEye,Fixed centre distance; threaded adjustment envelope,1
+Blade2DamperABall,Blade2,17-4 PH H1150 / screening basis,Blade2DamperAPin / Blade2DamperAEye,,1
+Blade2DamperAEye,Blade2,17-4 PH H1150 / screening basis,Blade2Housing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade2DamperASpacerL,Blade2,17-4 PH H1150 / screening basis,Blade2DamperABall / fork,,1
+Blade2DamperASpacerR,Blade2,17-4 PH H1150 / screening basis,Blade2DamperABall / fork,,1
+Blade2DamperAFork,Blade2,17-4 PH H1150 / screening basis,Blade2Housing / Blade2DamperAPin,,1
+Blade2DamperAPin,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2DamperAPinHead,Blade2,17-4 PH H1150 / screening basis,Blade2DamperAPin,Integral headed pin,1
+Blade2DamperAPinRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2DamperAPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2DamperBBall,Blade2,17-4 PH H1150 / screening basis,Blade2DamperBPin / Blade2DamperBEye,,1
+Blade2DamperBEye,Blade2,17-4 PH H1150 / screening basis,Blade2CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade2DamperBSpacerL,Blade2,17-4 PH H1150 / screening basis,Blade2DamperBBall / fork,,1
+Blade2DamperBSpacerR,Blade2,17-4 PH H1150 / screening basis,Blade2DamperBBall / fork,,1
+Blade2DamperBFork,Blade2,17-4 PH H1150 / screening basis,Blade2CuffHorn / Blade2DamperBPin,,1
+Blade2DamperBPin,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2DamperBPinHead,Blade2,17-4 PH H1150 / screening basis,Blade2DamperBPin,Integral headed pin,1
+Blade2DamperBPinRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2DamperBPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2DamperMount,Blade2,17-4 PH H1150 / screening basis,Housing / DamperAFork,,1
+Blade2DamperLug,Blade2,17-4 PH H1150 / screening basis,CuffHorn / DamperBFork,,1
+Blade2DamperBody,Blade2,17-4 PH H1150 / screening basis,DamperAEye / piston,,1
+Blade2DamperRod,Blade2,17-4 PH H1150 / screening basis,piston / DamperBEye,350 mm constant rod length,1
+Blade2DamperPiston,Blade2,17-4 PH H1150 / screening basis,DamperRod / oil chamber,,1
+Blade2FoldClevis,Blade2,17-4 PH H1150 / screening basis,CuffHorn / hinge and flight lock,,1
+Blade2FoldTang,Blade2,17-4 PH H1150 / screening basis,RootSpar / hinge and lock,,1
+Blade2FoldHinge,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2FoldHingeHead,Blade2,17-4 PH H1150 / screening basis,Blade2FoldHinge,Integral headed pin,1
+Blade2FoldHingeRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2FoldHinge,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2FlightLock,Blade2,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade2FlightLockHead,Blade2,17-4 PH H1150 / screening basis,Blade2FlightLock,Integral headed pin,1
+Blade2FlightLockRetainer,Blade2,17-4 PH H1150 / screening basis,Blade2FlightLock,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade2LockGuide,Blade2,17-4 PH H1150 / screening basis,FoldClevis / captive flight pin,Manual screw withdrawal with trapped-key collar; see operating-state.md,1
+Blade2LockWebM1,Blade2,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade2LockWeb1,Blade2,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade2Airfoil,Blade2,Equivalent composite airfoil envelope,RootSpar,Full span; mass model does not use solid density,1
+Blade2RootSpar,Blade2,Equivalent composite insert,FoldTang / Airfoil,Insert-to-laminate qualification unresolved,1
+Blade3Housing,Blade3,17-4 PH H1150 / screening basis,HubRing / OuterRace,Bolted split housing; opening cap retained radially,1
+Blade3OuterRace,Blade3,17-4 PH H1150 / screening basis,Housing / elastomer,,1
+Blade3Elastomer,Blade3,Bonded elastomer; supplier compound required,InnerRace / Shims / OuterRace,Undeformed material envelope; stiffness/strain assessment separate,5
+Blade3Shims,Blade3,17-4 PH H1150 / screening basis,Elastomer,,5
+Blade3InnerRace,Blade3,17-4 PH H1150 / screening basis,Elastomer / Cuff,,1
+Blade3CuffHorn,Blade3,17-4 PH H1150 / screening basis,InnerRace / PitchUpperFork / FoldClevis,,1
+Blade3StopCradle,Blade3,17-4 PH H1150 / screening basis,Blade3Housing / CuffHorn,"Lower face -115 mm, upper +146 mm; circular collar provides flap stops while retaining pitch motion",1
+Blade3LagStopM1,Blade3,17-4 PH H1150 / screening basis,Blade3StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade3LagStop1,Blade3,17-4 PH H1150 / screening basis,Blade3StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade3ParkShoe,Blade3,17-4 PH H1150 / screening basis,Blade3StopCradle,"Captive manual support wedge: fitted after jacking level for folding, stowed during flight",1
+Blade3PitchLowerBall,Blade3,17-4 PH H1150 / screening basis,Blade3PitchLowerPin / Blade3PitchLowerEye,,1
+Blade3PitchLowerEye,Blade3,17-4 PH H1150 / screening basis,RotorRing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade3PitchLowerSpacerL,Blade3,17-4 PH H1150 / screening basis,Blade3PitchLowerBall / fork,,1
+Blade3PitchLowerSpacerR,Blade3,17-4 PH H1150 / screening basis,Blade3PitchLowerBall / fork,,1
+Blade3PitchLowerFork,Blade3,17-4 PH H1150 / screening basis,RotorRing / Blade3PitchLowerPin,,1
+Blade3PitchLowerPin,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3PitchLowerPinHead,Blade3,17-4 PH H1150 / screening basis,Blade3PitchLowerPin,Integral headed pin,1
+Blade3PitchLowerPinRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3PitchLowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3PitchUpperBall,Blade3,17-4 PH H1150 / screening basis,Blade3PitchUpperPin / Blade3PitchUpperEye,,1
+Blade3PitchUpperEye,Blade3,17-4 PH H1150 / screening basis,Blade3CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade3PitchUpperSpacerL,Blade3,17-4 PH H1150 / screening basis,Blade3PitchUpperBall / fork,,1
+Blade3PitchUpperSpacerR,Blade3,17-4 PH H1150 / screening basis,Blade3PitchUpperBall / fork,,1
+Blade3PitchUpperFork,Blade3,17-4 PH H1150 / screening basis,Blade3CuffHorn / Blade3PitchUpperPin,,1
+Blade3PitchUpperPin,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3PitchUpperPinHead,Blade3,17-4 PH H1150 / screening basis,Blade3PitchUpperPin,Integral headed pin,1
+Blade3PitchUpperPinRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3PitchUpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3PitchLink,Blade3,17-4 PH H1150 / screening basis,PitchLowerEye / PitchUpperEye,Fixed centre distance; threaded adjustment envelope,1
+Blade3DamperABall,Blade3,17-4 PH H1150 / screening basis,Blade3DamperAPin / Blade3DamperAEye,,1
+Blade3DamperAEye,Blade3,17-4 PH H1150 / screening basis,Blade3Housing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade3DamperASpacerL,Blade3,17-4 PH H1150 / screening basis,Blade3DamperABall / fork,,1
+Blade3DamperASpacerR,Blade3,17-4 PH H1150 / screening basis,Blade3DamperABall / fork,,1
+Blade3DamperAFork,Blade3,17-4 PH H1150 / screening basis,Blade3Housing / Blade3DamperAPin,,1
+Blade3DamperAPin,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3DamperAPinHead,Blade3,17-4 PH H1150 / screening basis,Blade3DamperAPin,Integral headed pin,1
+Blade3DamperAPinRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3DamperAPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3DamperBBall,Blade3,17-4 PH H1150 / screening basis,Blade3DamperBPin / Blade3DamperBEye,,1
+Blade3DamperBEye,Blade3,17-4 PH H1150 / screening basis,Blade3CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade3DamperBSpacerL,Blade3,17-4 PH H1150 / screening basis,Blade3DamperBBall / fork,,1
+Blade3DamperBSpacerR,Blade3,17-4 PH H1150 / screening basis,Blade3DamperBBall / fork,,1
+Blade3DamperBFork,Blade3,17-4 PH H1150 / screening basis,Blade3CuffHorn / Blade3DamperBPin,,1
+Blade3DamperBPin,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3DamperBPinHead,Blade3,17-4 PH H1150 / screening basis,Blade3DamperBPin,Integral headed pin,1
+Blade3DamperBPinRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3DamperBPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3DamperMount,Blade3,17-4 PH H1150 / screening basis,Housing / DamperAFork,,1
+Blade3DamperLug,Blade3,17-4 PH H1150 / screening basis,CuffHorn / DamperBFork,,1
+Blade3DamperBody,Blade3,17-4 PH H1150 / screening basis,DamperAEye / piston,,1
+Blade3DamperRod,Blade3,17-4 PH H1150 / screening basis,piston / DamperBEye,350 mm constant rod length,1
+Blade3DamperPiston,Blade3,17-4 PH H1150 / screening basis,DamperRod / oil chamber,,1
+Blade3FoldClevis,Blade3,17-4 PH H1150 / screening basis,CuffHorn / hinge and flight lock,,1
+Blade3FoldTang,Blade3,17-4 PH H1150 / screening basis,RootSpar / hinge and lock,,1
+Blade3FoldHinge,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3FoldHingeHead,Blade3,17-4 PH H1150 / screening basis,Blade3FoldHinge,Integral headed pin,1
+Blade3FoldHingeRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3FoldHinge,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3FlightLock,Blade3,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade3FlightLockHead,Blade3,17-4 PH H1150 / screening basis,Blade3FlightLock,Integral headed pin,1
+Blade3FlightLockRetainer,Blade3,17-4 PH H1150 / screening basis,Blade3FlightLock,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade3LockGuide,Blade3,17-4 PH H1150 / screening basis,FoldClevis / captive flight pin,Manual screw withdrawal with trapped-key collar; see operating-state.md,1
+Blade3LockWebM1,Blade3,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade3LockWeb1,Blade3,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade3Airfoil,Blade3,Equivalent composite airfoil envelope,RootSpar,Full span; mass model does not use solid density,1
+Blade3RootSpar,Blade3,Equivalent composite insert,FoldTang / Airfoil,Insert-to-laminate qualification unresolved,1
+Blade4Housing,Blade4,17-4 PH H1150 / screening basis,HubRing / OuterRace,Bolted split housing; opening cap retained radially,1
+Blade4OuterRace,Blade4,17-4 PH H1150 / screening basis,Housing / elastomer,,1
+Blade4Elastomer,Blade4,Bonded elastomer; supplier compound required,InnerRace / Shims / OuterRace,Undeformed material envelope; stiffness/strain assessment separate,5
+Blade4Shims,Blade4,17-4 PH H1150 / screening basis,Elastomer,,5
+Blade4InnerRace,Blade4,17-4 PH H1150 / screening basis,Elastomer / Cuff,,1
+Blade4CuffHorn,Blade4,17-4 PH H1150 / screening basis,InnerRace / PitchUpperFork / FoldClevis,,1
+Blade4StopCradle,Blade4,17-4 PH H1150 / screening basis,Blade4Housing / CuffHorn,"Lower face -115 mm, upper +146 mm; circular collar provides flap stops while retaining pitch motion",1
+Blade4LagStopM1,Blade4,17-4 PH H1150 / screening basis,Blade4StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade4LagStop1,Blade4,17-4 PH H1150 / screening basis,Blade4StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade4ParkShoe,Blade4,17-4 PH H1150 / screening basis,Blade4StopCradle,"Captive manual support wedge: fitted after jacking level for folding, stowed during flight",1
+Blade4PitchLowerBall,Blade4,17-4 PH H1150 / screening basis,Blade4PitchLowerPin / Blade4PitchLowerEye,,1
+Blade4PitchLowerEye,Blade4,17-4 PH H1150 / screening basis,RotorRing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade4PitchLowerSpacerL,Blade4,17-4 PH H1150 / screening basis,Blade4PitchLowerBall / fork,,1
+Blade4PitchLowerSpacerR,Blade4,17-4 PH H1150 / screening basis,Blade4PitchLowerBall / fork,,1
+Blade4PitchLowerFork,Blade4,17-4 PH H1150 / screening basis,RotorRing / Blade4PitchLowerPin,,1
+Blade4PitchLowerPin,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4PitchLowerPinHead,Blade4,17-4 PH H1150 / screening basis,Blade4PitchLowerPin,Integral headed pin,1
+Blade4PitchLowerPinRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4PitchLowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4PitchUpperBall,Blade4,17-4 PH H1150 / screening basis,Blade4PitchUpperPin / Blade4PitchUpperEye,,1
+Blade4PitchUpperEye,Blade4,17-4 PH H1150 / screening basis,Blade4CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade4PitchUpperSpacerL,Blade4,17-4 PH H1150 / screening basis,Blade4PitchUpperBall / fork,,1
+Blade4PitchUpperSpacerR,Blade4,17-4 PH H1150 / screening basis,Blade4PitchUpperBall / fork,,1
+Blade4PitchUpperFork,Blade4,17-4 PH H1150 / screening basis,Blade4CuffHorn / Blade4PitchUpperPin,,1
+Blade4PitchUpperPin,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4PitchUpperPinHead,Blade4,17-4 PH H1150 / screening basis,Blade4PitchUpperPin,Integral headed pin,1
+Blade4PitchUpperPinRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4PitchUpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4PitchLink,Blade4,17-4 PH H1150 / screening basis,PitchLowerEye / PitchUpperEye,Fixed centre distance; threaded adjustment envelope,1
+Blade4DamperABall,Blade4,17-4 PH H1150 / screening basis,Blade4DamperAPin / Blade4DamperAEye,,1
+Blade4DamperAEye,Blade4,17-4 PH H1150 / screening basis,Blade4Housing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade4DamperASpacerL,Blade4,17-4 PH H1150 / screening basis,Blade4DamperABall / fork,,1
+Blade4DamperASpacerR,Blade4,17-4 PH H1150 / screening basis,Blade4DamperABall / fork,,1
+Blade4DamperAFork,Blade4,17-4 PH H1150 / screening basis,Blade4Housing / Blade4DamperAPin,,1
+Blade4DamperAPin,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4DamperAPinHead,Blade4,17-4 PH H1150 / screening basis,Blade4DamperAPin,Integral headed pin,1
+Blade4DamperAPinRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4DamperAPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4DamperBBall,Blade4,17-4 PH H1150 / screening basis,Blade4DamperBPin / Blade4DamperBEye,,1
+Blade4DamperBEye,Blade4,17-4 PH H1150 / screening basis,Blade4CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade4DamperBSpacerL,Blade4,17-4 PH H1150 / screening basis,Blade4DamperBBall / fork,,1
+Blade4DamperBSpacerR,Blade4,17-4 PH H1150 / screening basis,Blade4DamperBBall / fork,,1
+Blade4DamperBFork,Blade4,17-4 PH H1150 / screening basis,Blade4CuffHorn / Blade4DamperBPin,,1
+Blade4DamperBPin,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4DamperBPinHead,Blade4,17-4 PH H1150 / screening basis,Blade4DamperBPin,Integral headed pin,1
+Blade4DamperBPinRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4DamperBPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4DamperMount,Blade4,17-4 PH H1150 / screening basis,Housing / DamperAFork,,1
+Blade4DamperLug,Blade4,17-4 PH H1150 / screening basis,CuffHorn / DamperBFork,,1
+Blade4DamperBody,Blade4,17-4 PH H1150 / screening basis,DamperAEye / piston,,1
+Blade4DamperRod,Blade4,17-4 PH H1150 / screening basis,piston / DamperBEye,350 mm constant rod length,1
+Blade4DamperPiston,Blade4,17-4 PH H1150 / screening basis,DamperRod / oil chamber,,1
+Blade4FoldClevis,Blade4,17-4 PH H1150 / screening basis,CuffHorn / hinge and flight lock,,1
+Blade4FoldTang,Blade4,17-4 PH H1150 / screening basis,RootSpar / hinge and lock,,1
+Blade4FoldHinge,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4FoldHingeHead,Blade4,17-4 PH H1150 / screening basis,Blade4FoldHinge,Integral headed pin,1
+Blade4FoldHingeRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4FoldHinge,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4FlightLock,Blade4,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade4FlightLockHead,Blade4,17-4 PH H1150 / screening basis,Blade4FlightLock,Integral headed pin,1
+Blade4FlightLockRetainer,Blade4,17-4 PH H1150 / screening basis,Blade4FlightLock,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade4LockGuide,Blade4,17-4 PH H1150 / screening basis,FoldClevis / captive flight pin,Manual screw withdrawal with trapped-key collar; see operating-state.md,1
+Blade4LockWebM1,Blade4,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade4LockWeb1,Blade4,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade4Airfoil,Blade4,Equivalent composite airfoil envelope,RootSpar,Full span; mass model does not use solid density,1
+Blade4RootSpar,Blade4,Equivalent composite insert,FoldTang / Airfoil,Insert-to-laminate qualification unresolved,1
+Blade5Housing,Blade5,17-4 PH H1150 / screening basis,HubRing / OuterRace,Bolted split housing; opening cap retained radially,1
+Blade5OuterRace,Blade5,17-4 PH H1150 / screening basis,Housing / elastomer,,1
+Blade5Elastomer,Blade5,Bonded elastomer; supplier compound required,InnerRace / Shims / OuterRace,Undeformed material envelope; stiffness/strain assessment separate,5
+Blade5Shims,Blade5,17-4 PH H1150 / screening basis,Elastomer,,5
+Blade5InnerRace,Blade5,17-4 PH H1150 / screening basis,Elastomer / Cuff,,1
+Blade5CuffHorn,Blade5,17-4 PH H1150 / screening basis,InnerRace / PitchUpperFork / FoldClevis,,1
+Blade5StopCradle,Blade5,17-4 PH H1150 / screening basis,Blade5Housing / CuffHorn,"Lower face -115 mm, upper +146 mm; circular collar provides flap stops while retaining pitch motion",1
+Blade5LagStopM1,Blade5,17-4 PH H1150 / screening basis,Blade5StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade5LagStop1,Blade5,17-4 PH H1150 / screening basis,Blade5StopCradle,Replaceable stop face at nominal lag 6 degrees,1
+Blade5ParkShoe,Blade5,17-4 PH H1150 / screening basis,Blade5StopCradle,"Captive manual support wedge: fitted after jacking level for folding, stowed during flight",1
+Blade5PitchLowerBall,Blade5,17-4 PH H1150 / screening basis,Blade5PitchLowerPin / Blade5PitchLowerEye,,1
+Blade5PitchLowerEye,Blade5,17-4 PH H1150 / screening basis,RotorRing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade5PitchLowerSpacerL,Blade5,17-4 PH H1150 / screening basis,Blade5PitchLowerBall / fork,,1
+Blade5PitchLowerSpacerR,Blade5,17-4 PH H1150 / screening basis,Blade5PitchLowerBall / fork,,1
+Blade5PitchLowerFork,Blade5,17-4 PH H1150 / screening basis,RotorRing / Blade5PitchLowerPin,,1
+Blade5PitchLowerPin,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5PitchLowerPinHead,Blade5,17-4 PH H1150 / screening basis,Blade5PitchLowerPin,Integral headed pin,1
+Blade5PitchLowerPinRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5PitchLowerPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5PitchUpperBall,Blade5,17-4 PH H1150 / screening basis,Blade5PitchUpperPin / Blade5PitchUpperEye,,1
+Blade5PitchUpperEye,Blade5,17-4 PH H1150 / screening basis,Blade5CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade5PitchUpperSpacerL,Blade5,17-4 PH H1150 / screening basis,Blade5PitchUpperBall / fork,,1
+Blade5PitchUpperSpacerR,Blade5,17-4 PH H1150 / screening basis,Blade5PitchUpperBall / fork,,1
+Blade5PitchUpperFork,Blade5,17-4 PH H1150 / screening basis,Blade5CuffHorn / Blade5PitchUpperPin,,1
+Blade5PitchUpperPin,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5PitchUpperPinHead,Blade5,17-4 PH H1150 / screening basis,Blade5PitchUpperPin,Integral headed pin,1
+Blade5PitchUpperPinRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5PitchUpperPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5PitchLink,Blade5,17-4 PH H1150 / screening basis,PitchLowerEye / PitchUpperEye,Fixed centre distance; threaded adjustment envelope,1
+Blade5DamperABall,Blade5,17-4 PH H1150 / screening basis,Blade5DamperAPin / Blade5DamperAEye,,1
+Blade5DamperAEye,Blade5,17-4 PH H1150 / screening basis,Blade5Housing,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade5DamperASpacerL,Blade5,17-4 PH H1150 / screening basis,Blade5DamperABall / fork,,1
+Blade5DamperASpacerR,Blade5,17-4 PH H1150 / screening basis,Blade5DamperABall / fork,,1
+Blade5DamperAFork,Blade5,17-4 PH H1150 / screening basis,Blade5Housing / Blade5DamperAPin,,1
+Blade5DamperAPin,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5DamperAPinHead,Blade5,17-4 PH H1150 / screening basis,Blade5DamperAPin,Integral headed pin,1
+Blade5DamperAPinRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5DamperAPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5DamperBBall,Blade5,17-4 PH H1150 / screening basis,Blade5DamperBPin / Blade5DamperBEye,,1
+Blade5DamperBEye,Blade5,17-4 PH H1150 / screening basis,Blade5CuffHorn,Split race housing required for assembly; 0.15 mm nominal sphere radial fit,1
+Blade5DamperBSpacerL,Blade5,17-4 PH H1150 / screening basis,Blade5DamperBBall / fork,,1
+Blade5DamperBSpacerR,Blade5,17-4 PH H1150 / screening basis,Blade5DamperBBall / fork,,1
+Blade5DamperBFork,Blade5,17-4 PH H1150 / screening basis,Blade5CuffHorn / Blade5DamperBPin,,1
+Blade5DamperBPin,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5DamperBPinHead,Blade5,17-4 PH H1150 / screening basis,Blade5DamperBPin,Integral headed pin,1
+Blade5DamperBPinRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5DamperBPin,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5DamperMount,Blade5,17-4 PH H1150 / screening basis,Housing / DamperAFork,,1
+Blade5DamperLug,Blade5,17-4 PH H1150 / screening basis,CuffHorn / DamperBFork,,1
+Blade5DamperBody,Blade5,17-4 PH H1150 / screening basis,DamperAEye / piston,,1
+Blade5DamperRod,Blade5,17-4 PH H1150 / screening basis,piston / DamperBEye,350 mm constant rod length,1
+Blade5DamperPiston,Blade5,17-4 PH H1150 / screening basis,DamperRod / oil chamber,,1
+Blade5FoldClevis,Blade5,17-4 PH H1150 / screening basis,CuffHorn / hinge and flight lock,,1
+Blade5FoldTang,Blade5,17-4 PH H1150 / screening basis,RootSpar / hinge and lock,,1
+Blade5FoldHinge,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5FoldHingeHead,Blade5,17-4 PH H1150 / screening basis,Blade5FoldHinge,Integral headed pin,1
+Blade5FoldHingeRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5FoldHinge,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5FlightLock,Blade5,17-4 PH H1150 / screening basis,double shear journal,,1
+Blade5FlightLockHead,Blade5,17-4 PH H1150 / screening basis,Blade5FlightLock,Integral headed pin,1
+Blade5FlightLockRetainer,Blade5,17-4 PH H1150 / screening basis,Blade5FlightLock,Thread envelope; castellated lock and cotter specified in assembly procedure,1
+Blade5LockGuide,Blade5,17-4 PH H1150 / screening basis,FoldClevis / captive flight pin,Manual screw withdrawal with trapped-key collar; see operating-state.md,1
+Blade5LockWebM1,Blade5,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade5LockWeb1,Blade5,17-4 PH H1150 / screening basis,LockGuide / FoldClevis,,1
+Blade5Airfoil,Blade5,Equivalent composite airfoil envelope,RootSpar,Full span; mass model does not use solid density,1
+Blade5RootSpar,Blade5,Equivalent composite insert,FoldTang / Airfoil,Insert-to-laminate qualification unresolved,1
+AirframeEnvelope,Reference,Boundary only,,,1

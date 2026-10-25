@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ROTOR / C2 — 継手を実形状へ更新したローターヘッド</title>
+  <meta name="description" content="C2メジャーアップデート。425形状フィーチャ・648ソリッドの実CADと、12姿勢のCAD生成モーション画像をブラウザで確認できます。">
+  <meta name="theme-color" content="#002060">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23002060'/%3E%3Ctext x='18' y='75' font-size='66' fill='%2338BEE2'%3EC2%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="c2.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+</head>
+<body>
+<a class="skip" href="#explore">操作パネルへ</a>
+<header>
+  <a class="brand" href="./index.html">R<span class="brand-mark">✳</span>TOR <small>/ C2</small></a>
+  <nav aria-label="メイン">
+    <a href="./index.html">比較トップ</a>
+    <a href="./c1.html">C1</a>
+    <a href="#explore">探索する</a>
+    <a href="#evidence">検証結果</a>
+    <a href="https://github.com/naoyamd/rotor-cad-benchmark/tree/main/results/C2">GitHub ↗</a>
+  </nav>
+  <span class="edition">OPEN DESIGN BENCHMARK · C2</span>
+</header>
+
+<main>
+  <section class="intro">
+    <div>
+      <p class="eyebrow"><span class="dot"></span> ROTOR C2 / MAJOR UPDATE</p>
+      <h1>再設計した<br>ローターヘッド C2</h1>
+    </div>
+    <div class="intro-copy">
+      <p>球面・ピン・保持部まで含む<br>実CADを、そのまま探索できます。</p>
+      <p class="muted">C1の中心線モデルを、ピン軸付きRR-S、溝付き軸受、<br>折畳み保持へ更新。到達点と未検証項目を分けて公開します。</p>
+      <a href="#explore" class="text-link">操作画面へ <span>↓</span></a>
+    </div>
+  </section>
+
+  <section id="explore" class="explorer" aria-label="C2インタラクティブCAD">
+    <div class="explorer-top">
+      <div class="tabs" role="group" aria-label="表示モード">
+        <button id="motionMode" class="active" aria-pressed="true">01 動作を見る</button>
+        <button id="cadMode" aria-pressed="false">02 CADを探索</button>
+      </div>
+      <div class="display-options">
+        <label id="xrayOption" class="xray-label" hidden><input id="xray" type="checkbox" checked> X-ray（透過）</label>
+        <span class="live-tag" id="modeTag">12 CAD-GENERATED FRAMES</span>
+      </div>
+    </div>
+    <div class="explorer-body">
+      <div class="stage-wrap">
+        <div id="viewport" hidden tabindex="0" role="img" aria-label="C2実CAD。ドラッグで回転、ホイールで拡大。下の視点ボタンでも操作できます。"></div>
+        <div id="motionViewport">
+          <img id="motionImage" src="assets/c2/motion-00.png" alt="C2実CADから生成した動作フレーム 1 / 12">
+          <span class="frame-chip" id="frameChip">FRAME 01 / 12</span>
+        </div>
+        <div class="stage-caption">
+          <span class="eyebrow" id="stageTitle">C2 / FINITE CAD MOTION</span>
+          <p id="stageDescription">12枚の実CAD生成画像を手動スクラブ・再生。連続解ではありません。</p>
+        </div>
+        <div class="stage-bottom">
+          <span id="status" role="status" aria-live="polite">CAD生成フレーム 01 / 12</span>
+          <div id="cameraButtons" class="camera-buttons" role="group" aria-label="視点" hidden>
+            <button data-view="head" class="active">ヘッド</button>
+            <button data-view="full">全体</button>
+            <button data-view="top">真上</button>
+          </div>
+        </div>
+        <div id="loadError" hidden></div>
+      </div>
+
+      <aside class="controls">
+        <div id="cadControls" hidden>
+          <p class="eyebrow">SAVED DESIGN STATES</p>
+          <h2>保存済みのCAD状態</h2>
+          <div class="state-grid" role="group" aria-label="CAD状態">
+            <button data-state="neutral" class="active">01 <b>中立</b><small>collective 12°</small></button>
+            <button data-state="max-input">02 <b>最大入力</b><small>flap / lagを含む</small></button>
+            <button data-state="parked">03 <b>駐機</b><small>マスト固定・解錠</small></button>
+            <button data-state="folded">04 <b>折畳み</b><small>幅 3.504 m</small></button>
+          </div>
+          <label class="select-label" for="isolate">見たい構成を選ぶ</label>
+          <select id="isolate">
+            <option value="all">アセンブリ全体</option>
+            <option value="Swashplate">スワッシュプレート</option>
+            <option value="Blade1">1枚目の翼根と翼</option>
+            <option value="Hub">ハブ・マスト</option>
+            <option value="Fixed">固定部・サーボ</option>
+          </select>
+          <div class="part-info" aria-live="polite">
+            <span class="eyebrow">PART INSPECTOR</span>
+            <h3 id="partName">部品を選択</h3>
+            <p id="partDetail">3D上の部品をクリック。名前・接続先・設計上の注記を確認できます。</p>
+          </div>
+          <p class="fine">425は形状フィーチャ数です。製造部品点数ではありません。参照用AirframeEnvelopeは表示用メッシュから除外しています。</p>
+        </div>
+
+        <div id="motionControls">
+          <p class="eyebrow">FINITE CAD MOTION</p>
+          <h2>12姿勢の動作ビューア</h2>
+          <p class="control-intro">各フレームは有限長閉路から実CADを再生成したPNGです。連続ソルバーや210 rpmの実時間シミュレーションではありません。</p>
+          <label for="frameRange">フレーム <output id="frameValue">01 / 12</output></label>
+          <input id="frameRange" type="range" min="0" max="11" step="1" value="0">
+          <div class="play-row">
+            <button id="motionPlay" aria-pressed="false">▶ 再生</button>
+            <button id="motionReset">先頭へ</button>
+          </div>
+          <p class="preset-label">再生速度</p>
+          <div class="presets" role="group" aria-label="再生速度">
+            <button data-motion-speed="0" class="active" aria-pressed="true">低速<small>1.5秒 / frame</small></button>
+            <button data-motion-speed="1" aria-pressed="false">中速<small>0.7秒 / frame</small></button>
+            <button data-motion-speed="2" aria-pressed="false">高速<small>0.3秒 / frame</small></button>
+          </div>
+          <div class="motion-readout">
+            <span>サンプル数</span><strong>12 frames</strong>
+            <small>実CAD生成画像 / 連続的に解かれた軌跡ではありません</small>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="explorer-foot">
+      <span><i class="legend blue"></i>操縦・スワッシュ</span>
+      <span><i class="legend gold"></i>関節・ロック</span>
+      <span><i class="legend silver"></i>荷重を支える骨格</span>
+      <span id="modelNote">実CADの三角形化表示 / 長さ単位 m</span>
+    </div>
+  </section>
+
+  <section class="numbers" aria-label="設計規模">
+    <div><strong>425<span>features</span></strong><p>形状フィーチャ（製造部品数ではない）</p></div>
+    <div><strong>648<span>solids</span></strong><p>4状態で再読込したネイティブCAD</p></div>
+    <div><strong>4<span>states</span></strong><p>中立・最大入力・駐機・折畳み</p></div>
+    <div><strong>12<span>frames</span></strong><p>実CADから生成した有限サンプル</p></div>
+  </section>
+
+  <section class="story">
+    <div class="section-intro">
+      <p class="eyebrow">WHAT CHANGED IN C2</p>
+      <h2>C2で変更した機構</h2>
+      <p>C2では、ピン軸、フォーク、分割ソケット、溝付きレース、収納時の保持をCADの部品として追加しました。</p>
+    </div>
+    <div class="story-steps">
+      <article><span>01</span><div><h3>RR-Sで時計角を拘束</h3><p>両端球関節だけでは残る自由度を、固定軸と肘軸のあるRR-Sへ変更。三つのサーボと反回転リンクを、実際の耳・ピン・保持部で表現します。</p></div></article>
+      <article><span>02</span><div><h3>溝付きレースで軸方向を保持</h3><p>固定内輪・回転外輪・ボール・ケージを別形状で保存。購入軸受の選定、予圧、接触寿命はまだ未確定です。</p></div></article>
+      <article><span>03</span><div><h3>停止してから折り畳む</h3><p>マスト位置決めピン、引抜きガイド、翼根のFlightLockとParkShoeを追加。収納幅は約3.504 mですが、収納保持容量と故障時挙動は未検証です。</p></div></article>
+    </div>
+  </section>
+
+  <section id="evidence" class="evidence">
+    <div class="evidence-heading">
+      <div><p class="eyebrow">VERIFICATION / C2</p><h2>確認したことと、残ること</h2></div>
+      <p>この成果は工学候補CADです。<br>G0は完了、G1〜G3は未通過です。</p>
+    </div>
+    <div class="gate-strip">
+      <div class="passed"><span>G0</span><b>設計基準</b><small>完了</small></div>
+      <div><span>G1</span><b>初期成立性</b><small>未通過</small></div>
+      <div><span>G2</span><b>CAD実装</b><small>未通過</small></div>
+      <div><span>G3</span><b>統合検証</b><small>未通過</small></div>
+    </div>
+    <div class="evidence-grid">
+      <article>
+        <span class="badge">確認したこと</span>
+        <h3>実CADと有限リンクの証拠</h3>
+        <dl>
+          <div><dt>4状態 native / STEP</dt><dd>有効・再読込済み</dd></div>
+          <div><dt>形状フィーチャ / ソリッド</dt><dd>425 / 648</dd></div>
+          <div><dt>最大STEP相対体積差</dt><dd>1.49 × 10⁻⁷</dd></div>
+          <div><dt>実形状の閉路残差</dt><dd>2.27 × 10⁻¹³ mm</dd></div>
+          <div><dt>要求の追跡</dt><dd>合格11 / 不合格1 / 未検証16</dd></div>
+        </dl>
+        <p>数値は保存済み候補CADと離散検査の証拠です。全作動域の公差・変形・容量を意味しません。</p>
+        <a href="https://github.com/naoyamd/rotor-cad-benchmark/blob/main/results/C2/verification/cad-checks.json">CAD検証の原本 ↗</a>
+      </article>
+      <article class="limits">
+        <span class="badge">まだ証明していないこと</span>
+        <h3>G1を止めている項目</h3>
+        <ul>
+          <li>R-11：ダンパー性能・温度/速度特性は未検証</li>
+          <li>R-15：軸受・エラストマー・桁接合の容量が未完了（不合格）</li>
+          <li>R-16：積層弾性体の材料許容・接着・寿命は未検証</li>
+          <li>全作動域の干渉、公差、収納保持、単一故障</li>
+        </ul>
+        <p>初期金属評価のスクリーニング値を、製品許容値や安全余裕として扱いません。完成設計、製作承認、飛行可能性、耐空性を主張しません。</p>
+        <a href="https://github.com/naoyamd/rotor-cad-benchmark/blob/main/results/C2/design-review.md">設計レビューと残課題を見る ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="resources">
+    <div>
+      <p class="eyebrow">DOWNLOADS & SOURCE</p>
+      <h2>C2の原本と再生成手順</h2>
+      <p>FreeCAD 1.1.4と同梱Pythonで保存CADを開き、検証を再実行できます。公開用のブラウザメッシュは原本FCStdから生成しています。</p>
+      <p class="notice"><strong>コストについて：</strong>C2単独の時間・料金は集計していません。C1の集計には含めていません。</p>
+    </div>
+    <div class="resource-links">
+      <a href="https://github.com/naoyamd/rotor-cad-benchmark/tree/main/results/C2">C2成果物フォルダ <span>↗</span></a>
+      <a href="https://github.com/naoyamd/rotor-cad-benchmark/blob/main/results/C2/final-report.md">C2最終報告 <span>↗</span></a>
+      <a href="https://github.com/naoyamd/rotor-cad-benchmark/blob/main/results/C2/RUN.md">開き方・再生成・検証 <span>↗</span></a>
+      <a href="https://github.com/naoyamd/rotor-cad-benchmark/tree/main/results/C2/verification">検証JSON / CSV <span>↗</span></a>
+      <a href="./index.html">比較トップへ戻る <span>→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>ROTOR / C2 · OPEN DESIGN BENCHMARK · 2026-10-25<br>工学候補CAD。未検証項目を含み、製作・飛行の承認ではありません。</p>
+  <a href="https://github.com/naoyamd/rotor-cad-benchmark">GitHub ↗</a>
+</footer>
+<script type="module" src="c2.mjs"></script>
+</body>
+</html>
