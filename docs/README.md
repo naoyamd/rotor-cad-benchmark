@@ -2,6 +2,13 @@
 
 GitHub Pages: https://rotor.nightly.dedyn.io/
 
+All three site pages use English as the primary language with smaller Japanese
+translations (`bilingual.css`). Runtime UI labels use the escaped `bi()` helper.
+Linked CAD evidence, source reports and the original PDF retain their source
+languages. C2 alone includes English Open Graph and Twitter large-image metadata.
+Its 1200×630 PNG is rendered from `social-preview.html`, using the existing C2
+CAD preview; no third-party photography is redistributed.
+
 `index.html` is the side-by-side comparison landing. `c1.html` preserves the
 original C1 explorer; `c2.html` presents the redesigned C2. Shared root URLs
 with `#explore`, `#benchmark` or `#evidence` redirect to C1 to preserve old links.

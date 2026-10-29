@@ -3,10 +3,11 @@ import {OrbitControls} from './vendor/OrbitControls.js';
 import {createRig} from './c2-rig.mjs';
 import {surfaceFor} from './c2-materials.mjs?v=coatings-1';
 import {pitchPresets, speedPresets} from './presets.mjs';
+import {bi} from './bilingual.mjs';
 
 const $ = id => document.getElementById(id);
 const colors = {blue:0x38bee2,gold:0xedc263,silver:0xb0c8df,blade:0x578bc2,rubber:0x253c60};
-const stateNames = {neutral:'中立','max-input':'最大入力',parked:'駐機',folded:'折畳み'};
+const stateNames = {neutral:['Neutral','中立'],'max-input':['Maximum input','最大入力'],parked:['Parked','駐機'],folded:['Folded','折畳み']};
 let renderer,scene,camera,orbit,cad,live,rig,selected,ambientLight,fillLight;
 let mode='motion',currentState='neutral',view='head',requestId=0;
 let playing=false,azimuth=0,displayRpm=speedPresets[0],lastTime=0,lastReadout=0,liveLoading=false;
@@ -39,17 +40,20 @@ function makeGroup(data){
 function clearSelection(){if(selected)selected.material.emissive.setHex(0);selected=null;}
 function selectPart(object){
   clearSelection();if(!object)return;selected=object;object.material.emissive.setHex(0x00365a);
-  $('partName').textContent=object.name;
-  $('partDetail').textContent=[object.userData.group,object.userData.connection,object.userData.material,object.userData.note].filter(Boolean).join(' / ');
+  $('partName').innerHTML=bi(object.name,object.name);
+  const metadata=[['Group','グループ',object.userData.group],['Connection','接続',object.userData.connection],['Material','材料',object.userData.material],['Note','注記',object.userData.note]].filter(([, ,value])=>value);
+  const english=metadata.map(([label,,value])=>`${label}: ${value}`).join(' / ');
+  const japanese=metadata.map(([,label,value])=>`${label}: ${value}`).join(' / ');
+  $('partDetail').innerHTML=bi(english,japanese);
 }
 function applyXray(){
   const xray=$('xray').checked;
   ambientLight.color.setHex(xray?0xd7f2f9:0xffffff);ambientLight.groundColor.setHex(xray?0x334f7c:0x575b62);
   fillLight.color.setHex(xray?0x86c1d7:0xffffff);
   const legend=document.querySelectorAll('.explorer-foot>span');
-  const labels=xray?['操縦・スワッシュ','関節・ロック','荷重を支える骨格']:['塗装部：青灰・オリーブ','金具：銀・黄褐色','複合材・ゴム：黒系'];
+  const labels=xray?[['Controls · swashplate','操縦・スワッシュ'],['Joints · locks','関節・ロック'],['Load-bearing structure','荷重を支える骨格']]:[['Painted parts: blue-gray · olive','塗装部：青灰・オリーブ'],['Hardware: silver · ochre','金具：銀・黄褐色'],['Composite · rubber: dark','複合材・ゴム：黒系']];
   const swatches=xray?['#38bee2','#edc263','#b0c8df']:['#7d8c6b','#b59b66','#30343a'];
-  for(let i=0;i<3;i++){legend[i].innerHTML=`<i class="legend" style="background:${swatches[i]}"></i>${labels[i]}`;}
+  for(let i=0;i<3;i++){const swatch=legend[i].querySelector('.legend');swatch.style.background=swatches[i];legend[i].innerHTML=bi(...labels[i]);legend[i].prepend(swatch);}
   for(const group of [cad,live])group?.traverse(object=>{
     if(!object.isMesh)return;
     const finish=xray?{color:meshColor(object.name),metalness:.45,roughness:.48}:surfaceFor(object.userData);
@@ -62,11 +66,11 @@ function applyXray(){
 }
 function disposeGroup(group){group.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});scene.remove(group);}
 function applyIsolation(){clearSelection();for(const o of cad?.children??[])o.visible=$('isolate').value==='all'||o.userData.group===$('isolate').value;}
-function showError(error){stopMotion();$('loadError').textContent=`表示を更新できませんでした（${error.message}）。モードボタンで再読込できます。原本は下のGitHubリンクから確認できます。`;$('loadError').hidden=false;$('status').textContent='モデルの読み込み・計算エラー';}
+function showError(error){stopMotion();$('loadError').innerHTML=bi(`Could not update the display (${error.message}). Use a mode button to reload. Check the source on GitHub below.`,`表示を更新できませんでした（${error.ja??error.message}）。モードボタンで再読込できます。原本は下のGitHubリンクから確認できます。`);$('loadError').hidden=false;$('status').innerHTML=bi('Model loading/calculation error','モデルの読み込み・計算エラー');}
 async function ensureLive(){
   if(liveLoading)return;
   if(rig){live.visible=mode==='motion';if(mode==='motion')updateLive(true);return;}
-  liveLoading=true;if(mode==='motion')$('status').textContent='C2の機構モデルを読み込み中…';
+  liveLoading=true;if(mode==='motion')$('status').innerHTML=bi('Loading C2 mechanism model…','C2の機構モデルを読み込み中…');
   try{
     const group=makeGroup(await getData('neutral'));
     try{rig=createRig(group);}catch(error){disposeGroup(group);throw error;}
@@ -77,14 +81,14 @@ async function ensureLive(){
 }
 async function loadState(state){
   const ticket=++requestId;currentState=state;clearSelection();
-  if(mode==='cad'){$('status').textContent='保存CADを読み込み中…';$('loadError').hidden=true;}
+  if(mode==='cad'){$('status').innerHTML=bi('Loading saved CAD…','保存CADを読み込み中…');$('loadError').hidden=true;}
   if(cad)cad.visible=false;
   document.querySelectorAll('[data-state]').forEach(b=>{const active=b.dataset.state===state;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
   try{
     const data=await getData(state);if(ticket!==requestId)return;
     const group=makeGroup(data);if(cad)disposeGroup(cad);cad=group;scene.add(cad);cad.visible=mode==='cad';applyIsolation();applyXray();
-    $('partName').textContent='部品を選択';$('partDetail').textContent='3D上の部品をクリック。名前・接続先・設計上の注記を確認できます。';
-    if(mode==='cad')$('status').textContent=`${data.parts.length}形状フィーチャ / ${stateNames[state]} / 保存CAD`;
+    $('partName').innerHTML=bi('Select a part','部品を選択');$('partDetail').innerHTML=bi('Click a part in 3D to inspect its name, connections, and design notes.','3D上の部品をクリック。名前・接続先・設計上の注記を確認できます。');
+    if(mode==='cad')$('status').innerHTML=bi(`${data.parts.length} geometry features / ${stateNames[state][0]} / saved CAD`,`${data.parts.length}形状フィーチャ / ${stateNames[state][1]} / 保存CAD`);
   }catch(error){if(ticket===requestId&&mode==='cad')showError(error);}
 }
 function updateLive(readout){
@@ -93,29 +97,29 @@ function updateLive(readout){
   const {blades,frames}=rig.update({collective,cyclicC:cyclic*Math.cos(phase),cyclicS:cyclic*Math.sin(phase),azimuth});
   if(!readout)return;
   $('collectiveValue').value=`${collective.toFixed(1)}°`;$('cyclicValue').value=`${cyclic.toFixed(1)}°`;$('phaseValue').value=`${$('phase').value}°`;$('azimuthValue').value=`${azimuth.toFixed(1)}°`;
-  $('pitches').innerHTML=blades.map((b,i)=>`<div>翼 ${i+1}<strong>${b.theta.toFixed(2)}°</strong></div>`).join('');
+  $('pitches').innerHTML=blades.map((b,i)=>`<div>${bi(`Blade ${i+1}`,`翼 ${i+1}`)}<strong>${b.theta.toFixed(2)}°</strong></div>`).join('');
   $('pitchSection').setAttribute('transform',`rotate(${-blades[0].theta} 110 38)`);
   $('residual').value=Math.max(...blades.map(b=>b.residual)).toExponential(1);
   $('scissorResidual').value=Math.max(frames.stator_scissors.closure_residual_mm,frames.rotor_scissors.closure_residual_mm).toExponential(1);
-  $('status').textContent=`C2閉路解 / 425形状 / 表示速度 ${displayRpm} rpm`;
+  $('status').innerHTML=bi(`C2 closure solution / 425 features / display speed ${displayRpm} rpm`,`C2閉路解 / 425形状 / 表示速度 ${displayRpm} rpm`);
 }
 function refresh(){try{updateLive(true);}catch(error){showError(error);}}
 function syncPresets(){
   document.querySelectorAll('[data-pitch]').forEach(b=>{const p=pitchPresets[+b.dataset.pitch],active=p.collective===+$('collective').value&&p.cyclic===+$('cyclic').value;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
   document.querySelectorAll('[data-speed]').forEach(b=>{const active=speedPresets[+b.dataset.speed]===displayRpm;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
 }
-function stopMotion(){playing=false;$('motionPlay').textContent='▶ 回転を開始';$('motionPlay').setAttribute('aria-pressed','false');}
+function stopMotion(){playing=false;$('motionPlay').innerHTML=bi('▶ Start rotation','▶ 回転を開始');$('motionPlay').setAttribute('aria-pressed','false');}
 function setMode(next){
   stopMotion();clearSelection();mode=next;const isCad=mode==='cad';
   $('cadControls').hidden=!isCad;$('motionControls').hidden=isCad;
   if(cad)cad.visible=isCad;if(live)live.visible=!isCad;
   for(const [id,active] of [['cadMode',isCad],['motionMode',!isCad]]){$(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active));}
-  $('modeTag').textContent=isCad?'FREECAD → THREE.JS':'C2 / LIVE KINEMATICS';
-  $('stageTitle').textContent=isCad?'C2 / SAVED CAD':'C2 / LIVE MOTION';
-  $('stageDescription').textContent=isCad?'425形状フィーチャの保存CAD。部品をクリックして調べる。':'C2の閉路計算に合わせて実CAD形状を連続駆動。';
-  $('modelNote').textContent=isCad?'保存済みCADの三角形化表示 / 長さ単位 m':'C2閉路解でメッシュ姿勢を更新 / 干渉・強度検証ではありません';
+  $('modeTag').innerHTML=bi(isCad?'FREECAD → THREE.JS':'C2 / LIVE KINEMATICS',isCad?'FREECAD → THREE.JS / 保存CAD':'C2 / ライブ機構計算');
+  $('stageTitle').innerHTML=bi(isCad?'C2 / SAVED CAD':'C2 / LIVE MOTION',isCad?'C2 / 保存CAD':'C2 / ライブ動作');
+  $('stageDescription').innerHTML=bi(isCad?'Saved CAD with 425 geometry features. Click a part to inspect it.':'Drive the real CAD shape continuously using the C2 closure calculation.',isCad?'425形状フィーチャの保存CAD。部品をクリックして調べる。':'C2の閉路計算に合わせて実CAD形状を連続駆動。');
+  $('modelNote').innerHTML=bi(isCad?'Triangulated saved-CAD display / length unit: m':'Update mesh pose from the C2 closure solution / not interference or strength verification',isCad?'保存済みCADの三角形化表示 / 長さ単位 m':'C2閉路解でメッシュ姿勢を更新 / 干渉・強度検証ではありません');
   $('loadError').hidden=true;
-  if(isCad){if(cad)$('status').textContent=`425形状フィーチャ / ${stateNames[currentState]} / 保存CAD`;else loadState(currentState);}
+  if(isCad){if(cad)$('status').innerHTML=bi(`425 geometry features / ${stateNames[currentState][0]} / saved CAD`,`425形状フィーチャ / ${stateNames[currentState][1]} / 保存CAD`);else loadState(currentState);}
   else ensureLive();
 }
 function setCamera(which){
@@ -141,10 +145,10 @@ try{
   for(const id of ['collective','cyclic','phase','azimuth'])$(id).oninput=()=>{if(id==='azimuth'){stopMotion();azimuth=+$(id).value;}syncPresets();refresh();};
   document.querySelectorAll('[data-pitch]').forEach(b=>b.onclick=()=>{const p=pitchPresets[+b.dataset.pitch];$('collective').value=p.collective;$('cyclic').value=p.cyclic;syncPresets();refresh();});
   document.querySelectorAll('[data-speed]').forEach(b=>b.onclick=()=>{displayRpm=speedPresets[+b.dataset.speed];syncPresets();refresh();});
-  $('motionPlay').onclick=()=>{playing=!playing;$('motionPlay').textContent=playing?'Ⅱ 回転を止める':'▶ 回転を開始';$('motionPlay').setAttribute('aria-pressed',String(playing));};
+  $('motionPlay').onclick=()=>{playing=!playing;$('motionPlay').innerHTML=bi(playing?'Ⅱ Stop rotation':'▶ Start rotation',playing?'Ⅱ 回転を止める':'▶ 回転を開始');$('motionPlay').setAttribute('aria-pressed',String(playing));};
   $('motionReset').onclick=()=>{stopMotion();azimuth=0;displayRpm=speedPresets[0];$('collective').value=12;$('cyclic').value=1.5;$('phase').value=0;$('azimuth').value=0;syncPresets();refresh();setCamera('head');};
   document.addEventListener('visibilitychange',()=>{lastTime=0;if(document.hidden)stopMotion();});
-  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();showError(Error('3D描画が中断されました。ページを再読み込みしてください'));});
+  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();const error=Error('3D rendering was interrupted. Please reload the page');error.ja='3D描画が中断されました。ページを再読み込みしてください';showError(error);});
   renderer.setAnimationLoop(time=>{const dt=lastTime?Math.min((time-lastTime)/1000,.1):0;lastTime=time;if(document.hidden)return;if(playing&&mode==='motion'&&rig){azimuth=(azimuth+dt*displayRpm*6)%360;$('azimuth').value=azimuth;try{updateLive(time-lastReadout>120);if(time-lastReadout>120)lastReadout=time;}catch(error){showError(error);}}orbit.update();renderer.render(scene,camera);});
   syncPresets();setCamera('head');setMode('motion');
 }catch(error){showError(error);document.querySelectorAll('.explorer button,.explorer input,.explorer select').forEach(e=>e.disabled=true);}

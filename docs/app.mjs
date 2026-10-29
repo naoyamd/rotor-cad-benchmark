@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { solve, swash } from './kinematics.mjs';
 import {pitchPresets,speedPresets} from './presets.mjs';
+import {bi} from './bilingual.mjs';
 
 const $ = id => document.getElementById(id);
 const colors = {blue:0x38bee2, gold:0xd6a45a, silver:0xb0c8df, blade:0x578bc2, rubber:0x253c60};
@@ -67,10 +68,10 @@ function liveUpdate(readout=true){
   live.servos.forEach(({bottom,body,rod})=>{const top=v([bottom.x,bottom.y,-.1]).applyMatrix4(m4(s.q)).add(mm(s.center));const dir=top.clone().sub(bottom).normalize();placeRod(body,bottom,bottom.clone().addScaledVector(dir,.55));placeRod(rod,top.clone().addScaledVector(dir,-.65),top);});
   if(readout){
     $('collectiveValue').value=`${collective.toFixed(1)}°`;$('cyclicValue').value=`${amp.toFixed(1)}°`;$('phaseValue').value=`${$('phase').value}°`;$('azimuthValue').value=`${Math.round(azimuth)}°`;
-    $('pitches').innerHTML=results.map((s,i)=>`<div>翼 ${i+1}<strong>${s.theta.toFixed(2)}°</strong></div>`).join('');
+    $('pitches').innerHTML=results.map((s,i)=>`<div>${bi(`Blade ${i+1}`,`翼 ${i+1}`)}<strong>${s.theta.toFixed(2)}°</strong></div>`).join('');
     $('pitchSection').setAttribute('transform',`rotate(${-results[0].theta} 110 38)`);
     $('residual').value=Math.max(...results.map(s=>s.residual)).toExponential(1);
-    $('status').textContent='有限リンク解 / θ₀ = 8–16° / cyclic ≤ 3°';
+    $('status').innerHTML=bi('Finite-link solution / θ₀ = 8–16° / cyclic ≤ 3°','有限リンク解 / θ₀ = 8–16° / cyclic ≤ 3°');
   }
 }
 function applyXray(){
@@ -90,10 +91,10 @@ function syncPresets(){
   document.querySelectorAll('[data-speed]').forEach(b=>{const active=speedPresets[+b.dataset.speed]===displayRpm;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});
 }
 function clearSelection(){if(selected){selected.material.emissive.setHex(0);selected=null;}}
-function selectPart(o){clearSelection();if(!o)return;selected=o;o.material.emissive.setHex(0x00365a);$('partName').textContent=o.name;$('partDetail').textContent=[o.userData.connection,o.userData.note].filter(Boolean).join(' / ')||'荷重・接続の詳細は原本BOMを参照してください。';}
+function selectPart(o){clearSelection();if(!o)return;selected=o;o.material.emissive.setHex(0x00365a);$('partName').innerHTML=bi(o.name,o.name);const metadata=[['Connection','接続',o.userData.connection],['Note','注記',o.userData.note]].filter(([, ,value])=>value);const english=metadata.map(([label,,value])=>`${label}: ${value}`).join(' / ');const japanese=metadata.map(([,label,value])=>`${label}: ${value}`).join(' / ');$('partDetail').innerHTML=metadata.length?bi(english,japanese):bi('See the source BOM for load and connection details.','荷重・接続の詳細は原本BOMを参照してください。');}
 function disposeGroup(group){group.traverse(o=>{o.geometry?.dispose();o.material?.dispose();});scene.remove(group);}
 async function loadState(state){
-  const ticket=++requestId;currentState=state;clearSelection();$('status').textContent='CAD形状を読み込み中…';$('loadError').hidden=true;
+  const ticket=++requestId;currentState=state;clearSelection();$('status').innerHTML=bi('Loading CAD geometry…','CAD形状を読み込み中…');$('loadError').hidden=true;
   // Hide the previous state while loading so the selected label never misidentifies geometry.
   if(cad)cad.visible=false;
   document.querySelectorAll('[data-state]').forEach(b=>{b.classList.toggle('active',b.dataset.state===state);b.setAttribute('aria-pressed',String(b.dataset.state===state));});
@@ -103,14 +104,14 @@ async function loadState(state){
     const data=cache.get(state),group=new THREE.Group();meshes.length=0;
     for(const part of data.parts){const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(part.vertices,3));geometry.setIndex(part.indices);geometry.computeVertexNormals();const o=mesh(geometry,partColor(part.name),group);o.name=part.name;o.userData=part;meshes.push(o);}
     if(cad)disposeGroup(cad);cad=group;scene.add(cad);cad.visible=mode==='cad';applyIsolation();applyXray();
-    $('partName').textContent='部品を選択';$('partDetail').textContent='3D上の部品をクリック。名前・接続先・設計上の注記を確認できます。';
-    if(mode==='cad')$('status').textContent=`${data.parts.length}部品 / ${state} / 原本から直接変換`;
-  }catch(error){if(ticket!==requestId)return;$('loadError').textContent=`モデルを読み込めませんでした (${error.message})。状態ボタンを押すと再試行できます。下のGitHubリンクから原本も確認できます。`;$('loadError').hidden=false;$('status').textContent='CAD読み込み失敗';}
+    $('partName').innerHTML=bi('Select a part','部品を選択');$('partDetail').innerHTML=bi('Click a part in 3D to inspect its name, connections, and design notes.','3D上の部品をクリック。名前・接続先・設計上の注記を確認できます。');
+    if(mode==='cad')$('status').innerHTML=bi(`${data.parts.length} parts / ${state} / Directly converted from source`,`${data.parts.length}部品 / ${state} / 原本から直接変換`);
+  }catch(error){if(ticket!==requestId)return;$('loadError').innerHTML=bi(`Model could not be loaded (${error.message}). Press a state button to retry. Check the source via the GitHub link below.`,`モデルを読み込めませんでした (${error.message})。状態ボタンを押すと再試行できます。下のGitHubリンクから原本も確認できます。`);$('loadError').hidden=false;$('status').innerHTML=bi('CAD load failed','CAD読み込み失敗');}
 }
 function applyIsolation(){clearSelection();for(const o of meshes)o.visible=$('isolate').value==='all'||o.userData.group===$('isolate').value;}
 function setCamera(which){view=which;const target=which==='head'?v([0,0,1.55]):v([0,0,1.4]);camera.position.copy(which==='head'?v([3.5,-4.7,3.8]):which==='top'?v([0,-.01,24]):v([13,-17,14]));if(which!=='head')camera.position.sub(target).multiplyScalar(Math.max(1,1.55/camera.aspect)).add(target);orbit.target.copy(target);orbit.update();document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===which);b.setAttribute('aria-pressed',String(b.dataset.view===which));});}
-function stop(){running=false;$('play').textContent='▶ 回転を開始';$('play').setAttribute('aria-pressed','false');}
-function setMode(next){mode=next;const isCad=mode==='cad';stop();$('cadControls').hidden=!isCad;$('liveControls').hidden=isCad;live.group.visible=!isCad;if(cad)cad.visible=isCad;for(const [id,active] of [['cadMode',isCad],['liveMode',!isCad]]){$(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active));}$('modeTag').textContent=isCad?'FREECAD → THREE.JS':'LIVE FINITE-LINK SOLVER';$('stageTitle').textContent=isCad?'C1 / ROTOR HEAD':'C1 / HOW IT MOVES';$('stageDescription').textContent=isCad?'145部品の実CAD形状。部品をクリックして調べる。':'元の機構式で動く簡略モデル。翼角は閉路から計算。';$('modelNote').textContent=isCad?'実CADの三角形化表示 / 長さ単位 m':'機構解説用の簡略形状 / 干渉・空力の評価ではありません';$('loadError').hidden=true;if(!isCad)liveUpdate();else if(cad)$('status').textContent=`145部品 / ${currentState} / 原本から直接変換`;else loadState(currentState);}
+function stop(){running=false;$('play').innerHTML=bi('▶ Start rotation','▶ 回転を開始');$('play').setAttribute('aria-pressed','false');}
+function setMode(next){mode=next;const isCad=mode==='cad';stop();$('cadControls').hidden=!isCad;$('liveControls').hidden=isCad;live.group.visible=!isCad;if(cad)cad.visible=isCad;for(const [id,active] of [['cadMode',isCad],['liveMode',!isCad]]){$(id).classList.toggle('active',active);$(id).setAttribute('aria-pressed',String(active));}$('modeTag').innerHTML=bi(isCad?'FREECAD → THREE.JS':'LIVE FINITE-LINK SOLVER',isCad?'FREECAD → THREE.JS':'有限リンク機構のライブ計算');$('stageTitle').innerHTML=bi(isCad?'C1 / ROTOR HEAD':'C1 / HOW IT MOVES',isCad?'C1 / ローターヘッド':'C1 / 動き方');$('stageDescription').innerHTML=bi(isCad?'145-part real CAD geometry. Click a part to inspect.':'Simplified model driven by the original mechanism equations. Blade angles come from the closure.',isCad?'145部品の実CAD形状。部品をクリックして調べる。':'元の機構式で動く簡略モデル。翼角は閉路から計算。');$('modelNote').innerHTML=bi(isCad?'Real CAD triangulation / length unit: m':'Simplified mechanism-explanation geometry / not for interference or aerodynamic evaluation',isCad?'実CADの三角形化表示 / 長さ単位 m':'機構解説用の簡略形状 / 干渉・空力の評価ではありません');$('loadError').hidden=true;if(!isCad)liveUpdate();else if(cad)$('status').innerHTML=bi(`${meshes.length||145} parts / ${currentState} / Directly converted from source`,`${meshes.length||145}部品 / ${currentState} / 原本から直接変換`);else loadState(currentState);}
 
 try{
   renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setClearColor(0x002060,0);renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.5;$('viewport').appendChild(renderer.domElement);
@@ -126,7 +127,7 @@ try{
   document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setCamera(b.dataset.view));document.querySelectorAll('[data-state]').forEach(b=>b.onclick=()=>{if(b.dataset.state==='folded'||b.dataset.state==='parked'){setCamera('top');$('isolate').value='all';}loadState(b.dataset.state);});
   $('isolate').onchange=()=>{applyIsolation();setCamera($('isolate').value==='Blade1'?'full':'head');};
   controls.forEach(id=>$(id).addEventListener('input',()=>{if(id==='azimuth'){stop();azimuth=+$(id).value;}syncPresets();liveUpdate();}));
-  $('play').onclick=()=>{running=!running;$('play').textContent=running?'Ⅱ 回転を止める':'▶ 回転を開始';$('play').setAttribute('aria-pressed',String(running));};
+  $('play').onclick=()=>{running=!running;$('play').innerHTML=running?bi('Ⅱ Stop rotation','Ⅱ 回転を止める'):bi('▶ Start rotation','▶ 回転を開始');$('play').setAttribute('aria-pressed',String(running));};
   $('xray').onchange=applyXray;
   document.querySelectorAll('[data-pitch]').forEach(b=>b.onclick=()=>{const p=pitchPresets[+b.dataset.pitch];$('collective').value=p.collective;$('cyclic').value=p.cyclic;syncPresets();liveUpdate();});
   document.querySelectorAll('[data-speed]').forEach(b=>b.onclick=()=>{displayRpm=speedPresets[+b.dataset.speed];syncPresets();});
@@ -134,6 +135,6 @@ try{
   document.querySelectorAll('[data-demo]').forEach(b=>b.onclick=()=>{if(b.dataset.demo==='fold'){setMode('cad');$('isolate').value='all';loadState('folded');setCamera('top');}else{setMode('live');$('collective').value=b.dataset.demo==='collective'?16:12;$('cyclic').value=b.dataset.demo==='cyclic'?3:0;$('phase').value=0;syncPresets();liveUpdate();setCamera('head');}$('explore').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
   document.addEventListener('visibilitychange',()=>{lastTime=0;});
   renderer.setAnimationLoop(time=>{const dt=lastTime?Math.min((time-lastTime)/1000,.1):0;lastTime=time;if(document.hidden)return;if(running&&mode==='live'){azimuth=(azimuth+dt*displayRpm*6)%360;$('azimuth').value=Math.round(azimuth);liveUpdate(time-lastReadout>120);if(time-lastReadout>120)lastReadout=time;}orbit.update();renderer.render(scene,camera);});
-  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();stop();$('loadError').textContent='3D描画が中断されました。ページを再読み込みしてください。設計資料は下のリンクから閲覧できます。';$('loadError').hidden=false;});
+  renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();stop();$('loadError').innerHTML=bi('3D rendering was interrupted. Reload the page. Design materials are available through the links below.','3D描画が中断されました。ページを再読み込みしてください。設計資料は下のリンクから閲覧できます。');$('loadError').hidden=false;});
   // CAD assets load on demand when the visitor switches tabs.
-}catch(error){$('status').textContent='3D描画を開始できません';$('loadError').hidden=false;$('loadError').textContent=`WebGL対応のブラウザで開いてください。設計資料は下のGitHubリンクから閲覧できます。 (${error.message})`;document.querySelectorAll('.tabs button,.controls button,.camera-buttons button,.demo').forEach(b=>b.disabled=true);}
+}catch(error){$('status').innerHTML=bi('3D rendering could not start','3D描画を開始できません');$('loadError').hidden=false;$('loadError').innerHTML=bi(`Open this in a WebGL-capable browser. Design materials are available through the GitHub links below. (${error.message})`,`WebGL対応のブラウザで開いてください。設計資料は下のGitHubリンクからご覧いただけます。 (${error.message})`);document.querySelectorAll('.tabs button,.controls button,.camera-buttons button,.demo').forEach(b=>b.disabled=true);}

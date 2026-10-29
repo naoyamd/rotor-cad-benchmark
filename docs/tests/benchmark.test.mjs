@@ -8,9 +8,10 @@ test('displayed benchmark costs, tokens and times match the published source',as
   const rows=[...html.matchAll(/<tr data-benchmark="([^"]+)">([\s\S]*?)<\/tr>/g)];
   assert.equal(rows.length,3);
   for(const [,key,row] of rows){
-    const cells=[...row.matchAll(/data-metric="([^"]+)" data-value="([^"]+)">([^<]+)/g)];
+    const cells=[...row.matchAll(/data-metric="([^"]+)" data-value="([^"]+)">([\s\S]*?)<\/td>/g)];
     assert.equal(cells.length,4);
-    for(const [,metric,value,visible] of cells){
+    for(const [,metric,value,markup] of cells){
+      const visible=markup.includes('class="ja"') ? markup.match(/<span class="ja"[^>]*>([\s\S]*?)<\/span>/)[1] : markup;
       assert.equal(Number(value),Number(summary[key][metric]));
       if(metric.endsWith('_usd'))assert.equal(visible,`$${Number(value).toFixed(2)}`);
       else if(metric==='total_tokens')assert.equal(visible,Number(value).toLocaleString('en-US'));
